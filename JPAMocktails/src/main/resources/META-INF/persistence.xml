@@ -8,7 +8,7 @@
 		<!-- Begin List Entities Here -->
 		
 		<class>com.skilldistillery.mocktailsmeetup.entities.User</class>
-
+ 
 		<!-- End List Entities Here -->
 
 
@@ -16,10 +16,9 @@
 
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/FIXME?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=US/Mountain" />
-			<property name="javax.persistence.jdbc.user" value="FIXME" />
-			<property name="javax.persistence.jdbc.password"
-				value="FIXME" />
+				value="jdbc:mysql://localhost:3306/meetupdb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=US/Mountain" />
+			<property name="javax.persistence.jdbc.user" value="mocktailuser" />
+			<property name="javax.persistence.jdbc.password" value="mocktail" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
 

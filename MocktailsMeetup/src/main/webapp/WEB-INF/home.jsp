@@ -10,5 +10,7 @@
 
 <h1>Welcome to Mocktails Meetup</h1>
 
+${DEBUG}
+
 </body>
 </html>
