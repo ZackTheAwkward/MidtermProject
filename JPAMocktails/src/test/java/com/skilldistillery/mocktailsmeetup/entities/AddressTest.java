@@ -45,13 +45,11 @@ class AddressTest {
 	void Test1() {
 	assertNotNull(address);
 	assertEquals("Shirley Street", address.getStreet());
-	assertEquals("CO springs", address.getCity());
+	assertEquals("Denver", address.getCity());
 	assertEquals("CO", address.getStateAbbr());
 	assertEquals("11111", address.getPostalCode());
 	
-		
 	}
-	
 	
 	}
 
