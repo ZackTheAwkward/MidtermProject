@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Address {
@@ -25,6 +27,9 @@ public class Address {
 	@Column(name = "postal_code")
 	private String postalCode;
 
+	@OneToOne(mappedBy="address")
+	private Meetup meetup;
+	
 // ----- END Fields -----------------------------
 
 	public Address() {
@@ -76,6 +81,15 @@ public class Address {
 	@Override
 	public int hashCode() {
 		return Objects.hash(city, id, postalCode, stateAbbr, street);
+	}
+	
+
+	public Meetup getMeetup() {
+		return meetup;
+	}
+
+	public void setMeetup(Meetup meetup) {
+		this.meetup = meetup;
 	}
 
 	@Override

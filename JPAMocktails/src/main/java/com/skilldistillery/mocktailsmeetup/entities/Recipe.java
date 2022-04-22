@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Recipe {
@@ -32,7 +34,12 @@ public class Recipe {
 	
 	@Column(name="created_date")
 	private LocalDate createDate;
-
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "drink_id")
+	private Drink drink;
+	
 	public Recipe() {
 		super();
 	}
@@ -99,6 +106,15 @@ public class Recipe {
 
 	public void setCreateDate(LocalDate createDate) {
 		this.createDate = createDate;
+	}
+	
+
+	public Drink getDrink() {
+		return drink;
+	}
+
+	public void setDrink(Drink drink) {
+		this.drink = drink;
 	}
 
 	@Override

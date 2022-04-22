@@ -1,5 +1,6 @@
 package com.skilldistillery.mocktailsmeetup.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Drink {
@@ -24,6 +26,10 @@ public class Drink {
 	
 	private boolean active;
 
+	@OneToMany(mappedBy = "drink")
+	private List<Recipe> recipes;
+
+	
 	public Drink() {
 		super();
 	}

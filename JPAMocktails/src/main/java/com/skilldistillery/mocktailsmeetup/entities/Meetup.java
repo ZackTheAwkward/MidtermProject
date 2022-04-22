@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Meetup {
@@ -41,6 +43,9 @@ public class Meetup {
 	@Column(name="meetup_date")
 	private LocalDate meetupDate;
 	
+	@OneToOne
+	@JoinColumn(name="address_id")
+	private Address address; 
 
 	public Meetup() {
 		super();
@@ -129,6 +134,16 @@ public class Meetup {
 
 	public void setMeetupDate(LocalDate meetupDate) {
 		this.meetupDate = meetupDate;
+	}
+	
+	
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	@Override
