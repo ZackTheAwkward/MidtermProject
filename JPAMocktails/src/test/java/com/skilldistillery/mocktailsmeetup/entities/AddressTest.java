@@ -45,7 +45,7 @@ class AddressTest {
 	void Test1() {
 	assertNotNull(address);
 	assertEquals("Shirley Street", address.getStreet());
-	assertEquals("CO spring", address.getCity());
+	assertEquals("CO springs", address.getCity());
 	assertEquals("CO", address.getStateAbbr());
 	assertEquals("11111", address.getPostalCode());
 	
