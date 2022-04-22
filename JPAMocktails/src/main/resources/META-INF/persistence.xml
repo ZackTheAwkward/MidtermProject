@@ -7,6 +7,12 @@
 
 		<!-- Begin List Entities Here -->
 		
+		<class>com.skilldistillery.mocktailsmeetup.entities.Address</class>
+		<class>com.skilldistillery.mocktailsmeetup.entities.Category</class>
+		<class>com.skilldistillery.mocktailsmeetup.entities.Drink</class>
+		<class>com.skilldistillery.mocktailsmeetup.entities.Ingredient</class>
+		<class>com.skilldistillery.mocktailsmeetup.entities.Meetup</class>
+		<class>com.skilldistillery.mocktailsmeetup.entities.Recipe</class>
 		<class>com.skilldistillery.mocktailsmeetup.entities.User</class>
  
 		<!-- End List Entities Here -->
