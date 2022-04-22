@@ -433,6 +433,26 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `favorite_recipe`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `mocktaildb`;
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`) VALUES (1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `drink_category`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `mocktaildb`;
+INSERT INTO `drink_category` (`drink_id`, `category_id`) VALUES (1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `recipe_comment`
 -- -----------------------------------------------------
 START TRANSACTION;
