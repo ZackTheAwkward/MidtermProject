@@ -48,6 +48,6 @@ class CategoryTest {
 	@DisplayName("Initial test for category mapping")
 	void test1 () {
 		assertNotNull(category);
-		assertEquals("XXXX", category.getName());			
+		assertEquals("Frozen", category.getName());			
 	}
 }
