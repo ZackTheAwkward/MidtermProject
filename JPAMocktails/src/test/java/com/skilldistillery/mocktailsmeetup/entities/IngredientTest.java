@@ -48,6 +48,6 @@ class IngredientTest {
 	@DisplayName("Initial test for ingredient mapping")
 	void test1 () {
 		assertNotNull(ingredient);
-		assertEquals("XXXX", ingredient.getName());			
+		assertEquals("lemon juice", ingredient.getName());			
 	}
 }
