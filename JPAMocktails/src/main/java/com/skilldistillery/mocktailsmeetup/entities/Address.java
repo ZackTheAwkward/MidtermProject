@@ -10,6 +10,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Address {
+<<<<<<< HEAD
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Integer id;
@@ -20,6 +21,17 @@ public class Address {
 	@Column
 	private String city;
 	
+=======
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	private String street;
+	
+	
+	private String city;
+>>>>>>> 31b692b508eabadf97e3336ae53ed6ba89e9a939
 	
 	@Column(name="state_abbr")
 	private String stateAbbr;
@@ -27,12 +39,17 @@ public class Address {
 	@Column(name="postal_code")
 	private String postalCode;
 	
+<<<<<<< HEAD
 // ----- END Fields -----------------------------
 	
+=======
+
+>>>>>>> 31b692b508eabadf97e3336ae53ed6ba89e9a939
 	public Address() {
 		super();
 	}
 	
+<<<<<<< HEAD
 // --- END no-arg Constructor----------------- 	
 	
 
@@ -42,6 +59,22 @@ public class Address {
 
 
 	public void setId(Integer id) {
+=======
+	
+
+	@Override
+	public String toString() {
+		return "Address: " + street + ", " + city + ", " + stateAbbr + ", " + postalCode;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+>>>>>>> 31b692b508eabadf97e3336ae53ed6ba89e9a939
 		this.id = id;
 	}
 
@@ -91,6 +124,7 @@ public class Address {
 		if (getClass() != obj.getClass())
 			return false;
 		Address other = (Address) obj;
+<<<<<<< HEAD
 		return Objects.equals(id, other.id);
 	}
 
@@ -98,8 +132,16 @@ public class Address {
 	public String toString() {
 		return "Address [id=" + id + ", street=" + street + ", city=" + city + ", stateAbbr=" + stateAbbr
 				+ ", postalCode=" + postalCode + "]";
+=======
+		return id == other.id;
+>>>>>>> 31b692b508eabadf97e3336ae53ed6ba89e9a939
 	}
 	
 	
 	
+<<<<<<< HEAD
+=======
+	
+	
+>>>>>>> 31b692b508eabadf97e3336ae53ed6ba89e9a939
 }
