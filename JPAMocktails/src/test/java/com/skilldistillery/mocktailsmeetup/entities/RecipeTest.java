@@ -10,46 +10,47 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
-
+class RecipeTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user; 
-	
-	
+	private Recipe recipe;
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-	    emf = Persistence.createEntityManagerFactory("JPAMocktails");
+		  emf = Persistence.createEntityManagerFactory("JPAMocktails");
 	}
 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
-	    emf.close();
+		   emf.close();
 	}
 
-	
 	@BeforeEach
 	void setUp() throws Exception {
-	    em = emf.createEntityManager();
-	    user = em.find(User.class, 1);
+		 em = emf.createEntityManager();
+		 recipe = em.find(Recipe.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-	    em.close();
-	    user = null;
+		recipe = null;
+		em.close();
 	}
 	
-	
+
 	@Test
-	@DisplayName("Initial test for user mapping")
-	void test1 () {
-		assertNotNull(user);
-		assertEquals("Andre5000", user.getUsername());			
+	void Test1() {
+	assertNotNull(recipe);
+	assertEquals("CHANGE ME", recipe.getName());
+	assertEquals("CHANGE ME", recipe.getDescription());
+	assertEquals("CHANGE ME", recipe.getServingSize());
+	assertEquals("CHANGE ME", recipe.getCreateDate());
+
+	
+		
 	}
 	
 	
-}
+	}
