@@ -10,18 +10,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Address {
-<<<<<<< HEAD
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Id
-	private Integer id;
+
 	
-	@Column
-	private String street;
-	
-	@Column
-	private String city;
-	
-=======
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +22,6 @@ public class Address {
 	
 	
 	private String city;
->>>>>>> 31b692b508eabadf97e3336ae53ed6ba89e9a939
 	
 	@Column(name="state_abbr")
 	private String stateAbbr;
@@ -39,18 +29,12 @@ public class Address {
 	@Column(name="postal_code")
 	private String postalCode;
 	
-<<<<<<< HEAD
-// ----- END Fields -----------------------------
-	
-=======
 
->>>>>>> 31b692b508eabadf97e3336ae53ed6ba89e9a939
 	public Address() {
 		super();
 	}
-	
-<<<<<<< HEAD
-// --- END no-arg Constructor----------------- 	
+
+
 	
 
 	public Integer getId() {
@@ -74,7 +58,7 @@ public class Address {
 	}
 
 	public void setId(int id) {
->>>>>>> 31b692b508eabadf97e3336ae53ed6ba89e9a939
+
 		this.id = id;
 	}
 
