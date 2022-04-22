@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
-  `active` TINYINT NULL,
+  `active` TINYINT NOT NULL DEFAULT 0,
   `bio` TEXT NULL,
   `photo_url` VARCHAR(2000) NULL,
   `created_date` DATETIME NULL,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `drink` (
   `name` TEXT NOT NULL,
   `description` TEXT NOT NULL,
   `image_url` VARCHAR(2000) NULL,
-  `active` TINYINT NULL,
+  `active` TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `fk_drink_user1_idx` (`user_id` ASC),
   CONSTRAINT `fk_drink_user1`
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `meetup` (
   `start_time` TIME NULL,
   `end_time` TIME NULL,
   `max_attendees` INT NULL,
-  `active` TINYINT NULL,
+  `active` TINYINT NOT NULL DEFAULT 0,
   `image_url` VARCHAR(2000) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Meetup_address1_idx` (`address_id` ASC),
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `recipe` (
   `name` VARCHAR(200) NOT NULL,
   `serving_size` INT NULL,
   `description` TEXT NULL,
-  `active` TINYINT NULL,
+  `active` TINYINT NOT NULL DEFAULT 0,
   `instructions` TEXT NULL,
   `image_url` VARCHAR(2000) NULL,
   `created_date` DATETIME NULL,
@@ -347,7 +347,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'Andre5000', 'rock_paper_spock', 'Big', 'outcast@heyya.com', 'Boie', NULL, NULL, NULL, NULL, 'data_admin');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'Andre5000', 'rock_paper_spock', 'Big', 'outcast@heyya.com', 'Boie', 1, NULL, NULL, NULL, 'data_admin');
 
 COMMIT;
 
@@ -357,7 +357,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (1, 'Shirley Street', 'Denver', 'CO', '11111');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (1, 'Shirley Street', 'CO springs', 'CO', '11111');
 
 COMMIT;
 
@@ -367,7 +367,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `drink` (`id`, `user_id`, `name`, `description`, `image_url`, `active`) VALUES (1, 1, 'Shirley Temple', 'Sample data', NULL, NULL);
+INSERT INTO `drink` (`id`, `user_id`, `name`, `description`, `image_url`, `active`) VALUES (1, 1, 'Shirley Temple', 'Sample data', NULL, 1);
 
 COMMIT;
 
@@ -377,7 +377,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 1, 'This is a new meetup', '2022-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 1, 'This is a new meetup', '2022-01-01', NULL, NULL, NULL, NULL, NULL, 1, NULL);
 
 COMMIT;
 
@@ -387,7 +387,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `recipe` (`id`, `drink_id`, `user_id`, `name`, `serving_size`, `description`, `active`, `instructions`, `image_url`, `created_date`) VALUES (1, 1, 1, 'Shirley Temple sample recipe', 12, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `recipe` (`id`, `drink_id`, `user_id`, `name`, `serving_size`, `description`, `active`, `instructions`, `image_url`, `created_date`) VALUES (1, 1, 1, 'Shirley Temple sample recipe', 12, NULL, 0, NULL, NULL, NULL);
 
 COMMIT;
 
