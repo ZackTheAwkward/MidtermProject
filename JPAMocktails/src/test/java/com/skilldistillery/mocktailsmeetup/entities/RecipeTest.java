@@ -43,8 +43,8 @@ class RecipeTest {
 	@Test
 	void Test1() {
 	assertNotNull(recipe);
-	assertEquals("Shirley Temple samoe recipe", recipe.getName());
-	assertEquals("12", recipe.getServingSize());
+	assertEquals("Shirley Temple sample recipe", recipe.getName());
+	assertEquals(12, recipe.getServingSize());
 
 	
 		
