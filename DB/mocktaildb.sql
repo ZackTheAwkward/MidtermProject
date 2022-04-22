@@ -5,15 +5,15 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema meetupdb
+-- Schema mocktaildb
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `meetupdb` ;
+DROP SCHEMA IF EXISTS `mocktaildb` ;
 
 -- -----------------------------------------------------
--- Schema meetupdb
+-- Schema mocktaildb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `meetupdb` DEFAULT CHARACTER SET utf8 ;
-USE `meetupdb` ;
+CREATE SCHEMA IF NOT EXISTS `mocktaildb` DEFAULT CHARACTER SET utf8 ;
+USE `mocktaildb` ;
 
 -- -----------------------------------------------------
 -- Table `user`
@@ -346,7 +346,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Data for table `user`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'Andre5000', 'rock_paper_spock', 'Big', 'outcast@heyya.com', 'Boie', NULL, NULL, NULL, NULL, 'data_admin');
 
 COMMIT;
@@ -356,7 +356,7 @@ COMMIT;
 -- Data for table `address`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (1, 'Shirley Street', 'Denver', 'CO', '11111');
 
 COMMIT;
@@ -366,7 +366,7 @@ COMMIT;
 -- Data for table `drink`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `drink` (`id`, `user_id`, `name`, `description`, `image_url`, `active`) VALUES (1, 1, 'Shirley Temple', 'Sample data', NULL, NULL);
 
 COMMIT;
@@ -376,7 +376,7 @@ COMMIT;
 -- Data for table `meetup`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 1, 'This is a new meetup', '2022-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
@@ -386,7 +386,7 @@ COMMIT;
 -- Data for table `recipe`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `recipe` (`id`, `drink_id`, `user_id`, `name`, `serving_size`, `description`, `active`, `instructions`, `image_url`, `created_date`) VALUES (1, 1, 1, 'Shirley Temple sample recipe', 12, NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
@@ -396,7 +396,7 @@ COMMIT;
 -- Data for table `category`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `category` (`id`, `name`) VALUES (1, 'Frozen');
 
 COMMIT;
@@ -406,7 +406,7 @@ COMMIT;
 -- Data for table `ingredient`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (1, 'lemon juice', NULL, NULL);
 
 COMMIT;
@@ -416,7 +416,7 @@ COMMIT;
 -- Data for table `recipe_ingredient`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (1, 1, 10, 'ounces', NULL);
 
 COMMIT;
@@ -426,7 +426,7 @@ COMMIT;
 -- Data for table `meetup_comment`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `meetup_comment` (`id`, `meetup_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (1, 1, 1, 'This is a planned meeting', NULL, NULL);
 
 COMMIT;
@@ -436,7 +436,7 @@ COMMIT;
 -- Data for table `recipe_comment`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `meetupdb`;
+USE `mocktaildb`;
 INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (1, 1, 1, 'Comment on Shirley Temple', NULL, NULL);
 
 COMMIT;
