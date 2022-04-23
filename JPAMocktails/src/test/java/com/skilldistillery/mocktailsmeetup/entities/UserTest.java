@@ -51,5 +51,12 @@ class UserTest {
 		assertEquals("Andre5000", user.getUsername());			
 	}
 	
+	@Test
+	@DisplayName("Testing mapping for User and Meetup joining table- many to many")
+	void test2() {
+		assertNotNull(user);
+		assertTrue(user.getMeetups().size() >0);
+		
+	}
 	
 }

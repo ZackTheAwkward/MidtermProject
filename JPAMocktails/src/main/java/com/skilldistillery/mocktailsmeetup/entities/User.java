@@ -1,6 +1,7 @@
 package com.skilldistillery.mocktailsmeetup.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class User {
@@ -37,6 +39,9 @@ public class User {
 	
 	@Column(name="created_date")
 	private LocalDate createDate;
+	
+	@ManyToMany(mappedBy = "users")
+	private List<Meetup> meetups;
 
 	public int getId() {
 		return id;
@@ -121,6 +126,16 @@ public class User {
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	public List<Meetup> getMeetups() {
+		return meetups;
+	}
+
+	public void setMeetups(List<Meetup> meetups) {
+		this.meetups = meetups;
 	}
 
 	@Override

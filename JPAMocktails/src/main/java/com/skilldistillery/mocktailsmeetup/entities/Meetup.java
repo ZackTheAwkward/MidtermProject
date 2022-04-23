@@ -2,6 +2,7 @@ package com.skilldistillery.mocktailsmeetup.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -10,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -46,6 +49,12 @@ public class Meetup {
 	@OneToOne
 	@JoinColumn(name="address_id")
 	private Address address; 
+	
+	@ManyToMany
+	@JoinTable(name= "user_meeting",
+			joinColumns=@JoinColumn(name="meetup_id"),
+			inverseJoinColumns=@JoinColumn(name="user_id"))
+	private List<User> users;
 
 	public Meetup() {
 		super();
@@ -144,6 +153,16 @@ public class Meetup {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+	
+	
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> user) {
+		this.users = users;
 	}
 
 	@Override
