@@ -1,10 +1,15 @@
 package com.skilldistillery.mocktailsmeetup.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Ingredient {
@@ -21,6 +26,14 @@ public class Ingredient {
 	
 	@Column
 	private String description;
+	
+	@ManyToMany
+	@JoinTable(name="recipe_ingredient",
+	joinColumns=@JoinColumn(name="ingredient_id"),
+	inverseJoinColumns=@JoinColumn(name="recipe_id"))
+	private List<Recipe> recipes;
+	
+	
 	
 	
 //--------- END FIELDS -------------
@@ -62,6 +75,20 @@ public class Ingredient {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	
+
+	public List<Recipe> getRecipes() {
+		return recipes;
+	}
+
+	public void setRecipes(List<Recipe> recipes) {
+		this.recipes = recipes;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override

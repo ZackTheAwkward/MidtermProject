@@ -50,4 +50,11 @@ class IngredientTest {
 		assertNotNull(ingredient);
 		assertEquals("lemon juice", ingredient.getName());			
 	}
+	
+	@Test
+	@DisplayName("Testing ingredient and recipe mapping")
+	void Test2() {
+		assertNotNull(ingredient);
+		assertTrue(ingredient.getRecipes().size()>0);
+	}
 }

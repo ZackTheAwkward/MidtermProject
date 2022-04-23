@@ -55,6 +55,8 @@ public class Recipe {
 	inverseJoinColumns=@JoinColumn(name="user_id"))
 	private List<User> commenters;
 	
+	@ManyToMany(mappedBy="recipes")
+	private List<Ingredient> ingredients;
 	
 	public Recipe() {
 		super();
@@ -149,6 +151,16 @@ public class Recipe {
 
 	public void setCommenters(List<User> commenters) {
 		this.commenters = commenters;
+	}
+
+	
+	
+	public List<Ingredient> getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(List<Ingredient> ingredients) {
+		this.ingredients = ingredients;
 	}
 
 	@Override

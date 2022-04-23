@@ -59,12 +59,19 @@ class RecipeTest {
 	}
 	
 	@Test
-	@DisplayName("Tetsing recipe and user comments and favorites mappings")
+	@DisplayName("Testing recipe and user comments and favorites mappings")
 	void Test3() {
 		assertNotNull(recipe);
 		assertTrue(recipe.getUsersFavorited().size()>0);
 		assertTrue(recipe.getCommenters().size() >0);
 		
+	}
+	
+	@Test
+	@DisplayName("Testing recipe to ingredient mapping")
+	void test4() {
+		assertNotNull(recipe);
+		assertTrue(recipe.getIngredients().size()>0);
 	}
 	
 	}
