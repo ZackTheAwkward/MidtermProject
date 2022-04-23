@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Drink {
@@ -14,14 +15,14 @@ public class Drink {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String name;
-	
+
 	private String description;
-	
-	@Column(name="image_url")
+
+	@Column(name = "image_url")
 	private String imageUrl;
-	
+
 	private boolean active;
 
 	public Drink() {
@@ -89,7 +90,5 @@ public class Drink {
 		Drink other = (Drink) obj;
 		return id == other.id;
 	}
-	
-	
-	
+
 }

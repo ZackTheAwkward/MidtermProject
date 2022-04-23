@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Recipe {
@@ -15,22 +17,22 @@ public class Recipe {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String name;
-	
+
 	private String description;
-	
+
 	private boolean active;
-	
+
 	private String instructions;
-	
-	@Column(name="image_url")
+
+	@Column(name = "image_url")
 	private String imageUrl;
-	
-	@Column(name="serving_size")
+
+	@Column(name = "serving_size")
 	private int servingSize;
-	
-	@Column(name="created_date")
+
+	@Column(name = "created_date")
 	private LocalDate createDate;
 
 	public Recipe() {
@@ -103,8 +105,8 @@ public class Recipe {
 
 	@Override
 	public String toString() {
-		return "Recipe ID" + id + ", Name: " + name + ", Description: " + description + ", Instructions: " + instructions
-				+ ", Serving Size: " + servingSize + ", Create Date: " + createDate;
+		return "Recipe ID" + id + ", Name: " + name + ", Description: " + description + ", Instructions: "
+				+ instructions + ", Serving Size: " + servingSize + ", Create Date: " + createDate;
 	}
 
 	@Override
@@ -123,6 +125,5 @@ public class Recipe {
 		Recipe other = (Recipe) obj;
 		return id == other.id;
 	}
-	
-	
+
 }
