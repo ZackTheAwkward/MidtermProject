@@ -58,5 +58,12 @@ class UserTest {
 		assertTrue(user.getMeetups().size() >0);
 		
 	}
+	@Test
+	@DisplayName("Testing mapping for User and Meetup Comemnts joining table- many to many")
+	void test4() {
+		assertNotNull(user);
+		assertTrue(user.getMeetupComments().size() > 0);
+		
+	}
 	
 }

@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -42,6 +44,12 @@ public class User {
 	
 	@ManyToMany(mappedBy = "users")
 	private List<Meetup> meetups;
+	
+	@ManyToMany
+	@JoinTable(name= "meetup_comment",
+			joinColumns=@JoinColumn(name="user_id"),
+			inverseJoinColumns=@JoinColumn(name="meetup_id"))
+	private List<Meetup> meetupComments;
 
 	public int getId() {
 		return id;
@@ -136,6 +144,16 @@ public class User {
 
 	public void setMeetups(List<Meetup> meetups) {
 		this.meetups = meetups;
+	}
+	
+	
+
+	public List<Meetup> getMeetupComments() {
+		return meetupComments;
+	}
+
+	public void setMeetupComments(List<Meetup> meetupComments) {
+		this.meetupComments = meetupComments;
 	}
 
 	@Override

@@ -57,5 +57,11 @@ class MeetupTest {
 		assertNotNull(meetup);
 		assertTrue(meetup.getUsers().size()>0);
 	}
+	@Test
+	@DisplayName("Testing meetup to user comment mapping")
+	void test3() {
+		assertNotNull(meetup);
+		assertTrue(meetup.getUsersWhoCommented().size() > 0);
+	}
 	
 }
