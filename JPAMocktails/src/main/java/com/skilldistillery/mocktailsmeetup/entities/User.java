@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -42,6 +44,23 @@ public class User {
 	
 	@ManyToMany(mappedBy = "users")
 	private List<Meetup> meetups;
+	
+
+	@ManyToMany
+	@JoinTable(name= "meetup_comment",
+			joinColumns=@JoinColumn(name="user_id"),
+			inverseJoinColumns=@JoinColumn(name="meetup_id"))
+	private List<Meetup> meetupComments;
+
+	@ManyToMany(mappedBy = "usersFavorited")
+	private List<Recipe> favoriteRecipes;
+	
+	@ManyToMany(mappedBy = "commenters")
+	private List<Recipe> commentedOn;
+
+	public User() {
+		super();
+	}
 
 	public int getId() {
 		return id;
@@ -123,12 +142,6 @@ public class User {
 		this.createDate = createDate;
 	}
 
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
 
 	public List<Meetup> getMeetups() {
 		return meetups;
@@ -136,6 +149,31 @@ public class User {
 
 	public void setMeetups(List<Meetup> meetups) {
 		this.meetups = meetups;
+	}
+	
+	
+	public List<Meetup> getMeetupComments() {
+		return meetupComments;
+	}
+
+	public void setMeetupComments(List<Meetup> meetupComments) {
+		this.meetupComments = meetupComments;
+	}
+		
+	public List<Recipe> getFavoriteRecipes() {
+		return favoriteRecipes;
+	}
+
+	public void setFavoriteRecipes(List<Recipe> favoriteRecipes) {
+		this.favoriteRecipes = favoriteRecipes;
+	}
+
+	public List<Recipe> getCommentedOn() {
+		return commentedOn;
+	}
+
+	public void setCommentedOn(List<Recipe> commentedOn) {
+		this.commentedOn = commentedOn;
 	}
 
 	@Override

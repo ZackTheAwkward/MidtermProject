@@ -2,6 +2,7 @@ package com.skilldistillery.mocktailsmeetup.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -55,6 +56,15 @@ class RecipeTest {
 	void Test2() {
 		assertNotNull(recipe);
 		assertEquals(1, recipe.getDrink().getId());
+	}
+	
+	@Test
+	@DisplayName("Tetsing recipe and user comments and favorites mappings")
+	void Test3() {
+		assertNotNull(recipe);
+		assertTrue(recipe.getUsersFavorited().size()>0);
+		assertTrue(recipe.getCommenters().size() >0);
+		
 	}
 	
 	}

@@ -1,6 +1,7 @@
 package com.skilldistillery.mocktailsmeetup.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -35,10 +38,23 @@ public class Recipe {
 	@Column(name = "created_date")
 	private LocalDate createDate;
 	
-	
 	@ManyToOne
 	@JoinColumn(name = "drink_id")
 	private Drink drink;
+	
+	
+	@ManyToMany
+	@JoinTable(name= "favorite_recipe",
+			joinColumns=@JoinColumn(name="recipe_id"),
+			inverseJoinColumns=@JoinColumn(name="user_id"))
+	private List<User> usersFavorited;
+	
+	@ManyToMany
+	@JoinTable(name="recipe_comment",
+	joinColumns=@JoinColumn(name="recipe_id"),
+	inverseJoinColumns=@JoinColumn(name="user_id"))
+	private List<User> commenters;
+	
 	
 	public Recipe() {
 		super();
@@ -115,6 +131,24 @@ public class Recipe {
 
 	public void setDrink(Drink drink) {
 		this.drink = drink;
+	}
+	
+	
+
+	public List<User> getUsersFavorited() {
+		return usersFavorited;
+	}
+
+	public void setUsersFavorited(List<User> users) {
+		this.usersFavorited = users;
+	}
+
+	public List<User> getCommenters() {
+		return commenters;
+	}
+
+	public void setCommenters(List<User> commenters) {
+		this.commenters = commenters;
 	}
 
 	@Override

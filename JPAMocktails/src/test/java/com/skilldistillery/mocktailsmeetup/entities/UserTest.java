@@ -56,6 +56,21 @@ class UserTest {
 	void test2() {
 		assertNotNull(user);
 		assertTrue(user.getMeetups().size() >0);
+	}
+	
+	@Test
+	@DisplayName("Testing recipe to user mapping for comments and favorites")
+	void test3() {
+		assertNotNull(user);
+		assertTrue(user.getFavoriteRecipes().size()>0);
+		assertTrue(user.getCommentedOn().size()>0);
+		
+	}
+	@Test
+	@DisplayName("Testing mapping for User and Meetup Comemnts joining table- many to many")
+	void test4() {
+		assertNotNull(user);
+		assertTrue(user.getMeetupComments().size() > 0);
 		
 	}
 	
