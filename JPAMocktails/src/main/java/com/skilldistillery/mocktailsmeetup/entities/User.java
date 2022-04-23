@@ -42,6 +42,12 @@ public class User {
 	
 	@ManyToMany(mappedBy = "users")
 	private List<Meetup> meetups;
+	
+	@ManyToMany(mappedBy = "usersFavorited")
+	private List<Recipe> favoriteRecipes;
+	
+	@ManyToMany(mappedBy = "commenters")
+	private List<Recipe> commentedOn;
 
 	public int getId() {
 		return id;
@@ -136,6 +142,24 @@ public class User {
 
 	public void setMeetups(List<Meetup> meetups) {
 		this.meetups = meetups;
+	}
+	
+	
+
+	public List<Recipe> getFavoriteRecipes() {
+		return favoriteRecipes;
+	}
+
+	public void setFavoriteRecipes(List<Recipe> favoriteRecipes) {
+		this.favoriteRecipes = favoriteRecipes;
+	}
+
+	public List<Recipe> getCommentedOn() {
+		return commentedOn;
+	}
+
+	public void setCommentedOn(List<Recipe> commentedOn) {
+		this.commentedOn = commentedOn;
 	}
 
 	@Override
