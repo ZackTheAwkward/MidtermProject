@@ -4,6 +4,8 @@ import com.skilldistillery.mocktailsmeetup.entities.User;
 
 public interface UserDAO {
 	
-	User findById(int userID);
+	User findById(int userId);
+	User findUserByUserRecipe (int recipeUserId);
+	
 
 }
