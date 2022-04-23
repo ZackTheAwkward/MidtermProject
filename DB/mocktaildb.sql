@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `drink` (
   `id` INT NOT NULL,
   `user_id` INT NOT NULL,
   `name` TEXT NOT NULL,
-  `description` TEXT NOT NULL,
+  `description` TEXT NULL,
   `image_url` VARCHAR(2000) NULL,
-  `active` TINYINT NOT NULL DEFAULT 0,
+  `active` TINYINT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `fk_drink_user1_idx` (`user_id` ASC),
   CONSTRAINT `fk_drink_user1`
@@ -347,7 +347,36 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'Andre5000', 'rock_paper_spock', 'Big', 'outcast@heyya.com', 'Boie', 1, NULL, NULL, NULL, 'data_admin');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'Andre5000', 'rock_paper_spock', 'Big', 'outcast@heyya.com', 'Boie', 1, ' ', ' ', '1988-04-23 07:16:20', 'data_admin');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (3, 'NeAlte', 'BY4Z8Gmf', 'Nelle', 'jude.nikolaus@baumbach.com', 'Altenwerth', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (4, 'MaPark01', 'v8dTLmB4', 'Madge', 'maynard50@homenick.com', 'Parker', 0, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (5, 'JaHaag', 'xaHJy9BU', 'Jamar', 'jermain.considine@crooks.org', 'Haag', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (6, 'DaJerd', 'hWunj8Us', 'Damaris', 'floy42@yahoo.com', 'Jerde', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (7, 'JaZbon', 'Cg4YvheM', 'Janae', 'shyann77@gmail.com', 'Zboncak', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (8, 'MaPark', 'dNUfwy7j', 'Marlin', 'collins.lew@yahoo.com', 'Parker', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (9, 'MaLark', 'jbPdx4v2', 'Maude', 'lauriane35@yahoo.com', 'Larkin', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (10, 'BoVolk', 'BLew89cH', 'Bobby', 'romaguera.clare@gorczany.com', 'Volkman', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (11, 'JuHick', 'QCqTn8Dr', 'Judah', 'ylehner@yahoo.com', 'Hickle', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (12, 'LaBots', 'bUr7nYvj', 'Laurel', 'mayra72@labadie.info', 'Botsford', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (13, 'MaLubo', 'TBq5KmDW', 'Marcelino', 'tyrel76@dicki.com', 'Lubowitz', 0, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (14, 'JaWitt', 'E8nJw29x', 'Jayden', 'marvin70@gmail.com', 'Witting', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (15, 'KeBloc', 'exXJ35Z6', 'Keeley', 'marcel.rice@harris.com', 'Block', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (16, 'DaMcDe', 'W4pagXCD', 'Daisha', 'lacey.miller@gmail.com', 'McDermott', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (17, 'LuFram', 'ETr7RdZv', 'Luisa', 'heidenreich.jonathon@bailey.com', 'Frami', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (18, 'CaDeck', 'yM7qsUK9', 'Catherine', 'uvandervort@macejkovic.org', 'Deckow', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (19, 'ClTreu', '7YPWLDad', 'Cloyd', 'eugenia.reynolds@yahoo.com', 'Treutel', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (20, 'WaCrem', 'jxnhAv2Q', 'Wava', 'gferry@vandervort.com', 'Cremin', 0, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (21, 'MaMosc', 'ceXyzw6s', 'Maximillia', 'reva47@dubuque.com', 'Mosciski', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (22, 'YoRunt', '97CUfc5z', 'Yolanda', 'mckayla65@welch.org', 'Runte', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (23, 'NoKono', '9prgRXKH', 'Norene', 'lavinia.kuvalis@satterfield.biz', 'Konopelski', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (24, 'KeMaye', 'ZA2ks5QT', 'Kevon', 'wjacobson@streich.com', 'Mayert', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (25, 'RaKshl', 'WnBfP4g3', 'Ramon', 'lavern02@koss.com', 'Kshlerin', 0, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (26, 'GaWill', 'rCLEza8M', 'Garland', 'katelynn76@vandervort.com', 'Willms', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (27, 'AdJask', '2nwyeUqm', 'Adrienne', 'brielle61@heaney.info', 'Jaskolski', 0, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (28, 'ZeRuec', 'DL3nh8rP', 'Zena', 'hollie16@gmail.com', 'Ruecker', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (29, 'ChRatk', 'zvJY7TDa', 'Chase', 'elody84@gmail.com', 'Ratke', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (30, 'LlVolk', 'qUWRQTj2', 'Lloyd', 'nratke@yahoo.com', 'Volkman', 1, '', '', '1988-04-23 07:16:20', 'user');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (31, 'CrErns', 'KjR2qrW7', 'Cristal', 'crona.wilma@jacobi.com', 'Ernser', 1, '', '', '1988-04-23 07:16:20', 'user');
 
 COMMIT;
 
@@ -367,7 +396,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `drink` (`id`, `user_id`, `name`, `description`, `image_url`, `active`) VALUES (1, 1, 'Shirley Temple', 'Sample data', NULL, 1);
+INSERT INTO `drink` (`id`, `user_id`, `name`, `description`, `image_url`, `active`) VALUES (1, 1, 'Shirley Temple', 'Sample data', ' ', 1);
 
 COMMIT;
 
@@ -377,7 +406,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 1, 'This is a new meetup', '2022-01-01', NULL, NULL, NULL, NULL, NULL, 1, NULL);
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 1, 'This is a new meetup', '2022-01-01', 'Descrip', NULL, NULL, NULL, 10, 1, NULL);
 
 COMMIT;
 
@@ -458,6 +487,16 @@ COMMIT;
 START TRANSACTION;
 USE `mocktaildb`;
 INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (1, 1, 1, 'Comment on Shirley Temple', NULL, NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `user_meeting`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `mocktaildb`;
+INSERT INTO `user_meeting` (`user_id`, `meetup_id`) VALUES (1, 1);
 
 COMMIT;
 
