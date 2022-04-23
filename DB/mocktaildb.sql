@@ -82,7 +82,6 @@ DROP TABLE IF EXISTS `meetup` ;
 CREATE TABLE IF NOT EXISTS `meetup` (
   `id` INT NOT NULL,
   `address_id` INT NOT NULL,
-  `user_id` INT NOT NULL,
   `title` VARCHAR(100) NOT NULL,
   `meetup_date` DATE NOT NULL,
   `description` TEXT NULL,
@@ -94,15 +93,9 @@ CREATE TABLE IF NOT EXISTS `meetup` (
   `image_url` VARCHAR(2000) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Meetup_address1_idx` (`address_id` ASC),
-  INDEX `fk_meetup_user1_idx` (`user_id` ASC),
   CONSTRAINT `fk_Meetup_address1`
     FOREIGN KEY (`address_id`)
     REFERENCES `address` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_meetup_user1`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -406,7 +399,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 1, 'This is a new meetup', '2022-01-01', 'Descrip', NULL, NULL, NULL, 10, 1, NULL);
+INSERT INTO `meetup` (`id`, `address_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 'This is a new meetup', '2022-01-01', 'Descrip', NULL, NULL, NULL, 10, 1, NULL);
 
 COMMIT;
 
