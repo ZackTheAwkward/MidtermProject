@@ -1,11 +1,15 @@
 package com.skilldistillery.mocktailsmeetup.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Category {
@@ -20,14 +24,22 @@ public class Category {
 		super();
 	}
 
-	
-	
-	@Override
-	public String toString() {
-		return "Category: " + name +"." ;
+	@ManyToMany
+	@JoinTable (
+			name="drink_category",
+			joinColumns = @JoinColumn(name ="category_id"),
+			inverseJoinColumns = @JoinColumn(name ="drink_id")
+			)
+	private List < Drink> drinks;
+
+
+	public List<Drink> getDrinks() {
+		return drinks;
 	}
 
-
+	public void setDrinks(List<Drink> drinks) {
+		this.drinks = drinks;
+	}
 
 	public int getId() {
 		return id;
@@ -60,6 +72,11 @@ public class Category {
 			return false;
 		Category other = (Category) obj;
 		return id == other.id;
+	}
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", drinks=" + drinks + "]";
 	}
 
 }

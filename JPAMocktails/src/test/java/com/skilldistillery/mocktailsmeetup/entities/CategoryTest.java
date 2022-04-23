@@ -50,4 +50,15 @@ class CategoryTest {
 		assertNotNull(category);
 		assertEquals("Frozen", category.getName());			
 	}
+	
+	@Test
+	@DisplayName("Testing Category to drink mapping")
+	void test2 () {
+		assertNotNull(category);
+		assertNotNull(category.getDrinks());
+		assertTrue(category.getDrinks().size() > 0);
+		
+	}
+	
+	
 }

@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -30,8 +31,20 @@ public class Drink {
 	private List<Recipe> recipes;
 
 	
+	@ManyToMany(mappedBy = "drinks")
+	private List<Category> categories;
+	
 	public Drink() {
 		super();
+	}
+
+
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	public int getId() {
