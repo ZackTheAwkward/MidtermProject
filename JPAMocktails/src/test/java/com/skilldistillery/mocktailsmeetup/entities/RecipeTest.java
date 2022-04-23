@@ -1,6 +1,7 @@
 package com.skilldistillery.mocktailsmeetup.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class RecipeTest {
@@ -45,10 +47,14 @@ class RecipeTest {
 	assertNotNull(recipe);
 	assertEquals("Shirley Temple sample recipe", recipe.getName());
 	assertEquals(12, recipe.getServingSize());
-
-	
 		
 	}
 	
+	@Test
+	@DisplayName("Testing recipe to drink mapping")
+	void Test2() {
+		assertNotNull(recipe);
+		assertEquals(1, recipe.getDrink().getId());
+	}
 	
 	}

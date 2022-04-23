@@ -73,6 +73,16 @@ public class Drink {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	
+	
+
+	public List<Recipe> getRecipes() {
+		return recipes;
+	}
+
+	public void setRecipes(List<Recipe> recipes) {
+		this.recipes = recipes;
+	}
 
 	@Override
 	public String toString() {

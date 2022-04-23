@@ -1,6 +1,8 @@
 package com.skilldistillery.mocktailsmeetup.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -10,6 +12,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class MeetupTest {
@@ -41,10 +44,18 @@ class MeetupTest {
 	
 	@Test
 	void Test1() {
-//	assertNotNull(meetup);
-//	assertNotNull(meetup.getMaxAttendees());
+	assertNotNull(meetup);
+	assertNotNull(meetup.getMaxAttendees());
 	assertEquals("CO springs", meetup.getAddress().getCity());
-
 	
 	}
+	
+	
+	@Test
+	@DisplayName("Testing meetup to user mapping")
+	void test2() {
+		assertNotNull(meetup);
+		assertTrue(meetup.getUsers().size()>0);
+	}
+	
 }
