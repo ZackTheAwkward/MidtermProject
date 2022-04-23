@@ -55,6 +55,9 @@ public class Meetup {
 			joinColumns=@JoinColumn(name="meetup_id"),
 			inverseJoinColumns=@JoinColumn(name="user_id"))
 	private List<User> users;
+	
+	@ManyToMany(mappedBy = "meetupComments")
+	private List<User> usersWhoCommented;
 
 	public Meetup() {
 		super();
@@ -163,6 +166,18 @@ public class Meetup {
 
 	public void setUsers(List<User> user) {
 		this.users = users;
+	}
+
+	
+	
+
+
+	public List<User> getUsersWhoCommented() {
+		return usersWhoCommented;
+	}
+
+	public void setUsersWhoCommented(List<User> usersWhoCommented) {
+		this.usersWhoCommented = usersWhoCommented;
 	}
 
 	@Override

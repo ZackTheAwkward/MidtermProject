@@ -16,49 +16,54 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class DrinkTest {
-		private static EntityManagerFactory emf;
-		private EntityManager em;
-		private Drink drink;
+	private static EntityManagerFactory emf;
+	private EntityManager em;
+	private Drink drink;
 
-		@BeforeAll
-		static void setUpBeforeClass() throws Exception {
-			  emf = Persistence.createEntityManagerFactory("JPAMocktails");
-		}
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+		emf = Persistence.createEntityManagerFactory("JPAMocktails");
+	}
 
-		@AfterAll
-		static void tearDownAfterClass() throws Exception {
-			   emf.close();
-		}
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+		emf.close();
+	}
 
-		@BeforeEach
-		void setUp() throws Exception {
-			 em = emf.createEntityManager();
-			    drink = em.find(Drink.class, 1);
-		}
+	@BeforeEach
+	void setUp() throws Exception {
+		em = emf.createEntityManager();
+		drink = em.find(Drink.class, 1);
+	}
 
-		
-		@AfterEach
-		void tearDown() throws Exception {
-			drink = null;
-			em.close();
-		}
-		
+	@AfterEach
+	void tearDown() throws Exception {
+		drink = null;
+		em.close();
+	}
 
-		@Test
-		void Test1() {
+	@Test
+	void Test1() {
 		assertNotNull(drink);
 		assertEquals("Shirley Temple", drink.getName());
 		assertEquals("Sample data", drink.getDescription());
-		
-		}
-		
-		@Test
-		@DisplayName("Testing Drink to Recipe mapping") 
-		void Test2() {
-			assertNotNull(drink);
-			assertTrue(drink.getRecipes().size() >0);
-		}
-		
-		}
 
+	}
 
+	@Test
+	@DisplayName("Testing Drink to Recipe mapping")
+	void Test2() {
+		assertNotNull(drink);
+		assertTrue(drink.getRecipes().size() > 0);
+	}
+
+	@Test
+	@DisplayName("Testing Drink to Category mapping")
+	void Test3() {
+		assertNotNull(drink);
+		assertTrue(drink.getCategories().size() > 0);
+	}
+
+	
+	
+}
