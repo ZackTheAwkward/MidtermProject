@@ -29,7 +29,6 @@ public class CategoryDaoImpl implements CategoryDAO {
 		List<Category> categories = null;
 		String jpql = "SELECT c FROM Category c WHERE c.name = :keyword";
 		categories = em.createQuery(jpql, Category.class).setParameter("keyword", "%" + keyword + "%" ).getResultList();
-		
 		return categories;
 	}
 
