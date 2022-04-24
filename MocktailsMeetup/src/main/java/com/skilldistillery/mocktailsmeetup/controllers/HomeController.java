@@ -80,7 +80,7 @@ public class HomeController {
 		if (session.getAttribute("user") != null) {
 			mv.setViewName("redirect:home.do");
 		} else {
-			mv.addObject("user", new User());
+			mv.addObject("userCommandObject", new User());
 			mv.setViewName("login");
 		}
 		return mv;
