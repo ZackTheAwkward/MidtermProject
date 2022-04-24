@@ -1,8 +1,5 @@
 package com.skilldistillery.mocktailsmeetup.data;
 
-import java.util.Map;
-import java.util.Set;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -15,7 +12,6 @@ import com.skilldistillery.mocktailsmeetup.entities.User;
 @Transactional
 public class UserDaoImpl implements UserDAO {
 	
-	private Map<Integer, User> users;
 
 	@PersistenceContext
 	private EntityManager em;
@@ -36,18 +32,12 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User getUserByUserNameAndPassword(String userName, String password) {
-		User u = null;
-		Set<Integer> keys = users.keySet();
-		for (Integer key : keys) {
-			User user = users.get(key);
-			if(user.getUsername().equals(userName) && user.getPassword().equals(password)) {
-				u = user;
-				break;
-			}
+		String jpql = "SELECT username, password FROM User WHERE username = :name AND WHERE password = :password";
+		User user = em.createQuery(jpql, User.class).setParameter("name", userName).setParameter("password", password).getSingleResult();
+			return user;
 		}
 		
-		return u;
-	}
+
 
 	@Override
 	public User updateUser(int userId, User user) {
@@ -55,3 +45,4 @@ public class UserDaoImpl implements UserDAO {
 	}
 
 }
+
