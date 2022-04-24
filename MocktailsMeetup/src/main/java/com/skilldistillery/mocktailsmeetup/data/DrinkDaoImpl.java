@@ -25,7 +25,7 @@ public class DrinkDaoImpl implements DrinkDAO {
 	@Override
 	public List<Drink> findByKeyword(String keyword) {
 		List<Drink> drinks = null;
-		String jpql = "SELECT d FROM Drink d WHERE d.name = :keyword OR d.description = :keyword";
+		String jpql = "SELECT d FROM Drink d WHERE name LIKE :keyword OR description LIKE :keyword";
 		drinks = em.createQuery(jpql, Drink.class).setParameter("keyword", "%" + keyword + "%" ).getResultList();
 		return drinks;
 	}

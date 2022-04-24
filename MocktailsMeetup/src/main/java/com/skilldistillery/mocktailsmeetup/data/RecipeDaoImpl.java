@@ -25,7 +25,7 @@ public class RecipeDaoImpl implements RecipeDAO {
 	@Override
 	public List<Recipe> findByKeyword(String keyword) {
 		List<Recipe> recipes = null;
-		String jpql = "SELECT r FROM Recipe r WHERE r.name = :keyword OR r.description = :keyword";
+		String jpql = "SELECT r FROM Recipe r WHERE name LIKE :keyword OR description LIKE :keyword";
 		recipes = em.createQuery(jpql, Recipe.class).setParameter("keyword", "%" + keyword + "%").getResultList();
 		return recipes;
 	}

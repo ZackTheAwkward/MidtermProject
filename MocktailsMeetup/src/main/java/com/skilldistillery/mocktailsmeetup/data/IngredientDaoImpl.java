@@ -26,7 +26,7 @@ public class IngredientDaoImpl implements IngredientDAO {
 	@Override
 	public List<Ingredient> findByKeyword(String keyword) {
 		List<Ingredient> ingredients = null;
-		String jpql = "SELECT i FROM Ingredient i WHERE i.name = :keyword OR i.description = :keyword";
+		String jpql = "SELECT i FROM Ingredient i WHERE name LIKE :keyword OR description LIKE :keyword";
 		ingredients = em.createQuery(jpql, Ingredient.class).setParameter("keyword",  "%" + keyword + "%" ).getResultList();
 		return ingredients;
 	}
