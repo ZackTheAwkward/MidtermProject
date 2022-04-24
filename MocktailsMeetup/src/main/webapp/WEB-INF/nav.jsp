@@ -12,7 +12,7 @@
 
 <nav>
 	<a href="home.do">Home</a>
-	<c:if test="${User != null}">
+	<c:if test="${user != null}">
 		<a href="account.do">Account</a>
 		<a href="logout.do">Logout</a>
 	</c:if>

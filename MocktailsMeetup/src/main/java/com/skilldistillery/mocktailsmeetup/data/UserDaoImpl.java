@@ -11,7 +11,6 @@ import com.skilldistillery.mocktailsmeetup.entities.User;
 @Service
 @Transactional
 public class UserDaoImpl implements UserDAO {
-	
 
 	@PersistenceContext
 	private EntityManager em;
@@ -32,12 +31,11 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User getUserByUserNameAndPassword(String userName, String password) {
-		String jpql = "SELECT u FROM User WHERE username = :name AND password = :password";
+
+		String jpql = "SELECT u FROM User u WHERE username = :name AND password = :password";
 		User user = em.createQuery(jpql, User.class).setParameter("name", userName).setParameter("password", password).getSingleResult();
 			return user;
 		}
-		
-
 
 	@Override
 	public User updateUser(int userId, User user) {
@@ -45,4 +43,3 @@ public class UserDaoImpl implements UserDAO {
 	}
 
 }
-
