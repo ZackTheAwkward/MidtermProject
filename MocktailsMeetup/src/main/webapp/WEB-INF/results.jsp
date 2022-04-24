@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,35 +61,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-			
-			
-<%-- 
-			<table class="table table-striped">
-				<thead class="table-light">
-					<tr>
-						<th>ID</th>
-						<th>Name</th>
-						<th>Description</th>
-					
-						
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="r" items="${recipes}">
-						<tr>
-							<td>${r.id}</td>
-							<td><a href="showDrink.do?pid=${r.id}">${r.name}</a></td>
-							<td>${r.description}
-							<td>
-								
-								<!-- Insert a way to update or delete here??  -->
-								
-							</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-			<!-- </main> --> --%>
 		</c:when>
 
 	<c:when test="${! empty categoryMatch}">
