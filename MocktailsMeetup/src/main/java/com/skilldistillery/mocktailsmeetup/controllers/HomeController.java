@@ -86,7 +86,7 @@ public class HomeController {
 		return mv;
 	}
 
-	@RequestMapping(path = "login.do", method = RequestMethod.GET)
+	@RequestMapping(path = "login.do", method = RequestMethod.POST)
 	public String submitLogin(User user, HttpSession session) {
 		if (session.getAttribute("user") != null) {
 			return "redirect:home.do";

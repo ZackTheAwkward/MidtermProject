@@ -11,7 +11,8 @@
 
 
 <%@ include file="bootstrap.jsp" %>
-<%@ include file="nav.jsp" %>
+
+<%@ include file="nav.jsp"%>
 
 
 <h1>LOG IN SUCCESSFUL </h1>
