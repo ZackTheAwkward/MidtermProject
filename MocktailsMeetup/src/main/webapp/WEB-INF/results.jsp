@@ -9,59 +9,20 @@
 </head>
 <body>
 <%@ include file="bootstrap.jsp" %>
-	<h1>RESULTS PAGE</h1>
+	<h1>Results Matching Your Search: </h1>
 
 
 	<c:choose>
-
-		<c:when test="${! empty recipe}">
-
-			<ul>
-
-				<li><h3>${recipe.id}Recipe Name: ${recipe.name}</h3> </li>
-
-				<li>Description: ${recipe.description}</li>
-			
-
-			<!-- 	option to update or delete -->
-
-
-			</ul>
-		</c:when>
-		
-		<c:when test="${! empty category}">
-
-			<ul>
-
-				<li><h3>${category.id}Category Name: ${category.name}</h3> </li>
-
-			</ul>
-		</c:when>
-		
-		<c:when test="${! empty drink}">
-
-			<ul>
-
-				<li><h3>${drink.id}Drink Name: ${drink.name}</h3> </li>
-
-			</ul>
-		</c:when>
-
 
 		<c:when test="${! empty drinkMatch}">
 
 			<br>
 			<br>
-			<h3 id="tableHead">DRINK SEARCH RESULTS </h3>
+			
 			<br>
-			<br>
-			<!-- <form action="search.do" method="GET">
-				Find another: <input type="text" name="keyword"
-					placeholder="Enter Keyword" /> <input type="submit" value="Search" />
-			</form> -->
 			<br>
 			
-			<h2>These are the menu items that match your search:</h2>
+			<h2>Matched by Drink Name:</h2>
 	<table>
 		<thead>
 			<tr>
@@ -82,6 +43,8 @@
 		</c:when>
 
 	<c:when test="${! empty categoryMatch}">
+	
+	<h2>Matched by Category:</h2>
 		<table>
 		<thead>
 			<tr>
