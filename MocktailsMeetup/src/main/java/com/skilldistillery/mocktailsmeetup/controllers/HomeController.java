@@ -37,30 +37,19 @@ public class HomeController {
 	}
 	
 	@RequestMapping(path = { "search.do" }, method = RequestMethod.GET)
-	public ModelAndView searchKeywordOrId(String id) {
-		ModelAndView mv = new ModelAndView();
-		String keyword = id;
-
-		try {
-			int newId = Integer.parseInt(id);
-			Recipe recipe = recipeDAO.findById(newId);
-			mv.addObject("recipe", recipe);
-			mv.setViewName("results");
-
-		} catch (Exception e) {
+	public String searchKeyword(String keyword, Model model) {
+		
 
 //			List<Recipe> recipeMatch = dao.findByNameContaining(keyword);
 //			mv.addObject("recipeMatch", recipeMatch);
 			List<Category> categoryMatch = categoryDAO.findByKeyword(keyword);
-			mv.addObject("categoryMatch", categoryMatch);
+			model.addAttribute("categoryMatch", categoryMatch);
 			List<Drink> drinkMatch = drinkDAO.findByKeyword(keyword);
-			mv.addObject("categoryMatch", categoryMatch);
+			model.addAttribute("drinkMatch", drinkMatch);
 //			List<Ingredient> ingredientMatch = dao.findByNameContaining(keyword);
 //			mv.addObject("ingredientMatch", ingredientMatch);
-//			mv.setViewName("results");
-
-		}
-		return mv;
+		
+		return "results";
 	}
 	
 }

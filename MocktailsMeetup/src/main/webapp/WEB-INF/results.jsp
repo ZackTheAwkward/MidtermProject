@@ -18,13 +18,31 @@
 
 			<ul>
 
-				<h3>${recipe.id}Category Name: ${recipe.name}</h3>
+				<li><h3>${recipe.id}Recipe Name: ${recipe.name}</h3> </li>
 
 				<li>Description: ${recipe.description}</li>
 			
 
 			<!-- 	option to update or delete -->
 
+
+			</ul>
+		</c:when>
+		
+		<c:when test="${! empty category}">
+
+			<ul>
+
+				<li><h3>${category.id}Category Name: ${category.name}</h3> </li>
+
+			</ul>
+		</c:when>
+		
+		<c:when test="${! empty drink}">
+
+			<ul>
+
+				<li><h3>${drink.id}Drink Name: ${drink.name}</h3> </li>
 
 			</ul>
 		</c:when>
