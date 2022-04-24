@@ -36,8 +36,18 @@ public class HomeController {
 	public String category(Model model) {
 		return "findByCategory";
 	}
+	
+	@RequestMapping(path = { "goLogin.do" })
+	public String login(Model model) {
+		return "login";
+	}
+	@RequestMapping(path = { "signUp.do" })
+	public String signUp(Model model) {
+		return "signUp";
+	
+	}
 
-	@RequestMapping(path = { "search.do" }, method = RequestMethod.GET)
+	@RequestMapping(path = {"search.do"} , method = RequestMethod.GET)
 	public String searchKeyword(String keyword, Model model) {
 
 //			List<Recipe> recipeMatch = dao.findByNameContaining(keyword);

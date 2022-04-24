@@ -20,6 +20,8 @@
 	<input type="submit" value="Log In" > 
 </form>
 
+<a href="signUp.do">Sign Up</a>
+
 
 
 
