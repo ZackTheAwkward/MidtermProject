@@ -26,7 +26,7 @@
         <a class="nav-link" href="**CHANGEME.do**">Take Me Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="**viewCat.do**">Categories</a>
+        <a class="nav-link" href="viewCat.do">Categories</a>
       </li>
      <li class="nav-item">
         <a class="nav-link" href="**MEETUPS.do**">Meetups</a>

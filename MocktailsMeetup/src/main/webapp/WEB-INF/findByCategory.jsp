@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<%@ include file="bootstrap.jsp" %>
+
 <h1>SEACRH BY CATEGORY PAGE </h1>
 
 
@@ -18,7 +20,7 @@
 ${DEBUG}
 
 <form action="categories.do" method="GET">
-  Plant KeyWord Search: <input type="text" name="categories" />
+  Search by Category: <input type="text" name="keyword" placeholder="Frozen, Fruit, POTATO"/>
   <input type="submit" value="Find Drink" />
 </form> 
 

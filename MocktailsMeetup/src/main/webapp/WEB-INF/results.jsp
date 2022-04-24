@@ -8,7 +8,7 @@
 <title>Mocktail Results</title>
 </head>
 <body>
-
+<%@ include file="bootstrap.jsp" %>
 	<h1>RESULTS PAGE</h1>
 
 
