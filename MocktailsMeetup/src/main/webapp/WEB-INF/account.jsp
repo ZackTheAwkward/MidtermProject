@@ -5,26 +5,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login Page</title>
+<title>Mocktails Meetup</title>
 </head>
 <body>
 
+
 <%@ include file="bootstrap.jsp" %>
 
-<h1>Login Page Make Me Pretty</h1>
+<%@ include file="nav.jsp"%>
 
-<form action="login.do" method="POST">
-	<%-- Error messages --%>
-	<input type="text" name="userName">
-	<input type="password" name="password"/>
-	<input type="submit" value="Log In" > 
-</form>
+<h1>LOG IN SUCCESSFUL </h1>
 
 
 
-<a href="signUp.do">Sign Up</a>
+<p>**CAROUSEL**</p>
 
 
+<p>**ABOUT**</p>
 
 
 </body>
