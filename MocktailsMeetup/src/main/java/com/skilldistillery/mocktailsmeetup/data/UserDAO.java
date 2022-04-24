@@ -8,5 +8,9 @@ public interface UserDAO {
 	
 	User findUserByUserRecipe (int recipeUserId);
 	
+	User getUserByUserNameAndPassword(String userName, String password);
+	
+	User updateUser(int userId, User user);
+	
 
 }
