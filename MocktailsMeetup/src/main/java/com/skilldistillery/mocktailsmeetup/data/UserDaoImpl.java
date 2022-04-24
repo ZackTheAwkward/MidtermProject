@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User getUserByUserNameAndPassword(String userName, String password) {
-		String jpql = "SELECT username, password FROM User WHERE username = :name AND WHERE password = :password";
+		String jpql = "SELECT u FROM User WHERE username = :name AND password = :password";
 		User user = em.createQuery(jpql, User.class).setParameter("name", userName).setParameter("password", password).getSingleResult();
 			return user;
 		}
