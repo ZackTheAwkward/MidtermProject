@@ -46,7 +46,8 @@ class DrinkTest {
 	void Test1() {
 		assertNotNull(drink);
 		assertEquals("Shirley Temple", drink.getName());
-		assertEquals("Sample data", drink.getDescription());
+		assertEquals("The Shirley Temple is a nice way to dress up your average soda."
+				, drink.getDescription());
 
 	}
 
