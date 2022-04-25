@@ -81,5 +81,11 @@ class UserTest {
 		assertNotNull(user);
 		assertTrue(user.getUserCreated().size()>0);
 	}
+	@Test
+	@DisplayName("Testing mapping for recipe comments by user")
+	void test6() {
+		assertNotNull(user);
+		assertTrue(user.getUserRecipeComments().size() > 0);
+	}
 	
 }

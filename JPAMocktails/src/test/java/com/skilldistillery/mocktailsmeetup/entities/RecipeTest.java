@@ -73,5 +73,11 @@ class RecipeTest {
 		assertNotNull(recipe);
 		assertTrue(recipe.getIngredients().size()>0);
 	}
+	@Test
+	@DisplayName("Testing recipe to recipe comments")
+	void test5() {
+		assertNotNull(recipe);
+		assertTrue(recipe.getComments().size()>0);
+	}
 	
 	}

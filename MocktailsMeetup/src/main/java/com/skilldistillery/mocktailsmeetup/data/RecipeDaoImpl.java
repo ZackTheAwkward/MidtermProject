@@ -67,5 +67,5 @@ public class RecipeDaoImpl implements RecipeDAO {
 		em.persist(recipe);
 		return recipe;
 	}
-
 }
+	

@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.xml.stream.events.Comment;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -44,6 +46,10 @@ public class Recipe {
 	@ManyToOne
 	@JoinColumn(name = "drink_id")
 	private Drink drink;
+	
+	@OneToMany(mappedBy = "recipe")
+	private List<RecipeComment> comments; 
+	
 	
 	
 	@ManyToMany
@@ -168,6 +174,16 @@ public class Recipe {
 
 	public void setIngredients(List<Ingredient> ingredients) {
 		this.ingredients = ingredients;
+	}
+
+
+
+	public List<RecipeComment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<RecipeComment> comments) {
+		this.comments = comments;
 	}
 
 	@Override
