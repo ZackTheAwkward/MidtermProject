@@ -11,7 +11,7 @@
 
 <h1>Welcome to Mocktails Meetup</h1>
 
-<%@ include file="bootstrap.jsp" %>
+<%@ include file="mainNavBar.jsp" %>
 
 
 <p>**CAROUSEL**</p>

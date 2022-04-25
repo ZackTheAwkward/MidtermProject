@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<%@ include file="bootstrap.jsp" %>
+<%@ include file="mainNavBar.jsp" %>
 
 <h1>Login Page Make Me Pretty</h1>
 

@@ -10,16 +10,12 @@
 <body>
 
 
-<%@ include file="bootstrap.jsp" %>
+<%@ include file="loggedInNavBar.jsp" %>
 
 <%@ include file="nav.jsp"%>
 
 
 <h1>LOG IN SUCCESSFUL </h1>
-
-
-
-<p>**CAROUSEL**</p>
 
 
 <p>**ABOUT**</p>
