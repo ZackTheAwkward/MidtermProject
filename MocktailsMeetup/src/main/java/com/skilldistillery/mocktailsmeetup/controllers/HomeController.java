@@ -78,7 +78,7 @@ public class HomeController {
 	public ModelAndView displayLogin(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		if (session.getAttribute("user") != null) {
-			mv.setViewName("redirect:index.do");
+			mv.setViewName("redirect:home.do");
 		} else {
 			mv.addObject("userCommandObject", new User());
 			mv.setViewName("login");
