@@ -29,5 +29,37 @@ public class RecipeDaoImpl implements RecipeDAO {
 		recipes = em.createQuery(jpql, Recipe.class).setParameter("keyword", "%" + keyword + "%").getResultList();
 		return recipes;
 	}
+	
+	@Override
+	public Recipe updateRecipe(int id, Recipe recipe) {
+		Recipe updated = em.find(Recipe.class, id);
+		updated.setName(recipe.getName());
+		updated.setDescription(recipe.getDescription());
+		updated.setInstructions(recipe.getInstructions());
+		updated.setImageUrl(recipe.getImageUrl());
+		em.flush();
+		return updated;
+	}
+	
+	@Override
+	public boolean deleteRecipe(int id) {
+		
+		boolean isDeleted = false;
+		Recipe recipe = em.find(Recipe.class, id);
+		if (recipe != null) {
+			em.remove(recipe);
+		}
+		em.flush();
+		isDeleted = !em.contains(recipe);
+		
+		return isDeleted;
+	}
+	
+	@Override
+	public List<Recipe> findAll() {
+		String jpql = "SELECT r FROM Recipe r";
+		return em.createQuery(jpql, Recipe.class).getResultList();
+
+	}
 
 }
