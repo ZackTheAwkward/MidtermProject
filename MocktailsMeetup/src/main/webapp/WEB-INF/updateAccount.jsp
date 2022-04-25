@@ -20,7 +20,7 @@
 <br>
 <br>
 <br>
-	
+	<div class="container-fluid">
 	<form action="updateAccount.do" method="POST">
 		<input type="hidden" name="id" value="${user.id }" />
 
@@ -45,5 +45,6 @@
 		
 		
 		</form>
+		</div>
 </body>
 </html>
