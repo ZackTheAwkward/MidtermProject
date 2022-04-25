@@ -9,7 +9,8 @@
 </head>
 <body>
 
-<%@ include file="bootstrap.jsp" %>
+
+<%@ include file="loggedInNavBar.jsp" %>
 
 
 <h2>Hey ${user.username} !</h2>

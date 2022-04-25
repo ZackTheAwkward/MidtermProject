@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<%@ include file="bootstrap.jsp" %>
+<%@ include file="mainNavBar.jsp" %>
 
 <h1>SEACRH BY CATEGORY PAGE </h1>
 
