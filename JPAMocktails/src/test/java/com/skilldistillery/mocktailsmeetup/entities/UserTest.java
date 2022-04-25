@@ -48,7 +48,7 @@ class UserTest {
 	@DisplayName("Initial test for user mapping")
 	void test1 () {
 		assertNotNull(user);
-		assertEquals("Andre5000", user.getUsername());			
+		assertEquals("admin", user.getUsername());			
 	}
 	
 	@Test
@@ -66,12 +66,20 @@ class UserTest {
 		assertTrue(user.getCommentedOn().size()>0);
 		
 	}
+	
 	@Test
 	@DisplayName("Testing mapping for User and Meetup Comemnts joining table- many to many")
 	void test4() {
 		assertNotNull(user);
 		assertTrue(user.getMeetupComments().size() > 0);
 		
+	}
+	
+	@Test
+	@DisplayName("Testing mapping for recipes input by user")
+	void test5() {
+		assertNotNull(user);
+		assertTrue(user.getUserCreated().size()>0);
 	}
 	
 }
