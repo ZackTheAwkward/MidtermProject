@@ -89,6 +89,11 @@ public class HomeController {
 	}
 	
 
+	@RequestMapping(path = { "meetup.do" })
+	public String meetup(Model model) {
+		return "showMeetup";
+	}
+
 	@RequestMapping(path = { "getRecipe.do" }, method = RequestMethod.GET)
 	public String getSingleRecipeResult(int id, Model model) {
 		Recipe recipe = recipeDAO.findById(id);
@@ -148,19 +153,14 @@ public class HomeController {
 	}
 
 	@RequestMapping("welcome.do")
-	public String checkLogin(HttpSession session) {
+	public String checkLogin(HttpSession session, Model model) {
 		if (session.getAttribute("user") == null) {
 			return "redirect:login.do";
 		}
+		List<Meetup> meetup = meetupDAO.findAll();
+		model.addAttribute("meetup", meetup);
 		return "welcome";
 
-	}
-
-	@RequestMapping("getMeetup.do")
-	public String showMeetup(int id, Model model) {
-		Meetup meetup = meetupDAO.findById(id);
-		model.addAttribute("meetup", meetup);
-		return "results";
 	}
 
 	@RequestMapping("logout.do")
@@ -193,8 +193,8 @@ public class HomeController {
 	}
 
 	@RequestMapping("getMeetups.do")
-	public String showMeetups(int id, Model model) {
-		Meetup meetup = meetupDAO.findById(id);
+	public String showMeetup(Integer Id, Model model) {
+		Meetup meetup = meetupDAO.findById(Id);
 		model.addAttribute("meetup", meetup);
 		return "showMeetup";
 	}

@@ -44,8 +44,8 @@
 			<tbody>
 				<c:forEach var="m" items="${meetup}">
 					<tr>
-						<td>${m.id }</td>
-						<td><a href="getMeetups.do?Id=${m.id}">${m.name}</a></td>
+						<td>${m.id}</td>
+						<td><a href="getMeetups.do?Id=${m.id}">${m.title}</a></td>
 					</tr>
 				</c:forEach>
 

@@ -64,6 +64,9 @@ public class User {
 	
 	@OneToMany(mappedBy="createdByUser")
 	private List<Recipe> userCreated;
+	
+	@OneToMany(mappedBy = "user")
+	private List<RecipeComment> userRecipeComments;
 
 	public User() {
 		super();
@@ -191,6 +194,16 @@ public class User {
 
 	public void setUserCreated(List<Recipe> userCreated) {
 		this.userCreated = userCreated;
+	}
+
+	
+	
+	public List<RecipeComment> getUserRecipeComments() {
+		return userRecipeComments;
+	}
+
+	public void setUserRecipeComments(List<RecipeComment> userRecipeComments) {
+		this.userRecipeComments = userRecipeComments;
 	}
 
 	@Override
