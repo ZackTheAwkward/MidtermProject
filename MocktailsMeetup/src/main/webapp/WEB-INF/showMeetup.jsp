@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+
+
+
+
+
 <meta charset="UTF-8">
 <title>Meetup Details</title>
 </head>
@@ -10,12 +15,12 @@
 
 
 
-	<h1>Meetup Details</h1>
+<h1>Meetup Details</h1>
 
 	<div class="details">
 		<h5>${meetup.name}</h5>
 		<p>${meetup.description}</p>
-		<h4>${meetup.startTime},${meetup.endTime}</h4>
+		<h4>${meetup.startTime}, ${meetup.endTime}</h4>
 	</div>
 
 
@@ -25,30 +30,37 @@
 		<div id="map"></div>
 	</div>
 
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<script type="text/javascript">
+		var map;
 
-	<script type="module" src="./index.js"></script>
+		function initMap() {
+			var street = ${address.street}; // YOUR LATITUDE VALUE
+			var city = ${address.city}; // YOUR LONGITUDE VALUE
+			var state = ${address.state}; // YOUR LONGITUDE VALUE
+	//FIX ME
+			var myLatLng = {
+				lat : latitude,
+				lng : longitude
+			};
 
+			map = new google.maps.Map(document.getElementById('map'), {
+				center : myLatLng,
+				zoom : 14
+			});
 
-</head>
-<body>
-    <div id="floating-panel">
-      <code>componentRestrictions: {country: "AU", postalCode: "2000"}</code>
-		<br />
-      <button id="submit">Geocode</button>
-    </div>
-    <div id="map"></div>
+			var marker = new google.maps.Marker({
+				position : myLatLng,
+				map : map,
 
-    <!-- 
-     The `defer` attribute causes the callback to execute after the full HTML
-     document has been parsed. For non-blocking uses, avoiding race conditions,
-     and consistent behavior across browsers, consider loading using Promises
-     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
-    <script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-		defer></script></body>
+				title : latitude + ', ' + longitude
+			});
+		}
+	</script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzy-u0ZqxrRptKkEvuJV7nUwWazekSszQ&callback=initMap"
+		async defer></script>
 
+</body>
 
 
 </body>
