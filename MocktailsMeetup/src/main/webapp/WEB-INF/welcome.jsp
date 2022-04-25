@@ -8,7 +8,9 @@
 <title>Welcome ${user.username}</title>
 </head>
 <body>
-	<%@ include file="nav.jsp"%>
+
+
+<%@ include file="loggedInNavbar.jsp" %>
 
 
 	<h1>Welcome ${user.username}</h1>

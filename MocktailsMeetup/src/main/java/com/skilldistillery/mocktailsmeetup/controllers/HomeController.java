@@ -131,16 +131,23 @@ public class HomeController {
 	public String update(Model model, int id) {
 		User user = userDAO.findById(id);
 		model.addAttribute("user", user);
-		System.out.println("In update.do");
+//		System.out.println("In update.do");
 		return "updateAccount";
 	}
 
 	@RequestMapping(path = "updateAccount.do", method = RequestMethod.POST)
 	public String updateAccount(int id, User user, Model model) {
-		System.out.println("In updateCoffee.do");
+//		System.out.println("In updateCoffee.do");
 		User updatedAccount = userDAO.updateUser(id, user);
 		model.addAttribute("user", updatedAccount);
 		return "account";
+	}
+	
+	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
+	public String createAccount(User user, Model model) {
+		User createAccount = userDAO.createUser(user);
+		model.addAttribute("user", createAccount);
+		return "welcome";
 	}
 
 }

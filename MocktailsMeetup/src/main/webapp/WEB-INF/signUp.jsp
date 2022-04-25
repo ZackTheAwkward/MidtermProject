@@ -10,8 +10,17 @@
 <body>
 
 
-<%@ include file="bootstrap.jsp" %>
+<%@ include file="mainNavBar.jsp" %>
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <h1>Sign Up </h1>
 
 
@@ -19,7 +28,7 @@
 
 
 
-<label for="userName">User Name: </label><input type="text" name="userName" required>  <br>
+<label for="username">User Name: </label><input type="text" name="username" required><br>
 <label for="Password">Password: </label><input type="password" name="password" required> <br>
 <label for="firstName">First Name: </label><input type="text" name="firstName" required><br>
 <label for="lastName">Last Name: </label><input type="text" name="lastName" required><br>
