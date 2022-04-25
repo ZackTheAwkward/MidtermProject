@@ -46,7 +46,6 @@
 					<tr>
 						<td>${m.id }</td>
 						<td><a href="getMeetups.do?Id=${m.id}">${m.name}</a></td>
-						<td><a href="getMeetups.do?Id=${m.id}">${m.address}</a></td>
 					</tr>
 				</c:forEach>
 
