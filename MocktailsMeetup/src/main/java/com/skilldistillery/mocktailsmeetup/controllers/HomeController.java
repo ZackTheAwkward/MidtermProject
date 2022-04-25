@@ -63,6 +63,32 @@ public class HomeController {
 		return "account";
 
 	}
+	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
+	public String goToUserRecipes(Model model, int id) {
+		User user = userDAO.findById(id);
+		List<Recipe> userCreated = user.getUserCreated();
+		model.addAttribute("user", user);
+		model.addAttribute("userCreated", userCreated);
+
+		return "viewUserRecipes";
+	}
+
+	@RequestMapping(path = "updateR.do", method = RequestMethod.POST)
+	public String updateR(Model model, int id) {
+		Recipe recipe = recipeDAO.findById(id);
+		model.addAttribute("recipe", recipe);
+//		System.out.println("In update.do");
+		return "updateRecipe";
+	}
+	
+	@RequestMapping(path = "updateRecipe.do", method = RequestMethod.POST)
+	public String updateRecipe(int id, Recipe recipe, Model model) {
+//		System.out.println("In updateCoffee.do");
+		Recipe updatedRecipe = recipeDAO.updateRecipe(id, recipe);
+		model.addAttribute("recipe", updatedRecipe);
+		return "account";
+	}
+	
 
 	@RequestMapping(path = { "meetup.do" })
 	public String meetup(Model model) {

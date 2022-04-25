@@ -34,7 +34,7 @@ class IngredientTest {
 	@BeforeEach
 	void setUp() throws Exception {
 	    em = emf.createEntityManager();
-	    ingredient = em.find(Ingredient.class, 1);
+	    ingredient = em.find(Ingredient.class, 8);
 	}
 
 	@AfterEach
@@ -48,7 +48,7 @@ class IngredientTest {
 	@DisplayName("Initial test for ingredient mapping")
 	void test1 () {
 		assertNotNull(ingredient);
-		assertEquals("lemon juice", ingredient.getName());			
+		assertEquals("cherry", ingredient.getName());			
 	}
 	
 	@Test
