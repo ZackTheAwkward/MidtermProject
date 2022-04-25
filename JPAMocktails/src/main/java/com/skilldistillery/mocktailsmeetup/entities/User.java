@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 public class User {
 
@@ -40,6 +42,7 @@ public class User {
 	private String photoUrl;
 	
 	@Column(name="created_date")
+	@CreationTimestamp
 	private LocalDate createDate;
 	
 	@ManyToMany(mappedBy = "users")
