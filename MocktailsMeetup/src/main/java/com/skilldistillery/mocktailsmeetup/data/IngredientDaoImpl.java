@@ -31,4 +31,18 @@ public class IngredientDaoImpl implements IngredientDAO {
 		return ingredients;
 	}
 
+	@Override
+	public Ingredient createIngredient(Ingredient ingredient) {
+		em.persist(ingredient);
+		return em.find(Ingredient.class, ingredient.getId());
+	}
+
+	@Override
+	public Ingredient updateIngredient(int id, Ingredient ingredient) {
+		Ingredient managed = em.find(Ingredient.class, id);
+		managed.setImageUrl(ingredient.getImageUrl());
+		managed.setDescription(ingredient.getDescription());
+		return managed;
+	}
+
 }

@@ -6,11 +6,13 @@ public interface UserDAO {
 	
 	User findById(int userId);
 	
-	User findUserByUserRecipe (int recipeUserId);
-	
 	User getUserByUserNameAndPassword(String userName, String password);
 	
+	User createUser (User user);
+	
 	User updateUser(int userId, User user);
+	
+	User deleteUser(int userId, User user);
 	
 
 }

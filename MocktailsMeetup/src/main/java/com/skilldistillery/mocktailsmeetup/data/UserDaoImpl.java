@@ -21,13 +21,6 @@ public class UserDaoImpl implements UserDAO {
 		return em.find(User.class, userId);
 	}
 
-	@Override
-	public User findUserByUserRecipe(int recipeUserId) {
-		String jpql = "SELECT r.user_id FROM Recipe r WHERE r.user_id = :id";
-		User user = em.createQuery(jpql, User.class).setParameter("id", recipeUserId).getSingleResult();
-		return user;
-
-	}
 
 	@Override
 	public User getUserByUserNameAndPassword(String userName, String password) {
@@ -39,7 +32,29 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User updateUser(int userId, User user) {
-		return null;
+		User managed = em.find(User.class, userId);
+		managed.setFirstName(user.getFirstName());
+		managed.setLastName(user.getLastName());
+		managed.setUsername(user.getUsername());
+		managed.setPhotoUrl(user.getPhotoUrl());
+		return managed;
 	}
+
+
+	@Override
+	public User createUser(User user) {
+		em.persist(user);
+		return em.find(User.class, user.getId());
+	}
+
+
+	@Override
+	public User deleteUser(int userId, User user) {
+		User managed = em.find(User.class, userId);
+		managed.setActive(false);
+		return managed;
+	}
+
+
 
 }
