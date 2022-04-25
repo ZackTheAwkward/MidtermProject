@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -48,7 +49,6 @@ public class User {
 	@ManyToMany(mappedBy = "users")
 	private List<Meetup> meetups;
 	
-
 	@ManyToMany
 	@JoinTable(name= "meetup_comment",
 			joinColumns=@JoinColumn(name="user_id"),
@@ -61,6 +61,9 @@ public class User {
 	
 	@ManyToMany(mappedBy = "commenters")
 	private List<Recipe> commentedOn;
+	
+	@OneToMany(mappedBy="createdByUser")
+	private List<Recipe> userCreated;
 
 	public User() {
 		super();
@@ -178,6 +181,16 @@ public class User {
 
 	public void setCommentedOn(List<Recipe> commentedOn) {
 		this.commentedOn = commentedOn;
+	}
+
+	
+	
+	public List<Recipe> getUserCreated() {
+		return userCreated;
+	}
+
+	public void setUserCreated(List<Recipe> userCreated) {
+		this.userCreated = userCreated;
 	}
 
 	@Override
