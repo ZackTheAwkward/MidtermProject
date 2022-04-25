@@ -48,7 +48,7 @@ class UserTest {
 	@DisplayName("Initial test for user mapping")
 	void test1 () {
 		assertNotNull(user);
-		assertEquals("Andre5000", user.getUsername());			
+		assertEquals("admin", user.getUsername());			
 	}
 	
 	@Test
