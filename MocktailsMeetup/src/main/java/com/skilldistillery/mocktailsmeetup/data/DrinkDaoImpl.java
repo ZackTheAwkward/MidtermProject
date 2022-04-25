@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.mocktailsmeetup.entities.Category;
 import com.skilldistillery.mocktailsmeetup.entities.Drink;
 
 @Service
@@ -30,4 +31,36 @@ public class DrinkDaoImpl implements DrinkDAO {
 		return drinks;
 	}
 
+	@Override
+	public Drink createNewDrink (Drink drink) {
+		em.persist(drink);
+		return em.find(Drink.class, drink.getId());
+	}
+	
+	
+	public List<Drink> findDrinkByCategory (Category category) {
+		String jpql = "SELECT d FROM Drink d WHERE d.category = :category ";
+		return em.createQuery(jpql, Drink.class).setParameter("category", category).getResultList();
+	}
+	
+	
+	public Drink updateDrink (int drinkId, Drink drink) {
+		Drink updated = em.find(Drink.class, drinkId);
+		updated.setName(drink.getName());
+		updated.setDescription(drink.getDescription());
+		updated.setImageUrl(drink.getImageUrl());
+		em.flush();
+		return updated;	
+	}
+	
+	
+	public List<Drink> FindAllDrinks () {
+		String jpql = "SELECT d FROM Drink d";
+		return em.createQuery(jpql, Drink.class).getResultList();
+	}
+
+
+	
+	
+	
 }
