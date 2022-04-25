@@ -21,7 +21,7 @@ USE `mocktaildb` ;
 DROP TABLE IF EXISTS `user` ;
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
@@ -44,7 +44,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `address` ;
 
 CREATE TABLE IF NOT EXISTS `address` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `street` VARCHAR(100) NOT NULL,
   `city` VARCHAR(50) NOT NULL,
   `state_abbr` CHAR(2) NOT NULL,
@@ -59,7 +59,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `drink` ;
 
 CREATE TABLE IF NOT EXISTS `drink` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `name` TEXT NOT NULL,
   `description` TEXT NOT NULL,
@@ -81,7 +81,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `meetup` ;
 
 CREATE TABLE IF NOT EXISTS `meetup` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `address_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   `title` VARCHAR(100) NOT NULL,
@@ -115,7 +115,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `recipe` ;
 
 CREATE TABLE IF NOT EXISTS `recipe` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `drink_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   `name` VARCHAR(200) NOT NULL,
@@ -147,7 +147,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `category` ;
 
 CREATE TABLE IF NOT EXISTS `category` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -159,7 +159,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `ingredient` ;
 
 CREATE TABLE IF NOT EXISTS `ingredient` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `image_url` VARCHAR(2000) NULL,
   `description` TEXT NULL,
@@ -199,7 +199,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `meetup_comment` ;
 
 CREATE TABLE IF NOT EXISTS `meetup_comment` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `meetup_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   `text_content` TEXT NOT NULL,
@@ -281,7 +281,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `recipe_comment` ;
 
 CREATE TABLE IF NOT EXISTS `recipe_comment` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `recipe_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   `text_content` TEXT NOT NULL,
@@ -348,7 +348,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'Andre5000', 'rock_paper_spock', 'Big', 'outcast@heyya.com', 'Boie', 1, '', '', '2016-04-03 00:09:00', 'data_admin');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.com', 'admin', 1, '', '', '2016-04-03 00:09:00', 'data_admin');
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (2, 'NeAlte', 'BY4Z8Gmf', 'Nelle', 'jude.nikolaus@baumbach.com', 'Altenwerth', 1, '', '', '2016-04-03 00:09:00', 'user');
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (3, 'MaPark', 'v8dTLmB4', 'Madge', 'maynard50@homenick.com', 'Parker', 0, '', '', '1990-06-09 00:09:00', 'user');
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (4, 'JaHaag', 'xaHJy9BU', 'Jamar', 'jermain.considine@crooks.org', 'Haag', 1, '', '', '1978-11-09 00:09:00', 'user');

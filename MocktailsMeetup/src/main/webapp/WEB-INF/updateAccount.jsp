@@ -8,6 +8,7 @@
 </head>
 <body>
 	<%@ include file="bootstrap.jsp"%>
+	
 	<form action="updateAccount.do" method="POST">
 		<input type="hidden" name="id" value="${user.id }" />
 
@@ -29,6 +30,7 @@
 		</div>
 		
 		<br> <input type="submit" value="Submit Changes">
+		
 		
 		</form>
 </body>
