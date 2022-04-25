@@ -388,6 +388,12 @@ COMMIT;
 START TRANSACTION;
 USE `mocktaildb`;
 INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (1, 'Shirley Street', 'CO springs', 'CO', '11111');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (2, '2636 Walnut St., Suite 104', 'Denver', 'CO', '80205');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (3, '3601 West 32 Avenue ', 'Denver', 'CO', '80211');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (4, '1615 Platte Street', 'Denver', 'CO', '80202');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (5, '2240 North Clay Street', 'Denver', 'CO', '80211');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (6, '4024 Tennyson Street', 'Denver', 'CO', '80212');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (7, '2021 West 32 Ave', 'Denver', 'CO', '80211');
 
 COMMIT;
 
