@@ -27,24 +27,24 @@
 	<table class ="table .table-striped">
 		<thead>
 			<tr>
-				<th>Menu Item:</th>
+				<th>Recipe Id:</th>
 				<th>Name:</th>
-				<th>Size In Ounces:</th>
-				<th>Cost:</th>
+				<th>Description:</th>
 			</tr>
 		</thead>
 		<tbody style = background-color:#f6e7cb >
-			<c:forEach var="c" items="${user.}">
+			<c:forEach var="c" items="${user.userCreated}">
 				<tr>
 					<td>${c.id}</td>
 					<td>${c.name}</td>
 					<td>${c.sizeInOunces}</td>
-					<td>${c.cost}</td>
 				</tr>
 			</c:forEach>
 
 		</tbody>
 	</table>
+	</div>
+	</div>
 	</div>
 
 </body>
