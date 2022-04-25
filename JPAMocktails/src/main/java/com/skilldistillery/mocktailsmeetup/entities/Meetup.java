@@ -15,6 +15,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 public class Meetup {
 
@@ -27,6 +29,7 @@ public class Meetup {
 	private String description;
 	
 	@Column(name= "date_created")
+	@CreationTimestamp
 	private LocalDateTime dateCreated;
 	
 	@Column(name= "start_time")
