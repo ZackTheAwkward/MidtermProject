@@ -29,13 +29,19 @@
 			<tr>
 				<th>Menu Item:</th>
 				<th>Name:</th>
+				<th>Recipe</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="c" items="${recipeMatch}">
 				<tr>
 					<td>${c.id}</td>
-					<td><a href="getRecipe.do?pid=${c.id}">${c.name}</td>
+						<td>${c.name}</td>
+						<td>	<form action="getRecipe.do">
+								<input type="submit" value="Make This Drink"> <input
+									type="hidden" name="id" value="${c.id }" />
+							</form> </td>
+				
 					
 				</tr>
 			</c:forEach>
