@@ -14,6 +14,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 public class Recipe {
 
@@ -36,6 +38,7 @@ public class Recipe {
 	private int servingSize;
 
 	@Column(name = "created_date")
+	@CreationTimestamp
 	private LocalDate createDate;
 	
 	@ManyToOne
