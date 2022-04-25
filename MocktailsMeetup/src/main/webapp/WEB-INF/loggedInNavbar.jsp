@@ -88,13 +88,10 @@ body {
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 					<li class="nav-item active">
-					<a class="nav-link" aria-current="page" href="home.do">HOME</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="home.do">ABOUT</a></li>
+					<a class="nav-link" aria-current="page" href="welcome.do">HOME</a></li>
+			
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="***ADD MEETUP.DO***">MEETUPS</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="***ADD A RECIPE***">ADD A DRINK</a></li>
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="account.do">ACCOUNT</a></li>
 					<li class="nav-item"><a class="nav-link" aria-current="page"
