@@ -91,7 +91,7 @@ body {
 					<a class="nav-link" aria-current="page" href="welcome.do">HOME</a></li>
 			
 					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="***ADD MEETUP.DO***">MEETUPS</a></li>
+						href="meetup.do">MEETUPS</a></li>
 				
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="account.do">ACCOUNT</a></li>

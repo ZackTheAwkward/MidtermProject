@@ -46,7 +46,7 @@
 			</tr>
 		</thead>
 		<tbody style = background-color:#f6e7cb >
-			<c:forEach var="c" items="${user.}">
+			<c:forEach var="c" items="${user}">
 				<tr>
 					<td>${c.id}</td>
 					<td>${c.name}</td>
