@@ -8,11 +8,46 @@
 <title>Mocktail Results</title>
 </head>
 <body>
-<%@ include file="bootstrap.jsp" %>
+
+<%@ include file="mainNavBar.jsp" %>
 	<h1>Results Matching Your Search: </h1>
 
 
 	<c:choose>
+	
+		<c:when test="${! empty recipeMatch}">
+
+			<br>
+			<br>
+			
+			<br>
+			<br>
+			
+			<h2>Matched by Recipe Name:</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Menu Item:</th>
+				<th>Name:</th>
+				<th>Recipe</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="c" items="${recipeMatch}">
+				<tr>
+					<td>${c.id}</td>
+						<td>${c.name}</td>
+						<td>	<form action="getRecipe.do">
+								<input type="submit" value="Make This Drink"> <input
+									type="hidden" name="id" value="${c.id }" />
+							</form> </td>
+				
+					
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+		</c:when>
 
 		<c:when test="${! empty drinkMatch}">
 

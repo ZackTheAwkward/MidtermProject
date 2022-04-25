@@ -19,6 +19,7 @@ import com.skilldistillery.mocktailsmeetup.data.UserDAO;
 import com.skilldistillery.mocktailsmeetup.entities.Category;
 import com.skilldistillery.mocktailsmeetup.entities.Drink;
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
+import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.User;
 
 @Controller
@@ -56,13 +57,28 @@ public class HomeController {
 
 	}
 
+	@RequestMapping(path = { "account.do" })
+	public String accessAcount(Model model) {
+		return "account";
+
+	}
+
+	@RequestMapping(path = { "getRecipe.do" }, method = RequestMethod.GET)
+	public String getSingleRecipeResult(int id, Model model) {
+		Recipe recipe = recipeDAO.findById(id);
+		model.addAttribute("recipe", recipe);
+		return "singleResult";
+	}
+
 	@RequestMapping(path = { "search.do" }, method = RequestMethod.GET)
 	public String searchKeyword(String keyword, Model model) {
 
-//			List<Recipe> recipeMatch = dao.findByNameContaining(keyword);
-//			mv.addObject("recipeMatch", recipeMatch);
+		List<Recipe> recipeMatch = recipeDAO.findByKeyword(keyword);
+		model.addAttribute("recipeMatch", recipeMatch);
+
 		List<Category> categoryMatch = categoryDAO.findByKeyword(keyword);
 		model.addAttribute("categoryMatch", categoryMatch);
+
 		List<Drink> drinkMatch = drinkDAO.findByKeyword(keyword);
 		model.addAttribute("drinkMatch", drinkMatch);
 //			List<Ingredient> ingredientMatch = dao.findByNameContaining(keyword);
@@ -142,12 +158,19 @@ public class HomeController {
 		model.addAttribute("user", updatedAccount);
 		return "account";
 	}
-	
+
 	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
 	public String createAccount(User user, Model model) {
 		User createAccount = userDAO.createUser(user);
 		model.addAttribute("user", createAccount);
 		return "welcome";
+	}
+
+	@RequestMapping("getMeetups.do")
+	public String showMeetups(int id, Model model) {
+		Meetup meetup = meetupDAO.findById(id);
+		model.addAttribute("meetup", meetup);
+		return "showMeetup";
 	}
 
 }

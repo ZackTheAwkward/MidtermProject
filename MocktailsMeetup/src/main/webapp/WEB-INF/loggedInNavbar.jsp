@@ -61,7 +61,7 @@ body {
 }
 
 .navbar-nav>li {
-	padding-left: 30px;
+	/* padding-left: 30px; */
 	padding-right: 30px;
 }
 </style>
@@ -94,7 +94,7 @@ body {
 						href="***ADD MEETUP.DO***">MEETUPS</a></li>
 				
 					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="welcome.do">ACCOUNT</a></li>
+						href="account.do">ACCOUNT</a></li>
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="logout.do">LOG OFF</a></li>
 						

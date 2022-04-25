@@ -10,7 +10,19 @@
 <body>
 
 
-<%@ include file="loggedInNavBar.jsp" %>
+<%@ include file="loggedInNavbar.jsp" %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 <h2>Hey ${user.username} !</h2>
