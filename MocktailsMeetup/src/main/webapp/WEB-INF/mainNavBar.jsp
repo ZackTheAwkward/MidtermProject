@@ -106,6 +106,7 @@ body {
 			</form>
 			</ul>
 		</div>
+		</div>
 	</nav>
 
 

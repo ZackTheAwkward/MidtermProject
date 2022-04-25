@@ -61,6 +61,10 @@ public class Recipe {
 	@ManyToMany(mappedBy="recipes")
 	private List<Ingredient> ingredients;
 	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User createdByUser;
+	
 	public Recipe() {
 		super();
 	}
@@ -175,6 +179,16 @@ public class Recipe {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+	
+	
+
+	public User getCreatedByUser() {
+		return createdByUser;
+	}
+
+	public void setCreatedByUser(User createdByUser) {
+		this.createdByUser = createdByUser;
 	}
 
 	@Override

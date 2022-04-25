@@ -7,7 +7,19 @@
 <title>Update Account Info</title>
 </head>
 <body>
-	<%@ include file="bootstrap.jsp"%>
+	<%@ include file="loggedInNavbar.jsp"%>
+	
+	<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 	
 	<form action="updateAccount.do" method="POST">
 		<input type="hidden" name="id" value="${user.id }" />
