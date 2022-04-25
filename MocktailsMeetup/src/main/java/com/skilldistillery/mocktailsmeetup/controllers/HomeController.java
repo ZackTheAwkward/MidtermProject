@@ -105,4 +105,20 @@ public class HomeController {
 		return "redirect:home.do";
 	}
 
+	@RequestMapping(path="update.do", method=RequestMethod.GET)
+	public String update(Model model, int id) {
+		User user = userDAO.findById(id);
+		model.addAttribute("user", user);
+		System.out.println("In update.do");
+		return "updateAccount";
+	}
+	
+	@RequestMapping(path="updateAccount.do", method=RequestMethod.POST)
+	public String updateAccount(int id, User user, Model model) {
+		System.out.println("In updateCoffee.do");
+		User updatedAccount = userDAO.updateUser(id, user);
+		model.addAttribute("user", updatedAccount);
+		return "account";
+	}
+	
 }
