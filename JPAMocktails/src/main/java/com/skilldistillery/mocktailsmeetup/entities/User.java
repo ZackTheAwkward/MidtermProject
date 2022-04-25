@@ -54,6 +54,7 @@ public class User {
 			joinColumns=@JoinColumn(name="user_id"),
 			inverseJoinColumns=@JoinColumn(name="meetup_id"))
 	private List<Meetup> meetupComments;
+	
 
 	@ManyToMany(mappedBy = "usersFavorited")
 	private List<Recipe> favoriteRecipes;

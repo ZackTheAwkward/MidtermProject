@@ -12,6 +12,7 @@
 
 ${DEBUG}
 
+
 <form action="search.do" method="GET">
   Find Recipe For: <input type="text" name="keyword" />
   <input type="submit" value="Find Recipe" />

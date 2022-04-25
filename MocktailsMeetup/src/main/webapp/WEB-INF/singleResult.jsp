@@ -43,56 +43,7 @@
 	</table>
 		</c:when>
 
-		<c:when test="${! empty drinkMatch}">
-
-			<br>
-			<br>
-			
-			<br>
-			<br>
-			
-			<h2>Matched by Drink Name:</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Menu Item:</th>
-				<th>Name:</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="c" items="${drinkMatch}">
-				<tr>
-					<td>${c.id}</td>
-					<td>${c.name}</td>
-					
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-		</c:when>
-
-	<c:when test="${! empty categoryMatch}">
 	
-	<h2>Matched by Category:</h2>
-		<table>
-		<thead>
-			<tr>
-				<th>Menu Item:</th>
-				<th>Name:</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="c" items="${categoryMatch}">
-				<tr>
-					<td>${c.id}</td>
-					<td>${c.name}</td>
-					
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	
-	</c:when>
 
 		<c:otherwise>
 			<p>No Drink found!</p>
