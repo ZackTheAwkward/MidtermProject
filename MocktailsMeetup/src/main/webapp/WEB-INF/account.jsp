@@ -5,17 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Mocktails Meetup</title>
+<title>Account</title>
 </head>
 <body>
 
 
 <%@ include file="loggedInNavBar.jsp" %>
 
-<%@ include file="nav.jsp"%>
 
+<h2>Hey ${user.username} !</h2>
 
-<h1>LOG IN SUCCESSFUL </h1>
+<p>Thank you for sippin' with us!</p>
+
+<form action="update.do">
+<input type= "submit" value= "Update Account">
+<input type= "hidden" name= "id" value = "${user.id }"/></form>
 
 
 <p>**ABOUT**</p>

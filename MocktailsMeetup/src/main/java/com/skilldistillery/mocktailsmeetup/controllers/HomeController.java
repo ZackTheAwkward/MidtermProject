@@ -13,10 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.mocktailsmeetup.data.CategoryDAO;
 import com.skilldistillery.mocktailsmeetup.data.DrinkDAO;
+import com.skilldistillery.mocktailsmeetup.data.MeetupDAO;
 import com.skilldistillery.mocktailsmeetup.data.RecipeDAO;
 import com.skilldistillery.mocktailsmeetup.data.UserDAO;
 import com.skilldistillery.mocktailsmeetup.entities.Category;
 import com.skilldistillery.mocktailsmeetup.entities.Drink;
+import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.User;
 
 @Controller
@@ -30,6 +32,8 @@ public class HomeController {
 	private CategoryDAO categoryDAO;
 	@Autowired
 	private DrinkDAO drinkDAO;
+	@Autowired
+	private MeetupDAO meetupDAO;
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String home(Model model) {
@@ -40,18 +44,19 @@ public class HomeController {
 	public String category(Model model) {
 		return "findByCategory";
 	}
-	
+
 	@RequestMapping(path = { "goLogin.do" })
 	public String login(Model model) {
 		return "login";
 	}
+
 	@RequestMapping(path = { "signUp.do" })
 	public String signUp(Model model) {
 		return "signUp";
-	
+
 	}
 
-	@RequestMapping(path = {"search.do"} , method = RequestMethod.GET)
+	@RequestMapping(path = { "search.do" }, method = RequestMethod.GET)
 	public String searchKeyword(String keyword, Model model) {
 
 //			List<Recipe> recipeMatch = dao.findByNameContaining(keyword);
@@ -73,7 +78,7 @@ public class HomeController {
 		return "results";
 
 	}
-	
+
 	@RequestMapping("login.do")
 	public ModelAndView displayLogin(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
@@ -97,12 +102,45 @@ public class HomeController {
 		}
 		session.setAttribute("user", u);
 
-		return "account";
+		return "welcome";
 	}
+
+	@RequestMapping("welcome.do")
+	public String checkLogin(HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:login.do";
+		}
+		return "welcome";
+
+	}
+
+	@RequestMapping("getMeetup.do")
+	public String showMeetup(int id, Model model) {
+		Meetup meetup = meetupDAO.findById(id);
+		model.addAttribute("meetup", meetup);
+		return "results";
+	}
+
 	@RequestMapping("logout.do")
 	public String logout(HttpSession session) {
 		session.removeAttribute("user");
 		return "redirect:home.do";
+	}
+
+	@RequestMapping(path = "update.do", method = RequestMethod.GET)
+	public String update(Model model, int id) {
+		User user = userDAO.findById(id);
+		model.addAttribute("user", user);
+		System.out.println("In update.do");
+		return "updateAccount";
+	}
+
+	@RequestMapping(path = "updateAccount.do", method = RequestMethod.POST)
+	public String updateAccount(int id, User user, Model model) {
+		System.out.println("In updateCoffee.do");
+		User updatedAccount = userDAO.updateUser(id, user);
+		model.addAttribute("user", updatedAccount);
+		return "account";
 	}
 
 }
