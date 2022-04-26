@@ -14,6 +14,8 @@
 	    <class>com.skilldistillery.mocktailsmeetup.entities.Meetup</class>
 		<class>com.skilldistillery.mocktailsmeetup.entities.Recipe</class>
 		<class>com.skilldistillery.mocktailsmeetup.entities.RecipeComment</class>
+		<class>com.skilldistillery.mocktailsmeetup.entities.RecipeIngredient</class>
+		<class>com.skilldistillery.mocktailsmeetup.entities.RecipeIngredientId</class>
 		<class>com.skilldistillery.mocktailsmeetup.entities.User</class>
  
 		<!-- End List Entities Here -->

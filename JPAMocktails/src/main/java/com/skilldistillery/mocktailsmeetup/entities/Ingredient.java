@@ -1,6 +1,7 @@
 package com.skilldistillery.mocktailsmeetup.entities;
 
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Ingredient {
@@ -27,11 +29,8 @@ public class Ingredient {
 	@Column
 	private String description;
 	
-	@ManyToMany
-	@JoinTable(name="recipe_ingredient",
-	joinColumns=@JoinColumn(name="ingredient_id"),
-	inverseJoinColumns=@JoinColumn(name="recipe_id"))
-	private List<Recipe> recipes;
+	@OneToMany(mappedBy= "ingredient")
+	private List<RecipeIngredient> recipes;
 	
 	
 	
@@ -79,16 +78,37 @@ public class Ingredient {
 	
 	
 
-	public List<Recipe> getRecipes() {
+	public List<RecipeIngredient> getRecipes() {
 		return recipes;
 	}
 
-	public void setRecipes(List<Recipe> recipes) {
+	public void setRecipes(List<RecipeIngredient> recipes) {
 		this.recipes = recipes;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Ingredient other = (Ingredient) obj;
+		return id == other.id;
 	}
 
 	@Override
