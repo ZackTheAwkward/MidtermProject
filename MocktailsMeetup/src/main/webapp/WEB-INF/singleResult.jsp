@@ -21,7 +21,15 @@
 <li>${recipe.id}</li>
 <li>${recipe.name}</li>
 <li>${recipe.servingSize }</li>
+<li> </li>
 </ul>
+
+
+<c:forEach var="rc" items="${recipe.comments }">
+
+<li>${rc.user.username }</li>
+<li>${rc.comment }</li>
+</c:forEach>
 
 
 </body>

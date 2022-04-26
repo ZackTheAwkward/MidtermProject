@@ -3,6 +3,7 @@ package com.skilldistillery.mocktailsmeetup.data;
 import java.util.List;
 
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
 
 public interface RecipeDAO {
 	Recipe findById(int recipeId);
@@ -11,4 +12,5 @@ public interface RecipeDAO {
 	boolean deleteRecipe(int id);
 	List<Recipe> findAll();
 	Recipe createYourOwn(Recipe recipe);
+	List<RecipeComment> findAllRecipeComments(int id);
 }

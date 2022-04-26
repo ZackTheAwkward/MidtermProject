@@ -20,6 +20,7 @@ import com.skilldistillery.mocktailsmeetup.entities.Category;
 import com.skilldistillery.mocktailsmeetup.entities.Drink;
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
 import com.skilldistillery.mocktailsmeetup.entities.User;
 
 @Controller
@@ -197,6 +198,13 @@ public class HomeController {
 		Meetup meetup = meetupDAO.findById(Id);
 		model.addAttribute("meetup", meetup);
 		return "showMeetup";
+	}
+	
+	@RequestMapping(path ="getRecipeComments.do")
+	public String showRecipeComments(int id, Model model) {
+		List<RecipeComment> recipeComments = recipeDAO.findAllRecipeComments(id);
+		model.addAttribute("recipeComments", recipeComments);
+		return "singleResult";
 	}
 
 }
