@@ -77,6 +77,13 @@ public class HomeController {
 	public String createMeet(Model model) {
 		return "createMeetup";
 	}
+	
+	@RequestMapping(path = { "newRecipe.do" })
+	public String addARecipe(Model model) {
+		return "newRecipe";
+	}
+	
+	
 
 	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
 	public String goToUserRecipes(Model model, int id) {
@@ -207,6 +214,7 @@ public class HomeController {
 		model.addAttribute("meetup", meetup);
 		return "showMeetup";
 	}
+	
 
 	@RequestMapping(path = "createdMeetup.do", method = RequestMethod.POST)
 	public String createMeetup(Meetup meetup, Model model, HttpSession session) {
@@ -219,6 +227,20 @@ public class HomeController {
 			model.addAttribute("meetup", createMeetup);
 			return "showMeetup";
 
+		} else {
+			return "login";
+		}
+	}
+	@RequestMapping(path = "createdRecipe.do", method = RequestMethod.POST)
+	public String createRecipe(Recipe recipe, Model model, HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		if (user != null) {
+			recipe.setCreatedByUser(user);
+			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
+			model.addAttribute("newRecipe", newRecipe);
+			model.addAttribute("userId", user.getId());
+			return "viewUserRecipes";
+			
 		} else {
 			return "login";
 		}

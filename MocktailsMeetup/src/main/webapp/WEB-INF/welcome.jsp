@@ -24,11 +24,10 @@
 
 <a href="addMeet.do">Create a Meetup</a>
 
-
-
-
-
-
+<div>
+ <form action="newRecipe.do">
+   <input type= "submit" value= "Share A Recipe" class="ShareRec"/></form></div>
+  
 
 
 	<div class="main">
