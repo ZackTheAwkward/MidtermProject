@@ -61,11 +61,12 @@
 	
 	<!-- recipe is recipe_id in the RecipeComment entity  -->
 
-	<input id="id" type="hidden" name="id" value="${recipecomments.recipe}"/>
+	<input id="id" type="hidden" name="id" value="${recipe.id}"/>
+<%-- 	<input id="id" type="hidden" name="id" value="${user.id}"/>   --%>
+	
 	<input class="form-control-sm" type="text" name="comment" placeholder="Comment"/>
 	<br>
 	
-
 	<input type ="submit" value="sumbit"/>
 	</form>
 

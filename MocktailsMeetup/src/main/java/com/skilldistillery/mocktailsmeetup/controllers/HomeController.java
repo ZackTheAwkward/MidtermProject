@@ -222,11 +222,14 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(path = "createComment.do")
-	public String addComment(RecipeComment recipeComment, Model model,  HttpSession session) {
+	@RequestMapping(path = "createComment.do", method = RequestMethod.POST)
+	public String addComment(RecipeComment recipeComment, Model model,  HttpSession session, int recipeId, String comment) {
 		User user = (User) session.getAttribute("user");
 		if (user != null) {
 			recipeComment.setUser(user);
+			recipeComment.setRecipe(recipeDAO.findById(recipeId));
+			recipeComment.setComment(comment);
+			
 			RecipeComment createComment = recipeDAO.createComment(recipeComment);
 			model.addAttribute("recipeComment", createComment);
 			return "singleResult";
@@ -234,5 +237,32 @@ public class HomeController {
 			return "login";
 		}
 	}
+//	
+//	@RequestMapping(path = "createComment.do", method = RequestMethod.POST)
+//	public String addComment(RecipeComment recipeComment, Model model,  HttpSession session) {
+//		User user = (User) session.getAttribute("user");
+//		if (user != null) {
+//			recipeComment.setUser(user);
+//			RecipeComment createComment = recipeDAO.createComment(recipeComment);
+//			model.addAttribute("recipeComment", createComment);
+//			return "singleResult";
+//		} else {
+//			return "login";
+//		}
+//	}
+	
+//	@RequestMapping(path = "createComment.do")
+//	public String addComment(Model model,  int userId, int recipeId, String comment) {
+//		RecipeComment recipeComment = new RecipeComment();
+//		recipeComment.setUser(userDAO.findById(userId));
+//		recipeComment.setRecipe(recipeDAO.findById(recipeId));
+//		recipeComment.setComment(comment);
+//		
+//			model.addAttribute("recipeComment", recipeComment);
+//			
+//			return "singleResult";
+//	
+//		
+//	}
 
 }

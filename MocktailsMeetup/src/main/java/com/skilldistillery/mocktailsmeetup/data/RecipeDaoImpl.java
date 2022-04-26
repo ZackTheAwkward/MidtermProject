@@ -79,7 +79,11 @@ public class RecipeDaoImpl implements RecipeDAO {
 	
 	@Override
 	public RecipeComment createComment(RecipeComment comment) {
+//		em.persist(comment.getUser());
+//		em.persist(comment.getRecipe());
+	
 		em.persist(comment);
+		
 		return comment;
 		
 	}
