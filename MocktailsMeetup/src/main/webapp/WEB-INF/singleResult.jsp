@@ -39,7 +39,8 @@
           <!-- Expands card out -->
           <div class="card-read">Sip</div>
         </div>
-           <img src="https://live.staticflickr.com/65535/52029488110_21911d2ec2_o.png" width="280" height="auto" class="card-media" />
+        <img src="${recipe.imageUrl}" width="280" height="auto"/>
+          <!--  <img src="https://live.staticflickr.com/65535/52029488110_21911d2ec2_o.png" width="280" height="auto" class="card-media" /> -->
         <img src=""/>
       </div>
       <div class="card-shadow"></div>
