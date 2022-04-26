@@ -131,6 +131,7 @@ public class HomeController {
 
 	}
 
+
 	@RequestMapping("login.do")
 	public ModelAndView displayLogin(HttpSession session, Model model) {
 		ModelAndView mv = new ModelAndView();

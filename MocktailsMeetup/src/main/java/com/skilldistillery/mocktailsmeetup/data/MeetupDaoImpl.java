@@ -9,7 +9,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
-import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 
 @Service
 @Transactional
@@ -29,9 +28,9 @@ public class MeetupDaoImpl implements MeetupDAO {
 		updated.setTitle(meetup.getTitle());
 		updated.setDescription(meetup.getDescription());
 		updated.setAddress(meetup.getAddress());
-		updated.setMeetupDate(meetup.getMeetupDate());
-		updated.setStartTime(meetup.getStartTime());
-		updated.setEndTime(meetup.getEndTime());
+//		updated.setMeetupDate(meetup.getMeetupDate());
+//		updated.setStartTime(meetup.getStartTime());
+//		updated.setEndTime(meetup.getEndTime());
 		updated.setMaxAttendees(meetup.getMaxAttendees());
 		em.flush();
 		return updated;
