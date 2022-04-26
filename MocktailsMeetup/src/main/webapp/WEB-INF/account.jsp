@@ -24,7 +24,7 @@
 <br>
 <br>
 
-
+<div class="container-fluid">
 <h2>Hey ${user.username} !</h2>
 
 <p>Thank you for sippin' with us!</p>
@@ -33,31 +33,11 @@
 <input type= "submit" value= "Update Account">
 <input type= "hidden" name= "id" value = "${user.id }"/></form>
 
-	<div class ="container">
-	<div class = "row">
-	<div class = "col">
-	<table class ="table .table-striped">
-		<thead>
-			<tr>
-				<th>Recipe Id:</th>
-				<th>Name:</th>
-				<th>Description:</th>
-			</tr>
-		</thead>
-		<tbody style = background-color:#f6e7cb >
-			<c:forEach var="c" items="${user.userCreated}">
-				<tr>
-					<td>${c.id}</td>
-					<td>${c.name}</td>
-					<td>${c.sizeInOunces}</td>
-				</tr>
-			</c:forEach>
+<form action="sendToViewRecipes.do">
+<input type= "submit" value= "View Your Recipes">
+<input type= "hidden" name= "id" value = "${user.id }"/></form>
 
-		</tbody>
-	</table>
-	</div>
-	</div>
-	</div>
+</div>
 
 </body>
 </html>

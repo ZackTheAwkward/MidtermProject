@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
 
 @Service
 @Transactional
@@ -67,5 +68,21 @@ public class RecipeDaoImpl implements RecipeDAO {
 		em.persist(recipe);
 		return recipe;
 	}
+	
+	
+	@Override
+	public List<RecipeComment> findAllRecipeComments(int id) {
+		String jpql = "SELECT rc FROM RecipeComment rc WHERE id = :id";
+		return em.createQuery(jpql, RecipeComment.class).getResultList();
+		
+
+	}
+
 }
 	
+
+
+
+
+
+
