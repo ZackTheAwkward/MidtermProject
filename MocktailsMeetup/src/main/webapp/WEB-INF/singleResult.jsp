@@ -58,11 +58,13 @@
 <!--------------------- COMMENT FORM  ------------------------------->
 
 	  <form action="createComment.do" method="POST">
+	  
+
 	
 	<!-- recipe is recipe_id in the RecipeComment entity  -->
 
-	<input id="id" type="hidden" name="id" value="${recipe.id}"/>
-<%-- 	<input id="id" type="hidden" name="id" value="${user.id}"/>   --%>
+	<input id="id" type="hidden" name="recipeId" value="${recipe.id}"/>
+	
 	
 	<input class="form-control-sm" type="text" name="comment" placeholder="Comment"/>
 	<br>

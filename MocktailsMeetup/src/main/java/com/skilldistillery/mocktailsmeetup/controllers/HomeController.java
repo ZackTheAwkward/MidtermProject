@@ -231,8 +231,8 @@ public class HomeController {
 			recipeComment.setRecipe(recipeDAO.findById(recipeId));
 			recipeComment.setComment(comment);
 			
-			RecipeComment createComment = recipeDAO.createComment(recipeComment);
-			model.addAttribute("recipeComment", createComment);
+			recipeDAO.createComment(recipeComment);
+			model.addAttribute("recipe", recipeDAO.findById(recipeId));
 			return "singleResult";
 		} else {
 			return "login";
