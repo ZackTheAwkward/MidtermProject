@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
 
@@ -76,6 +75,13 @@ public class RecipeDaoImpl implements RecipeDAO {
 		return em.createQuery(jpql, RecipeComment.class).getResultList();
 		
 
+	}
+	
+	@Override
+	public RecipeComment createComment(RecipeComment comment) {
+		em.persist(comment);
+		return comment;
+		
 	}
 
 }

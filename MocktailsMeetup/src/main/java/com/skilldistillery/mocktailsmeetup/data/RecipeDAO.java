@@ -13,4 +13,5 @@ public interface RecipeDAO {
 	List<Recipe> findAll();
 	Recipe createYourOwn(Recipe recipe);
 	List<RecipeComment> findAllRecipeComments(int id);
+	RecipeComment createComment(RecipeComment comment);
 }

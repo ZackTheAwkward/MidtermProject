@@ -45,12 +45,41 @@
       <div class="card-shadow"></div>
     </div>
 
+<!-- ------------------ DISPLAY COMMENTS  ------------------------------->
+
 
 <c:forEach var="rc" items="${recipe.comments }">
 
 <li>${rc.user.username }</li>
 <li>${rc.comment }</li>
 </c:forEach>
+
+
+<!--------------------- COMMENT FORM  ------------------------------->
+
+	  <form action="createComment.do" method="POST">
+	
+	<!-- recipe is recipe_id in the RecipeComment entity  -->
+
+	<input id="id" type="hidden" name="id" value="${recipecomments.recipe}"/>
+	<input class="form-control-sm" type="text" name="comment" placeholder="Comment"/>
+	<br>
+	
+
+	<input type ="submit" value="sumbit"/>
+	</form>
+
+	
+
+
+
+
+
+
+
+
+
+
 
 
 </body>

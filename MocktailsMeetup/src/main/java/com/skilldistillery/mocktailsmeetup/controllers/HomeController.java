@@ -198,7 +198,7 @@ public class HomeController {
 	}
 
 	@RequestMapping("getMeetups.do")
-	public String showMeetup(Integer Id, Model model) {
+	public String showMeetup(int Id, Model model) {
 		Meetup meetup = meetupDAO.findById(Id);
 		model.addAttribute("meetup", meetup);
 		return "showMeetup";
@@ -225,6 +225,20 @@ public class HomeController {
 		List<RecipeComment> recipeComments = recipeDAO.findAllRecipeComments(id);
 		model.addAttribute("recipeComments", recipeComments);
 		return "singleResult";
+	}
+	
+	
+	@RequestMapping(path = "createComment.do")
+	public String addComment(RecipeComment recipeComment, Model model,  HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		if (user != null) {
+			recipeComment.setUser(user);
+			RecipeComment createComment = recipeDAO.createComment(recipeComment);
+			model.addAttribute("recipeComment", createComment);
+			return "singleResult";
+		} else {
+			return "login";
+		}
 	}
 
 }

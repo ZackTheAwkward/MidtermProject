@@ -26,6 +26,8 @@
 
 
 <style>
+
+
 .navbar-scroll .nav-link, .navbar-scroll .fa-bars, .navbar-scroll .navar-brand
 	{
 	color: #4f4f4f;
