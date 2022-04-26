@@ -24,8 +24,18 @@ html, body {
 </style>
 </head>
 <body>
+	<%@ include file="loggedInNavbar.jsp"%>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 	<h1>Meetup Details</h1>
 
@@ -44,29 +54,6 @@ html, body {
 <br>
 
 
-	<!-- <div id="map"></div>
-	<script>
-         var map;
-         function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-               center: { lat: 39.7392, lng: -104.9903 },
-               zoom: 8
-            });
-
-            //Begin Geocoder
-            const geocoder = new google.maps.Geocoder();
-            const address = '${meetup.address.street}, ${meetup.address.city}, ${meetup.address.stateAbbr}, ${meetup.address.postalCode}';
-            geocoder.geocode({ address }, (results, status) => {
-               const marker = new google.maps.Marker({
-                  map: map,
-                  position: results[0].geometry.location
-               });
-            });
-         }
-      </script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzy-u0ZqxrRptKkEvuJV7nUwWazekSszQ&callback=initMap"
-		async defer></script> -->
 		
 		 <div id="map"></div>
     <script>

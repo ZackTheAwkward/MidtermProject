@@ -5,11 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome ${user.username}</title>
+<title>Meetups</title>
 </head>
 <body>
-
-
 	<%@ include file="loggedInNavbar.jsp"%>
 
 	<br>
@@ -18,22 +16,10 @@
 	<br>
 	<br>
 	<br>
-
-	<h1>Welcome ${user.username}</h1>
-
-
-	<h2>
-		<a href="addMeet.do">Create a Meetup</a>
-	</h2>
-
-<div>
- <form action="newRecipe.do">
-   <input type= "submit" value= "Share A Recipe" class="ShareRec"/></form></div>
-  
-
+	<br>
 
 	<div class="main">
-		<h3>Meetups happening near you</h3>
+		<h3>List of Meetups</h3>
 		<table class="table table-borderless">
 			<thead>
 				<tr>
@@ -57,9 +43,6 @@
 		</table>
 
 	</div>
-
-
-
 
 
 </body>
