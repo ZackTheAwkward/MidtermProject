@@ -17,12 +17,33 @@
 	<br>
 	<h1></h1>
 
-<ul>
+<%-- <ul>
 <li>${recipe.id}</li>
 <li>${recipe.name}</li>
 <li>${recipe.servingSize }</li>
 <li> </li>
-</ul>
+</ul> --%>
+
+  <div class="card-container">
+      <div class="card u-clearfix">
+        <div class="card-body">
+
+          <!-- recipe number?  -->
+          <span class="card-number card-circle subtle">${recipe.id}</span>
+          <!-- Author or User  -->
+          <span class="card-author subtle">Sip n Social</span>
+          <!-- Name of Recipe  -->
+          <h2 class="card-title">${recipe.name}</h2>
+          <!-- Description -->
+          <span class="card-description subtle">${recipe.description }</span>
+          <!-- Expands card out -->
+          <div class="card-read">Sip</div>
+        </div>
+           <img src="https://live.staticflickr.com/65535/52029488110_21911d2ec2_o.png" width="280" height="auto" class="card-media" />
+        <img src=""/>
+      </div>
+      <div class="card-shadow"></div>
+    </div>
 
 
 <c:forEach var="rc" items="${recipe.comments }">
