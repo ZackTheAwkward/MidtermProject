@@ -61,13 +61,13 @@ public class HomeController {
 	@RequestMapping(path = { "account.do" })
 	public String accessAcount(Model model) {
 		return "account";
-
 	}
-<<<<<<< HEAD
-	@RequestMapping(path = { "addMeet.do"})
+
+	@RequestMapping(path = "addMeet.do")
 	public String createMeet(Model model) {
 		return "createMeetup";
-=======
+	}
+
 	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
 	public String goToUserRecipes(Model model, int id) {
 		User user = userDAO.findById(id);
@@ -85,7 +85,7 @@ public class HomeController {
 //		System.out.println("In update.do");
 		return "updateRecipe";
 	}
-	
+
 	@RequestMapping(path = "updateRecipe.do", method = RequestMethod.POST)
 	public String updateRecipe(int id, Recipe recipe, Model model) {
 //		System.out.println("In updateCoffee.do");
@@ -93,12 +93,10 @@ public class HomeController {
 		model.addAttribute("recipe", updatedRecipe);
 		return "account";
 	}
-	
 
 	@RequestMapping(path = { "meetup.do" })
 	public String meetup(Model model) {
 		return "showMeetup";
->>>>>>> a162ee6704f83191ffb0b0579eb2765e569a41af
 	}
 
 	@RequestMapping(path = { "getRecipe.do" }, method = RequestMethod.GET)
@@ -205,24 +203,24 @@ public class HomeController {
 		model.addAttribute("meetup", meetup);
 		return "showMeetup";
 	}
-	
-	
+
 	@RequestMapping(path = "createdMeetup.do", method = RequestMethod.POST)
 	public String createMeetup(Meetup meetup, Model model, HttpSession session) {
-		User user = (User)session.getAttribute("user");
-		if(user != null) {
+		User user = (User) session.getAttribute("user");
+		if (user != null) {
 			meetup.setOwner(user);
 			System.out.println("++++++++++++++++++++++++++++++");
 			System.out.println(meetup);
 			Meetup createMeetup = meetupDAO.createMeetup(meetup);
 			model.addAttribute("meetup", createMeetup);
 			return "showMeetup";
-			
+
 		} else {
 			return "login";
 		}
-		
-	@RequestMapping(path ="getRecipeComments.do")
+	}
+
+	@RequestMapping(path = "getRecipeComments.do")
 	public String showRecipeComments(int id, Model model) {
 		List<RecipeComment> recipeComments = recipeDAO.findAllRecipeComments(id);
 		model.addAttribute("recipeComments", recipeComments);
