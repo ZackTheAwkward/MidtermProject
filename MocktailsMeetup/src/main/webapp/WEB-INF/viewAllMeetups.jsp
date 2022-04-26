@@ -19,7 +19,7 @@
 	<br>
 
 	<div class="main">
-		<h3>Meetups happening near you</h3>
+		<h3>List of Meetups</h3>
 		<table class="table table-borderless">
 			<thead>
 				<tr>
