@@ -131,7 +131,7 @@ public class HomeController {
 
 	}
 
-	@RequestMapping("login.do")
+	@RequestMapping(path= {"login.do"}, method= RequestMethod.GET )
 	public ModelAndView displayLogin(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		if (session.getAttribute("user") != null) {

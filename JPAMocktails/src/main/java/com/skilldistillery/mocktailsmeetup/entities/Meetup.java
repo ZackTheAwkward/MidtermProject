@@ -20,6 +20,9 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
+
+
+
 @Entity
 public class Meetup {
 
