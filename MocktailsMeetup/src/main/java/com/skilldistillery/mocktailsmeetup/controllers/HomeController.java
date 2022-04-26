@@ -16,12 +16,10 @@ import com.skilldistillery.mocktailsmeetup.data.DrinkDAO;
 import com.skilldistillery.mocktailsmeetup.data.MeetupDAO;
 import com.skilldistillery.mocktailsmeetup.data.RecipeDAO;
 import com.skilldistillery.mocktailsmeetup.data.UserDAO;
-import com.skilldistillery.mocktailsmeetup.entities.Category;
 import com.skilldistillery.mocktailsmeetup.entities.Drink;
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
-import com.skilldistillery.mocktailsmeetup.entities.User;
 
 @Controller
 public class HomeController {
@@ -131,29 +129,24 @@ public class HomeController {
 
 	}
 
-	@RequestMapping(path= {"login.do"}, method= RequestMethod.GET )
-	public ModelAndView displayLogin(HttpSession session) {
+
+	@RequestMapping("login.do")
+	public ModelAndView displayLogin(HttpSession session, Model model) {
 		ModelAndView mv = new ModelAndView();
-		if (session.getAttribute("user") != null) {
-			mv.setViewName("redirect:home.do");
-		} else {
-			mv.addObject("userCommandObject", new User());
-			mv.setViewName("login");
-		}
+		mv.addObject("user", new User());
+		mv.setViewName("login");
 		return mv;
 	}
 
 	@RequestMapping(path = "login.do", method = RequestMethod.POST)
-	public String submitLogin(User user, HttpSession session) {
-		if (session.getAttribute("user") != null) {
-			return "redirect:home.do";
-		}
+	public String submitLogin(User user, HttpSession session, Model model) {
 		User u = userDAO.getUserByUserNameAndPassword(user.getUsername(), user.getPassword());
 		if (u == null) {
 			return "redirect:login.do";
 		}
 		session.setAttribute("user", u);
-
+		List<Meetup> meetup = meetupDAO.findAll();
+		model.addAttribute("meetup", meetup);
 		return "welcome";
 	}
 
@@ -198,7 +191,7 @@ public class HomeController {
 	}
 
 	@RequestMapping("getMeetups.do")
-	public String showMeetup(Integer Id, Model model) {
+	public String showMeetup(int Id, Model model) {
 		Meetup meetup = meetupDAO.findById(Id);
 		model.addAttribute("meetup", meetup);
 		return "showMeetup";
@@ -225,6 +218,20 @@ public class HomeController {
 		List<RecipeComment> recipeComments = recipeDAO.findAllRecipeComments(id);
 		model.addAttribute("recipeComments", recipeComments);
 		return "singleResult";
+	}
+	
+	
+	@RequestMapping(path = "createComment.do")
+	public String addComment(RecipeComment recipeComment, Model model,  HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		if (user != null) {
+			recipeComment.setUser(user);
+			RecipeComment createComment = recipeDAO.createComment(recipeComment);
+			model.addAttribute("recipeComment", createComment);
+			return "singleResult";
+		} else {
+			return "login";
+		}
 	}
 
 }
