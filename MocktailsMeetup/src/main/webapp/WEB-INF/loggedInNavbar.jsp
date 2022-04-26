@@ -61,9 +61,23 @@ body {
 }
 
 .navbar-nav>li {
-	/* padding-left: 30px; */
-	padding-right: 30px;
+	margin-left: 0px;
+	 padding-left : 10px;
+	padding-right: 40px;
+	padding-left: 10px;
 }
+
+.btn, .btn-info {
+	background-color: black;
+	color: white;
+	border: 0px;
+	border-color: black;
+}
+
+.btn:hover {
+	background-color: grey;
+}
+
 </style>
 
 
@@ -87,25 +101,25 @@ body {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item active">
-					<a class="nav-link" aria-current="page" href="welcome.do">HOME</a></li>
-			
+					<li class="nav-item active"><a class="nav-link"
+						aria-current="page" href="welcome.do">HOME</a></li>
+
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="meetup.do">MEETUPS</a></li>
-				
+
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="account.do">ACCOUNT</a></li>
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="logout.do">LOG OFF</a></li>
-						
-			<form class="form-inline my-2 my-lg-0" action="search.do">
-				<input id="subinput" class="form-control mr-sm-2" name="keyword"
-					type="search" placeholder="Search" aria-label="Search">
-				<button id="searchbutton"
-					class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-			</form>
-			</ul>
-		</div>
+
+					<form class="form-inline my-2 my-lg-0" action="search.do">
+						<input id="subinput" class="form-control mr-sm-2" name="keyword"
+							type="search" placeholder="Search" aria-label="Search">
+						<button id="searchbutton"
+							class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</ul>
+			</div>
 	</nav>
 
 

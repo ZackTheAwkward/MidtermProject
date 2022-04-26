@@ -7,9 +7,245 @@
 <meta charset="UTF-8">
 <title>Mocktail Results</title>
 </head>
+
+<style>
+
+
+.btn, .btn-info {
+	background-color: black;
+	border: 0px;
+	border-color: black;
+}
+
+.btn:hover {
+	background-color: green;
+}
+
+
+
+
+body {
+	background-color: #eee;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar-nav>li {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+/* .card-container {
+	background: #FAF7F2;
+	background-image:
+		url(https://s3.postimg.org/s1n3ji1ur/paper_fibers_2_X.png);
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.u-clearfix:before, .u-clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.u-clearfix:after {
+	clear: both;
+}
+
+.u-clearfix {
+	*zoom: 1;
+}
+
+.subtle {
+	color: #aaa;
+}
+
+.card-container {
+	margin: 25px auto 0;
+	position: relative;
+	width: 692px;
+}
+
+.card {
+	background-color: #fff;
+	padding: 30px;
+	position: relative;
+	box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+	z-index: 1;
+	display: inline-block;
+}
+
+.card-body {
+	display: inline-block;
+	float: left;
+	width: 350px;
+}
+
+.card-number {
+	margin-top: 15px;
+}
+
+.card-circle {
+	border: 1px solid #aaa;
+	border-radius: 50%;
+	display: inline-block;
+	line-height: 22px;
+	font-size: 12px;
+	height: 25px;
+	text-align: center;
+	width: 25px;
+}
+
+.card-author {
+	display: block;
+	font-size: 12px;
+	letter-spacing: .5px;
+	margin: 15px 0 0;
+	text-transform: uppercase;
+}
+
+.card-title {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 50px;
+	font-weight: 300;
+	line-height: 60px;
+	margin: 10px 0;
+}
+
+.card-description {
+	display: inline-block;
+	font-weight: 300;
+	line-height: 22px;
+	margin: 10px 0;
+}
+
+.card-read {
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 6px;
+	margin: 5px 0 20px;
+	position: relative;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.card-read:after {
+	background-color: #b8bddd;
+	content: "";
+	display: block;
+	height: 1px;
+	position: absolute;
+	top: 9px;
+	width: 75%;
+}
+
+.card-tag {
+	float: right;
+	margin: 5px 0 0;
+}
+
+.card-media {
+	float: right;
+}
+
+.card-shadow {
+	background-color: #fff;
+	box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 1), 0 2px 50px 2px
+		rgba(0, 0, 0, 1), 0 0 100px 3px rgba(0, 0, 0, .25);
+	height: 1px;
+	margin: -1px auto 0;
+	width: 80%;
+	z-index: -1;
+} */
+
+.commentcard {
+    border: 2px;
+    background-color: white;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 4px
+}
+
+.dots {
+    height: 4px;
+    width: 4px;
+    margin-bottom: 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block
+}
+
+.badge {
+    padding: 7px;
+    padding-right: 9px;
+    padding-left: 16px;
+    box-shadow: 5px 6px 6px 2px #e9ecef
+}
+
+.user-img {
+    margin-top: 4px
+}
+
+.check-icon {
+    font-size: 17px;
+    color: #c3bfbf;
+    top: 1px;
+    position: relative;
+    margin-left: 3px
+}
+
+.form-check-input {
+    margin-top: 6px;
+    margin-left: -24px !important;
+    cursor: pointer
+}
+
+.form-check-input:focus {
+    box-shadow: none
+}
+
+.icons i {
+    margin-left: 8px
+}
+
+.reply {
+    margin-left: 12px
+}
+
+.reply small {
+    color: #b7b4b4
+}
+
+.reply small:hover {
+    color: green;
+    cursor: pointer
+}
+
+
+.form-control-sm {
+height: 200px;
+width: 300px;
+
+}
+
+#commentForm {
+padding-left: 100px;
+display: inline-block;
+
+ }
+ 
+
+
+
+
+</style>
 <body>
 
-	<%@ include file="mainNavBar.jsp"%>
+	<%@ include file="recipeStyle.jsp"%>
 	<br>
 	<br>
 	<br>
@@ -37,14 +273,14 @@
           <!-- Description -->
           <span class="card-description subtle">${recipe.description }</span>
           <!-- Expands card out -->
-          <div class="card-read">Sip</div>
+         <!--  <div class="card-read">Sip</div> -->
         </div>
         <img src="${recipe.imageUrl}" width="280" height="auto"/>
           <!--  <img src="https://live.staticflickr.com/65535/52029488110_21911d2ec2_o.png" width="280" height="auto" class="card-media" /> -->
         <img src=""/>
       </div>
       <div class="card-shadow"></div>
-    </div>
+</div>
 
     <div class="container">
       <a href="#instructions" class="btn btn-info" data-toggle="collapse">Recipe & Instructions</a>
@@ -71,6 +307,8 @@
         <br>
         
 <!--------------------- COMMENT FORM  ------------------------------->
+        	
+        	<div id="commentForm">
         	  <form action="createComment.do" method="POST">
 	  
 
@@ -84,6 +322,8 @@
 	
 	<input type ="submit" value="sumbit"/>
 	</form>
+	
+	</div>
   
 <!-- ------------------ DISPLAY COMMENTS  ------------------------------->
   <c:forEach var="rc" items="${recipe.comments }">
@@ -96,7 +336,6 @@
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
             <div class="headings d-flex justify-content-between align-items-center mb-3">
-                <h5>Comments </h5>
           
             </div>
             <div class="commentcard p-3">
@@ -115,7 +354,11 @@
       </div>
     	</div>
 
- 
+ <div> 
+ <br>
+ <br>
+ <br>
+ </div>
 
 
 

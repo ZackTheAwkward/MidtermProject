@@ -23,13 +23,13 @@
 			<br>
 			<br>
 			
-			<h2>Matched by Recipe Name:</h2>
+			<h2>Matched by Recipe Name or Description:</h2>
 	<table>
 		<thead>
 			<tr>
-				<th>Menu Item:</th>
+				<!-- <th>Menu Item:</th>
 				<th>Name:</th>
-				<th>Recipe</th>
+				<th>Recipe</th> -->
 			</tr>
 		</thead>
 		<tbody>
