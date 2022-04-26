@@ -220,7 +220,7 @@ body {
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="home.do">ABOUT</a></li>
 					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="getMeetups.do">MEETUPS</a></li>
+						href="goLogin.do">MEETUPS</a></li>
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="goLogin.do">LOGIN</a></li>
 					<li class="nav-item"><a class="nav-link" aria-current="page"
