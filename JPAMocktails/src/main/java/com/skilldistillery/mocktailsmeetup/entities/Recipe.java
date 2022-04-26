@@ -64,8 +64,8 @@ public class Recipe {
 	inverseJoinColumns=@JoinColumn(name="user_id"))
 	private List<User> commenters;
 	
-	@ManyToMany(mappedBy="recipes")
-	private List<Ingredient> ingredients;
+	@OneToMany(mappedBy="recipe")
+	private List<RecipeIngredient> ingredients;
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
@@ -168,11 +168,11 @@ public class Recipe {
 
 	
 	
-	public List<Ingredient> getIngredients() {
+	public List<RecipeIngredient> getIngredients() {
 		return ingredients;
 	}
 
-	public void setIngredients(List<Ingredient> ingredients) {
+	public void setIngredients(List<RecipeIngredient> ingredients) {
 		this.ingredients = ingredients;
 	}
 
@@ -192,12 +192,6 @@ public class Recipe {
 				+ instructions + ", Serving Size: " + servingSize + ", Create Date: " + createDate;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-	
-	
 
 	public User getCreatedByUser() {
 		return createdByUser;
@@ -205,6 +199,10 @@ public class Recipe {
 
 	public void setCreatedByUser(User createdByUser) {
 		this.createdByUser = createdByUser;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
 	}
 
 	@Override

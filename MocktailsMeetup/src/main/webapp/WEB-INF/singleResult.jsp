@@ -46,6 +46,22 @@
       <div class="card-shadow"></div>
     </div>
 
+    <div class="container">
+      <a href="#instructions" class="btn btn-info" data-toggle="collapse">Recipe & Instructions</a>
+      <div id="instructions" class="collapse">
+        <br>
+        <br>
+        <br>
+        <c:forEach var="rc" items="${recipe.ingredients }">
+
+	<li>${rc.quantity} ${rc.unit } ${rc.ingredient.name } </li>
+	
+	
+	</c:forEach>
+	
+	${recipe.instructions }
+      </div>
+    	</div>
 <!-- ------------------ DISPLAY COMMENTS  ------------------------------->
 
 
@@ -54,6 +70,7 @@
 <li>${rc.user.username }</li>
 <li>${rc.comment }</li>
 </c:forEach>
+
 
 
 <!--------------------- COMMENT FORM  ------------------------------->
