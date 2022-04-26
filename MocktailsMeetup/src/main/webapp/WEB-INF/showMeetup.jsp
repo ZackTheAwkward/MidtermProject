@@ -55,7 +55,7 @@ html, body {
 
             //Begin Geocoder
             const geocoder = new google.maps.Geocoder();
-            const address = '${meetup.street}, ${meetup.city}, ${meetup.state}, ${meetup.postalCode}';
+            const address = '${meetup.address.street}, ${meetup.address.city}, ${meetup.address.stateAbbr}, ${meetup.address.postalCode}';
             geocoder.geocode({ address }, (results, status) => {
                const marker = new google.maps.Marker({
                   map: map,

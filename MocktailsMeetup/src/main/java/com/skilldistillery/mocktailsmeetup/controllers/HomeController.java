@@ -62,10 +62,9 @@ public class HomeController {
 		return "account";
 
 	}
-
-	@RequestMapping(path = { "meetup.do" })
-	public String meetup(Model model) {
-		return "showMeetup";
+	@RequestMapping(path = { "addMeet.do"})
+	public String createMeet(Model model) {
+		return "createMeetup";
 	}
 
 	@RequestMapping(path = { "getRecipe.do" }, method = RequestMethod.GET)
@@ -171,6 +170,24 @@ public class HomeController {
 		Meetup meetup = meetupDAO.findById(Id);
 		model.addAttribute("meetup", meetup);
 		return "showMeetup";
+	}
+	
+	
+	@RequestMapping(path = "createdMeetup.do", method = RequestMethod.POST)
+	public String createMeetup(Meetup meetup, Model model, HttpSession session) {
+		User user = (User)session.getAttribute("user");
+		if(user != null) {
+			meetup.setOwner(user);
+			System.out.println("++++++++++++++++++++++++++++++");
+			System.out.println(meetup);
+			Meetup createMeetup = meetupDAO.createMeetup(meetup);
+			model.addAttribute("meetup", createMeetup);
+			return "showMeetup";
+			
+		} else {
+			return "login";
+		}
+		
 	}
 
 }

@@ -2,6 +2,7 @@ package com.skilldistillery.mocktailsmeetup.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,54 +14,61 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Meetup {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;	
-	
+	private int id;
+
 	private String title;
-	
+
 	private String description;
-	
-	@Column(name= "date_created")
+
+	@Column(name = "date_created")
 	@CreationTimestamp
 	private LocalDateTime dateCreated;
-	
-	@Column(name= "start_time")
-	private LocalDateTime startTime;
-	
-	@Column(name= "end_time")
-	private LocalDateTime endTime;
-	
-	@Column(name="max_attendees")
+
+	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+	@Column(name = "start_time")
+	private LocalTime startTime;
+
+	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+	@Column(name = "end_time")
+	private LocalTime endTime;
+
+	@Column(name = "max_attendees")
 	private int maxAttendees;
-	
+
 	private boolean active;
-	
-	@Column(name="image_url")
+
+	@Column(name = "image_url")
 	private String imageURL;
-	
-	@Column(name="meetup_date")
+
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	@Column(name = "meetup_date")
 	private LocalDate meetupDate;
-	
+
 	@OneToOne
-	@JoinColumn(name="address_id")
-	private Address address; 
-	
+	@JoinColumn(name = "address_id")
+	private Address address;
+
 	@ManyToMany
-	@JoinTable(name= "user_meeting",
-			joinColumns=@JoinColumn(name="meetup_id"),
-			inverseJoinColumns=@JoinColumn(name="user_id"))
+	@JoinTable(name = "user_meeting", joinColumns = @JoinColumn(name = "meetup_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
 	private List<User> users;
-	
+
 	@ManyToMany(mappedBy = "meetupComments")
 	private List<User> usersWhoCommented;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User owner;
 
 	public Meetup() {
 		super();
@@ -103,19 +111,19 @@ public class Meetup {
 		this.dateCreated = dateCreated;
 	}
 
-	public LocalDateTime getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(LocalDateTime startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
 
-	public LocalDateTime getEndTime() {
+	public LocalTime getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(LocalDateTime endTime) {
+	public void setEndTime(LocalTime endTime) {
 		this.endTime = endTime;
 	}
 
@@ -150,8 +158,6 @@ public class Meetup {
 	public void setMeetupDate(LocalDate meetupDate) {
 		this.meetupDate = meetupDate;
 	}
-	
-	
 
 	public Address getAddress() {
 		return address;
@@ -160,20 +166,14 @@ public class Meetup {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	
-	
 
 	public List<User> getUsers() {
 		return users;
 	}
 
 	public void setUsers(List<User> user) {
-		this.users = users;
+		this.users = user;
 	}
-
-	
-	
-
 
 	public List<User> getUsersWhoCommented() {
 		return usersWhoCommented;
@@ -181,6 +181,14 @@ public class Meetup {
 
 	public void setUsersWhoCommented(List<User> usersWhoCommented) {
 		this.usersWhoCommented = usersWhoCommented;
+	}
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
 	}
 
 	@Override
@@ -199,9 +207,5 @@ public class Meetup {
 		Meetup other = (Meetup) obj;
 		return id == other.id;
 	}
-	
-	
-	
-	
-	
+
 }

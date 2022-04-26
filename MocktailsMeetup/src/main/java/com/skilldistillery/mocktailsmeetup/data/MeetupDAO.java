@@ -10,6 +10,8 @@ public interface MeetupDAO {
 	Meetup updateMeetup(int id, Meetup meetup);
 
 	boolean deleteMeetup(int id);
+	
+	Meetup createMeetup(Meetup meetup);
 
 	List<Meetup> findAll();
 }

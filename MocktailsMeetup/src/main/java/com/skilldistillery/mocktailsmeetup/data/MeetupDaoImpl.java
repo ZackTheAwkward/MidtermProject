@@ -62,6 +62,14 @@ public class MeetupDaoImpl implements MeetupDAO {
 		em.persist(meetup);
 		return meetup;
 	}
+
+	@Override
+	public Meetup createMeetup(Meetup meetup) {
+		System.out.println(meetup.getAddress() + " " + meetup.getOwner());
+		em.persist(meetup.getAddress());
+		em.persist(meetup);
+		return em.find(Meetup.class, meetup.getId());
+	}
 	
 	
 }

@@ -22,7 +22,7 @@
 	<h1>Welcome ${user.username}</h1>
 
 
-
+<a href="addMeet.do">Create a Meetup</a>
 
 
 

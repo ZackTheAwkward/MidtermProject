@@ -67,6 +67,9 @@ public class User {
 	
 	@OneToMany(mappedBy = "user")
 	private List<RecipeComment> userRecipeComments;
+	
+	@OneToMany(mappedBy="owner")
+	private List<Meetup> hostedMeetups;
 
 	public User() {
 		super();
