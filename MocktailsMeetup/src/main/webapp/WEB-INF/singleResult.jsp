@@ -62,20 +62,66 @@
 	${recipe.instructions }
       </div>
     	</div>
-<!-- ------------------ DISPLAY COMMENTS  ------------------------------->
-
-
-<c:forEach var="rc" items="${recipe.comments }">
-
-<li>${rc.user.username }</li>
-<li>${rc.comment }</li>
-</c:forEach>
-
-
-
+    	
+    <div class="container">
+      <a href="#comments" class="btn btn-info" data-toggle="collapse">Comments</a>
+      <div id="comments" class="collapse">
+        <br>
+        <br>
+        <br>
+        
 <!--------------------- COMMENT FORM  ------------------------------->
+        	  <form action="createComment.do" method="POST">
+	  
 
-	  <form action="createComment.do" method="POST">
+	
+
+	<input id="id" type="hidden" name="recipeId" value="${recipe.id}"/>
+	
+	
+	<input class="form-control-sm" type="text" name="comment" placeholder="Comment"/>
+	<br>
+	
+	<input type ="submit" value="sumbit"/>
+	</form>
+  
+<!-- ------------------ DISPLAY COMMENTS  ------------------------------->
+  <c:forEach var="rc" items="${recipe.comments }">
+
+<%-- <li>${rc.user.username }</li>
+<li>${rc.comment }</li>
+ --%>
+  
+   <div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="headings d-flex justify-content-between align-items-center mb-3">
+                <h5>Comments </h5>
+          
+            </div>
+            <div class="commentcard p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="user d-flex flex-row align-items-center"> <img src="${user.photoUrl }" width="30" class="user-img rounded-circle mr-2">
+                     <span><small class="font-weight-bold text-primary">${rc.user.username }</small> <small class="font-weight-bold">${rc.comment }</small></span> 
+                     </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+      </div>
+      
+      </c:forEach>
+      </div>
+    	</div>
+
+ 
+
+
+
+
+
+	<%--   <form action="createComment.do" method="POST">
 	  
 
 	
@@ -88,7 +134,7 @@
 	<br>
 	
 	<input type ="submit" value="sumbit"/>
-	</form>
+	</form> --%>
 
 	
 
