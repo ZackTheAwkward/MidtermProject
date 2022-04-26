@@ -37,13 +37,12 @@ public class Meetup {
 	@CreationTimestamp
 	private LocalDateTime dateCreated;
 
-//	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-//	@Column(name = "start_time")
-//	private LocalTime startTime;
-//
-//	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-//	@Column(name = "end_time")
-//	private LocalTime endTime;
+	
+	@Column(name = "start_time")
+	private LocalTime startTime;
+
+	@Column(name = "end_time")
+	private LocalTime endTime;
 
 	@Column(name = "max_attendees")
 	private int maxAttendees;
@@ -53,9 +52,8 @@ public class Meetup {
 	@Column(name = "image_url")
 	private String imageURL;
 
-//	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-//	@Column(name = "meetup_date")
-//	private LocalDate meetupDate;
+	@Column(name = "meetup_date")
+	private LocalDate meetupDate;
 
 	@OneToOne
 	@JoinColumn(name = "address_id")
@@ -113,21 +111,21 @@ public class Meetup {
 		this.dateCreated = dateCreated;
 	}
 
-//	public LocalTime getStartTime() {
-//		return startTime;
-//	}
-//
-//	public void setStartTime(LocalTime startTime) {
-//		this.startTime = startTime;
-//	}
-//
-//	public LocalTime getEndTime() {
-//		return endTime;
-//	}
-//
-//	public void setEndTime(LocalTime endTime) {
-//		this.endTime = endTime;
-//	}
+	public LocalTime getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(LocalTime startTime) {
+		this.startTime = startTime;
+	}
+
+	public LocalTime getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(LocalTime endTime) {
+		this.endTime = endTime;
+	}
 
 	public int getMaxAttendees() {
 		return maxAttendees;
@@ -153,13 +151,13 @@ public class Meetup {
 		this.imageURL = imageURL;
 	}
 
-//	public LocalDate getMeetupDate() {
-//		return meetupDate;
-//	}
-//
-//	public void setMeetupDate(LocalDate meetupDate) {
-//		this.meetupDate = meetupDate;
-//	}
+	public LocalDate getMeetupDate() {
+		return meetupDate;
+	}
+
+	public void setMeetupDate(LocalDate meetupDate) {
+		this.meetupDate = meetupDate;
+	}
 
 	public Address getAddress() {
 		return address;
