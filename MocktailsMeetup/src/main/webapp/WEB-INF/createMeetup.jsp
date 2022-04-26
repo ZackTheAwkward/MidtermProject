@@ -16,16 +16,16 @@
 	<input class="form-control-sm" type="text" name="description" placeholder="Description"/>
 	<br>
 	
-	<input class="form-control-sm" type="text" name="startTime" placeholder="Start Time"/>
+	<input class="form-control-sm" type="time" name="startTime" placeholder="Start Time"/>
 	<br>
 	
-	<input class="form-control-sm" type="text" name="endTime" placeholder="End Time"/>
+	<input class="form-control-sm" type="time" name="endTime" placeholder="End Time"/>
 	<br>
 	
 	<input class="form-control-sm" type="text" name="maxAttendees" placeholder="Max Attendees"/>
 	<br>
 	
-	<input class="form-control-sm" type="text" name="meetupDate" placeholder="Meetup Date"/>
+	<input class="form-control-sm" type="date" name="meetupDate" placeholder="Meetup Date"/>
 	<br>
 	
 	<input class="form-control-sm" type="text" name="imageURL" placeholder="Image URL"/>
