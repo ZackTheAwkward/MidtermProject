@@ -16,10 +16,12 @@ import com.skilldistillery.mocktailsmeetup.data.DrinkDAO;
 import com.skilldistillery.mocktailsmeetup.data.MeetupDAO;
 import com.skilldistillery.mocktailsmeetup.data.RecipeDAO;
 import com.skilldistillery.mocktailsmeetup.data.UserDAO;
+import com.skilldistillery.mocktailsmeetup.entities.Category;
 import com.skilldistillery.mocktailsmeetup.entities.Drink;
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
+import com.skilldistillery.mocktailsmeetup.entities.User;
 
 @Controller
 public class HomeController {
