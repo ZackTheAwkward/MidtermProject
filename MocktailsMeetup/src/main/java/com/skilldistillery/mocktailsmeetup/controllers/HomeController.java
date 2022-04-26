@@ -132,28 +132,22 @@ public class HomeController {
 	}
 
 	@RequestMapping("login.do")
-	public ModelAndView displayLogin(HttpSession session) {
+	public ModelAndView displayLogin(HttpSession session, Model model) {
 		ModelAndView mv = new ModelAndView();
-		if (session.getAttribute("user") != null) {
-			mv.setViewName("redirect:home.do");
-		} else {
-			mv.addObject("userCommandObject", new User());
-			mv.setViewName("login");
-		}
+		mv.addObject("user", new User());
+		mv.setViewName("login");
 		return mv;
 	}
 
 	@RequestMapping(path = "login.do", method = RequestMethod.POST)
-	public String submitLogin(User user, HttpSession session) {
-		if (session.getAttribute("user") != null) {
-			return "redirect:home.do";
-		}
+	public String submitLogin(User user, HttpSession session, Model model) {
 		User u = userDAO.getUserByUserNameAndPassword(user.getUsername(), user.getPassword());
 		if (u == null) {
 			return "redirect:login.do";
 		}
 		session.setAttribute("user", u);
-
+		List<Meetup> meetup = meetupDAO.findAll();
+		model.addAttribute("meetup", meetup);
 		return "welcome";
 	}
 
