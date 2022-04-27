@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
-  `active` TINYINT NOT NULL DEFAULT 0,
+  `active` TINYINT NOT NULL DEFAULT 1,
   `bio` TEXT NULL,
   `photo_url` VARCHAR(2000) NULL,
   `created_date` DATETIME NULL,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `meetup` (
   `start_time` TIME NULL,
   `end_time` TIME NULL,
   `max_attendees` INT NULL,
-  `active` TINYINT NOT NULL DEFAULT 0,
+  `active` TINYINT NOT NULL DEFAULT 1,
   `image_url` VARCHAR(2000) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Meetup_address1_idx` (`address_id` ASC),
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `recipe` (
   `name` VARCHAR(200) NOT NULL,
   `serving_size` INT NULL,
   `description` TEXT NULL,
-  `active` TINYINT NOT NULL DEFAULT 0,
+  `active` TINYINT NOT NULL DEFAULT 1,
   `instructions` TEXT NULL,
   `image_url` VARCHAR(2000) NULL,
   `created_date` DATETIME NULL,
@@ -562,7 +562,7 @@ INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (24, 
 INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (25, 'hibiscus infusion tea bags', '', '1\" pieces, rind removed');
 INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (26, 'honeydew', '', '');
 INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (27, 'huckleberry', '', '');
-INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (28, 'ice crushed', '', '');
+INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (28, 'crushed ice', '', '');
 INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (29, 'ice cubes', '', '');
 INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (30, 'kosher salt', '', '');
 INSERT INTO `ingredient` (`id`, `name`, `image_url`, `description`) VALUES (31, 'lemon juice', '', '');
@@ -805,7 +805,7 @@ INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (27, 79, 1, 'tsp', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (27, 80, 1, 'tsp', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (27, 81, 12, 'dashes', '');
-INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (27, 40, 2, 'whole', '');
+INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (27, 40, .25, 'cup', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (27, 82, 48, 'oz', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (28, 53, 0.75, 'cup', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (28, 83, 0.5, 'cup', '');
@@ -821,7 +821,7 @@ INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (30, 65, 1.25, 'cups', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (30, 87, 0.75, 'cup', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (30, 40, 0.5, 'cup', '');
-INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (30, 60, 1, 'can', '');
+INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (30, 60, 1, '12oz can', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (31, 89, 0.5, 'cup', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (31, 88, 0.5, 'cup', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (31, 53, 2, 'tbsp', '');
@@ -840,7 +840,7 @@ INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (33, 92, 1, 'tsp', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (33, 93, 3, 'oz', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (33, 56, 1, 'tsp', '');
-INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (34, 45, 4, 'oz', '');
+INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (34, 83, 4, 'oz', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (34, 32, 2, 'oz', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (34, 18, 1, 'bottle', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (34, 43, 2, 'slices', '');
