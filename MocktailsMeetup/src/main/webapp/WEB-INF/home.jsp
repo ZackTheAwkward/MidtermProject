@@ -8,50 +8,75 @@
 <title>Mocktails Meetup</title>
 
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 
 </head>
+
+
+<style>
+.carousel-item {
+  height: 100vh;
+  padding-top: 0px;
+ /*  background: #212121 */
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 8% !important;
+}
+
+.carousel-item.active,
+.carousel-item-left,
+.carousel-item-right {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item h1 {
+    color: #fff;
+    font-size: 72px;
+ }
+
+
+</style>
+
 <body>
 
 
 <%@ include file="mainNavBar.jsp" %>
 
- <!--  <div id="carousel class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
 
-              <img class="d-block w-100" src="https://live.staticflickr.com/65535/52024146327_b20d321ae9_o.png" width="1200" height="600" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5> </h5>
-
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://live.staticflickr.com/65535/52025183961_fcf52971b9_o.png" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://live.staticflickr.com/65535/52025434264_96d2d22c5d_o.png" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://live.staticflickr.com/65535/52024146417_dbf1f78173_o.png" alt="Fourth Slide">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div> -->
+<div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
 
 
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <img class="d-block w-100" src="https://live.staticflickr.com/65535/52034513710_2bb0632d5a_o.png" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://live.staticflickr.com/65535/52025183961_fcf52971b9_o.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+       <img class="d-block w-100" src="https://live.staticflickr.com/65535/52025434264_96d2d22c5d_o.png" alt="Third slide">
+    </div>
+  </div>
+  
+  
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
 
 
 
