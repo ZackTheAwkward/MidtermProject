@@ -43,17 +43,10 @@ public class RecipeDaoImpl implements RecipeDAO {
 	}
 	
 	@Override
-	public boolean deleteRecipe(int id) {
-		
-		boolean isDeleted = false;
-		Recipe recipe = em.find(Recipe.class, id);
-		if (recipe != null) {
-			em.remove(recipe);
-		}
-		em.flush();
-		isDeleted = !em.contains(recipe);
-		
-		return isDeleted;
+	public Recipe deleteRecipe(int id, Recipe recipe) {
+		Recipe managed = em.find(Recipe.class, id);
+		managed.setActive(false);
+		return managed;
 	}
 	
 

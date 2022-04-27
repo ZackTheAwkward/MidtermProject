@@ -373,13 +373,14 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (1, 'Shirley Street', 'CO springs', 'CO', '11111');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (1, '2021 West 32 Ave', 'Denver', 'CO', '80211');
 INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (2, '2636 Walnut St., Suite 104', 'Denver', 'CO', '80205');
 INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (3, '3601 West 32 Avenue ', 'Denver', 'CO', '80211');
 INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (4, '1615 Platte Street', 'Denver', 'CO', '80202');
 INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (5, '2240 North Clay Street', 'Denver', 'CO', '80211');
 INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (6, '4024 Tennyson Street', 'Denver', 'CO', '80212');
 INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (7, '2021 West 32 Ave', 'Denver', 'CO', '80211');
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbr`, `postal_code`) VALUES (8, '3601 West 32 Avenue ', 'Denver', 'CO', '80211');
 
 COMMIT;
 
@@ -448,7 +449,14 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 1, 'This is a new meetup', '2022-01-01', 'Descrip', NULL, NULL, NULL, 10, 1, NULL);
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (1, 1, 1, 'May is for Mocktail Party', '2022-05-01', 'Celebrate the May flowers with a delicious May Mocktail!', '2022-04-01', '19:00:00', '21:30:00', 30, 1, 'https://media.istockphoto.com/photos/m-having-the-best-time-with-you-guys-picture-id1133362469?k=20&m=1133362469&s=612x612&w=0&h=OG6ws5XYoka77vTtK82dUqaldFAdJ8sqZmDJ9NSlUyo=');
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (3, 2, 2, 'Mother\'s Day Mocktail Party', '2022-05-08', 'Treat your mom to a couple of delicious non-alcoholic drinks!', '2022-03-24', '19:00:00', '21:00:00', 100, 1, 'https://media.istockphoto.com/photos/top-view-of-carnation-on-pink-for-mothers-day-picture-id1142538191?k=20&m=1142538191&s=612x612&w=0&h=WqQgtnA8i9eJtG754u3sZ3YqY41O4ZaP9TSZ0y0RoD0=');
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (4, 3, 2, 'Zero Proof Party - May', '2022-05-15', 'Come out and meetup with other mocktail lovers during this monthly meetup!', '2022-04-15', '18:30:00', '20:30:00', 35, 1, 'https://media.istockphoto.com/vectors/vector-sign-for-mocktails-vector-id1137616794?k=20&m=1137616794&s=612x612&w=0&h=qE3_iEbufu_DtYVklwf8AKG0uQ2-j6-cNKFKUWWYPcE=');
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (5, 4, 3, 'Mocktail Brew Zoo', '2022-05-08', 'Tame your thirst at this Mocktail Brew Zoo!', '2022-03-24', '19:00:00', '21:00:00', 35, 1, 'https://media.istockphoto.com/photos/crazy-couple-celebrating-new-year-eve-wearing-chicken-and-dinosaur-picture-id1201208190?k=20&m=1201208190&s=612x612&w=0&h=i2fQnfsg4CIyJ-hQksj5d_nrHgJOUSqF0JGVNZr0JeY=');
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (6, 5, 1, 'Denver Historical Society Meetup', '2022-06-01', 'Establish your spot in history by drinking some classic Mocktails!', '2022-04-17', '17:00:00', '19:30:00', 100, 1, 'https://media.istockphoto.com/vectors/mocktails-vector-id1213422122?k=20&m=1213422122&s=612x612&w=0&h=4ovlEuTZxfMi5ewbZMIq4eRd8ZoUFLEYc9uyZDNeKWY=');
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (13, 6, 7, 'Speed Dating Sip and Social', '2022-06-01', 'Sign up for this event to meet Mocktail lovin singles at this delicious event.', '2022-02-01', '18:00:00', '19:30:00', 100, 1, 'https://media.istockphoto.com/photos/party-people-communication-talking-happiness-concept-picture-id668221242?k=20&m=668221242&s=612x612&w=0&h=XYHyzEnY0GtK6bO7dxXlMuvjHm8yCUk7or91OM_3zVI=');
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (8, 7, 2, 'Frozen Mocktail Friday', '2022-05-13', 'We will be blending up some good times at this local meetup!', '2022-03-29', '19:00:00', '21:30:00', 45, 1, 'https://media.istockphoto.com/photos/three-flavors-of-fruit-smoothies-in-glasses-on-white-background-picture-id542184706?k=20&m=542184706&s=612x612&w=0&h=C3oLUfasxLiuOzRlYsWmHnsQS8pcNlTxk8SBHlnyi9A=');
+INSERT INTO `meetup` (`id`, `address_id`, `user_id`, `title`, `meetup_date`, `description`, `date_created`, `start_time`, `end_time`, `max_attendees`, `active`, `image_url`) VALUES (9, 8, 3, 'Shirley Temples and Tapas ', '2022-05-15', 'If you like fruity Mocktails and tapas, this is the event for you!', '2022-04-15', '18:00:00', '20:00:00', 45, 1, 'https://media.istockphoto.com/photos/business-people-meeting-eating-discussion-cuisine-party-concept-picture-id665393236?k=20&m=665393236&s=612x612&w=0&h=PsAcGYgm1kQIdrDdAf0Os4cPQRFyyc8erwdHD5PqcaA=');
 
 COMMIT;
 

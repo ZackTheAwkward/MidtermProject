@@ -9,9 +9,9 @@ public interface RecipeDAO {
 	Recipe findById(int recipeId);
 	List<Recipe> findByKeyword(String keyword);
 	Recipe updateRecipe(int id, Recipe recipe);
-	boolean deleteRecipe(int id);
 	List<Recipe> findAll();
 	Recipe createYourOwn(Recipe recipe);
 	List<RecipeComment> findAllRecipeComments(int id);
 	RecipeComment createComment(RecipeComment comment);
+	Recipe deleteRecipe(int id, Recipe recipe);
 }
