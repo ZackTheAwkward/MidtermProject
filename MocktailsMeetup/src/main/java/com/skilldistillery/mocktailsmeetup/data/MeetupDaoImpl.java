@@ -27,12 +27,12 @@ public class MeetupDaoImpl implements MeetupDAO {
 		Meetup updated = em.find(Meetup.class, id);
 		updated.setTitle(meetup.getTitle());
 		updated.setDescription(meetup.getDescription());
-		updated.setAddress(meetup.getAddress());
-//		updated.setMeetupDate(meetup.getMeetupDate());
-//		updated.setStartTime(meetup.getStartTime());
-//		updated.setEndTime(meetup.getEndTime());
+		updated.setMeetupDate(meetup.getMeetupDate());
+		updated.setStartTime(meetup.getStartTime());
+		updated.setEndTime(meetup.getEndTime());
 		updated.setMaxAttendees(meetup.getMaxAttendees());
-		em.flush();
+//		updated.setAddress(meetup.getAddress());
+		
 		return updated;
 	}
 	
