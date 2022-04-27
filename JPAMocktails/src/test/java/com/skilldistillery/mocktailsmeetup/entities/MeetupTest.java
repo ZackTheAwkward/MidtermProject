@@ -43,10 +43,11 @@ class MeetupTest {
 	}
 	
 	@Test
+	@DisplayName("Testing max attendees and address / city mapping")
 	void Test1() {
 	assertNotNull(meetup);
 	assertNotNull(meetup.getMaxAttendees());
-	assertEquals("CO springs", meetup.getAddress().getCity());
+	assertEquals("Denver", meetup.getAddress().getCity());
 	
 	}
 	

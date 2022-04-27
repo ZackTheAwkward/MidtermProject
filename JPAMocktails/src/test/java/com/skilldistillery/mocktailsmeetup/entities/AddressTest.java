@@ -44,10 +44,10 @@ class AddressTest {
 	@Test
 	void Test1() {
 	assertNotNull(address);
-	assertEquals("Shirley Street", address.getStreet());
-	assertEquals("CO springs", address.getCity());
+	assertEquals("2021 West 32 Ave", address.getStreet());
+	assertEquals("Denver", address.getCity());
 	assertEquals("CO", address.getStateAbbr());
-	assertEquals("11111", address.getPostalCode());
+	assertEquals("80211", address.getPostalCode());
 	
 	}
 	
