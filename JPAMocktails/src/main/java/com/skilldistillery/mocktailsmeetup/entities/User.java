@@ -65,7 +65,7 @@ public class User {
 	@ManyToMany(mappedBy = "commenters")
 	private List<Recipe> commentedOn;
 	
-	@OneToMany(mappedBy="createdByUser", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="createdByUser")
 	private List<Recipe> userCreated;
 	
 	@OneToMany(mappedBy = "user")
