@@ -36,6 +36,7 @@ background-color: white !important;
 font-family: 'Source Sans Pro', sans-serif;
 font-size: 16px;
 color: black;
+
  }
 
 .nav-item {
@@ -107,8 +108,8 @@ body {
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="account.do">Account</a>
-          <a class="dropdown-item" href="#">See My Recipes</a>
-          <a class="dropdown-item" href="#">My Meetups</a>
+          <a class="dropdown-item" href="sendToViewRecipes.do">My Recipes</a>
+          <a class="dropdown-item" href="getMeetups.do">My Meetups</a>
         </div>
       </li>
 

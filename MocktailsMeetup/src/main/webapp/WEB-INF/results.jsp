@@ -9,7 +9,14 @@
 </head>
 <body>
 
-<%@ include file="mainNavBar.jsp" %>
+<c:if test="${user != null}">
+       <%@ include file="loggedInNavbar.jsp" %>
+	</c:if>
+    
+  <c:if test="${user == null}">
+       <%@ include file="mainNavBar.jsp" %>
+   </c:if>
+   
 
 
 	<c:choose>
