@@ -56,10 +56,10 @@ class RecipeIngredientTest {
 +-----------+---------------+----------+--------------+---------------+
 |         1 |             8 |        1 | cherry */
 	@Test
-	@DisplayName("Testing recipeingredient  mapping")
+	@DisplayName("Testing recipe_ingredient  mapping")
 	void test2() {
 		assertNotNull(ingredient);
-		assertEquals("cherry", ingredient.getUnit()); 
+		assertEquals("whole", ingredient.getUnit()); 
 	}
 
 }
