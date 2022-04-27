@@ -82,7 +82,10 @@ input[placeholder] {
 #deactivate {
 	line-height: 18px;
 }
-}
+
+/*--------------------------------------------------------- */
+
+
 </style>
 <body>
 
@@ -96,7 +99,8 @@ input[placeholder] {
 
 			<div class="form-group row">
 				<Label class="form-input-label"> Profile Picture URL: </Label> <input
-					type="text" name="photoUrl" value="${user.photoUrl}" />
+					type="text" name="photoUrl" value="${user.photoUrl}" /> 
+
 			</div>
 		</div>
 
@@ -117,7 +121,7 @@ input[placeholder] {
 						class="bg-light form-control" placeholder="${user.username}">
 				</div>
 
-			<form action="sendToViewRecipes.do">
+				<%-- 	<form action="sendToViewRecipes.do">
 					<input type="submit" value="View Your Recipes"
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
@@ -127,8 +131,8 @@ input[placeholder] {
 					<input type="submit" value="View Your Meetups"
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
-				</form>
- 
+				</form> --%>
+
 			</div>
 			<div class="row py-2"></div>
 			<form action="account.do">
@@ -151,25 +155,14 @@ input[placeholder] {
 	</div>
 
 
+	<div class="user d-flex flex-row align-items-center">
+		<img src="${user.photoUrl }" width="75"
+			class="user-img rounded-circle mr-2"> <span><small
+			class="font-weight-bold text-primary">${rc.user.username }</small> <small
+			class="font-weight-bold">${user.bio }</small></span>
+	</div>
 
-
-	<%-- <div class="row py-2"></div>
-	<form action="account.do">
-		<input type="submit" class="btn btn-primary mr-3" value="Save Changes">
-	</form>
-
-	<form action="welcome.do">
-		<button class="btn border button">Cancel</button>
-	</form>
-
-	<div>
-		<form action="deactivateUser.do">
-			<input type="submit" value="Deactivate Account"
-				class="bg-light form-control"> <input type="hidden"
-				name="id" value="${user.id }" />
-		</form>
-	</div> --%>
-
+   
 
 
 

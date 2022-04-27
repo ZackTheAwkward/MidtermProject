@@ -15,4 +15,5 @@ public interface RecipeDAO {
 	RecipeComment createComment(RecipeComment comment);
 	Recipe deleteRecipe(int id, Recipe recipe);
 	List<Recipe> findAllUserCreated(int id);
+	Recipe surpriseMe();
 }

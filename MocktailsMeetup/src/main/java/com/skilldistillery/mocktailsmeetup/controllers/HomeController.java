@@ -150,14 +150,6 @@ public class HomeController {
 		List<Recipe> recipeMatch = recipeDAO.findByKeyword(keyword);
 		model.addAttribute("recipeMatch", recipeMatch);
 
-		List<Category> categoryMatch = categoryDAO.findByKeyword(keyword);
-		model.addAttribute("categoryMatch", categoryMatch);
-
-		List<Drink> drinkMatch = drinkDAO.findByKeyword(keyword);
-		model.addAttribute("drinkMatch", drinkMatch);
-//			List<Ingredient> ingredientMatch = dao.findByNameContaining(keyword);
-//			mv.addObject("ingredientMatch", ingredientMatch);
-
 		return "results";
 	}
 
@@ -211,9 +203,10 @@ public class HomeController {
 
 	@RequestMapping("deleteRecipe.do")
 	public String deleteRecipe(int id, Recipe recipe) {
-			recipe = recipeDAO.findById(id);
-			recipe = recipeDAO.deleteRecipe(id, recipe);
-		return "viewUserRecipes";
+		recipe = recipeDAO.findById(id);
+		recipe = recipeDAO.deleteRecipe(id, recipe);
+
+		return "account";
 	}
 
 	@RequestMapping("deactivateUser.do")
@@ -228,13 +221,13 @@ public class HomeController {
 	public String update(Model model, int id) {
 		User user = userDAO.findById(id);
 		model.addAttribute("user", user);
-//		System.out.println("In update.do");
+
 		return "updateAccount";
 	}
 
 	@RequestMapping(path = "updateAccount.do", method = RequestMethod.POST)
 	public String updateAccount(int id, User user, Model model) {
-//		System.out.println("In updateCoffee.do");
+
 		User updatedAccount = userDAO.updateUser(id, user);
 		model.addAttribute("user", updatedAccount);
 		return "account";
@@ -291,7 +284,6 @@ public class HomeController {
 		List<Recipe> userCreated = recipeDAO.findAllUserCreated(user.getId());
 //		List<Meetup> userMeetups = meetupDAO.findByOwnerId(user.getId());
 
-		
 		model.addAttribute("user", user);
 		model.addAttribute("userCreated", userCreated);
 		return "viewUserRecipes";
@@ -321,6 +313,16 @@ public class HomeController {
 		}
 	}
 
+	@RequestMapping(path = "surpriseMe.do", method = RequestMethod.GET)
+	public String surpriseMe(Model model) {
+
+		Recipe recipe = recipeDAO.surpriseMe();
+
+		model.addAttribute("recipe", recipe);
+
+		return "singleResult";
+
+	}
 //	
 //	@RequestMapping(path = "createComment.do", method = RequestMethod.POST)
 //	public String addComment(RecipeComment recipeComment, Model model,  HttpSession session) {
