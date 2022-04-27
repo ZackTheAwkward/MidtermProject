@@ -6,7 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Mocktail Results</title>
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&family=Yeseva+One&display=swap"
+	rel="stylesheet">
+
 </head>
+
+
 
 <style>
 
@@ -15,13 +22,14 @@
 	background-color: black;
 	border: 0px;
 	border-color: black;
+	margin-top: 3px;
+	
+	
 }
 
 .btn:hover {
 	background-color: green;
 }
-
-
 
 
 body {
@@ -32,6 +40,13 @@ body {
 .navbar-nav>li {
 	padding-left: 30px;
 	padding-right: 30px;
+}
+
+.h4 {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 25px;
+	font-weight: 200;
+	margin: 10px 0;
 }
 
 /* .card-container {
@@ -238,6 +253,19 @@ display: inline-block;
 
  }
  
+ .container {
+display: inline-block;
+ }
+ 
+ ul, li {
+ 
+list-style-type: none;
+ 
+ }
+ 
+ 
+ 
+ 
 
 
 
@@ -274,20 +302,16 @@ display: inline-block;
           <span class="card-description subtle">${recipe.description }</span>
           <!-- Expands card out -->
          <!--  <div class="card-read">Sip</div> -->
-        </div>
-        <img src="${recipe.imageUrl}" width="280" height="auto"/>
-          <!--  <img src="https://live.staticflickr.com/65535/52029488110_21911d2ec2_o.png" width="280" height="auto" class="card-media" /> -->
-        <img src=""/>
-      </div>
-      <div class="card-shadow"></div>
-</div>
-
-    <div class="container">
-      <a href="#instructions" class="btn btn-info" data-toggle="collapse">Recipe & Instructions</a>
+         
+         
+         <div class="container">
+      <a href="#instructions" class="btn btn-info" data-toggle="collapse">Make This</a>
       <div id="instructions" class="collapse">
-        <br>
-        <br>
-        <br>
+       
+       	<br>
+	
+	<h4>Instructions & Ingredients</h4>
+       
         <c:forEach var="rc" items="${recipe.ingredients }">
 
 	<li>${rc.quantity} ${rc.unit } ${rc.ingredient.name } </li>
@@ -295,16 +319,35 @@ display: inline-block;
 	
 	</c:forEach>
 	
-	${recipe.instructions }
+
+	<table>
+		<thead>
+			<tr>
+				<th>Quanity</th>
+				<th>Unit</th>
+				<th>Ingredient Name</th>
+			</tr>
+		</thead>
+		<tbody>
+		 <c:forEach var="rc" items="${recipe.ingredients }">
+				<tr>
+					<td>${rc.quantity}</td>
+						<td>${rc.unit }</td>
+						<td>${rc.ingredient.name }</td>
+				
+					
+				</tr>
+			</c:forEach>
+		<tr>${recipe.instructions } </tr>
+		</tbody>
+	</table>
+	
       </div>
     	</div>
-    	
+    	<br>
     <div class="container">
       <a href="#comments" class="btn btn-info" data-toggle="collapse">Comments</a>
       <div id="comments" class="collapse">
-        <br>
-        <br>
-        <br>
         
 <!--------------------- COMMENT FORM  ------------------------------->
         	
@@ -353,6 +396,18 @@ display: inline-block;
       </c:forEach>
       </div>
     	</div>
+         
+         
+         
+        </div>
+        <img src="${recipe.imageUrl}" width="280" height="auto"/>
+          <!--  <img src="https://live.staticflickr.com/65535/52029488110_21911d2ec2_o.png" width="280" height="auto" class="card-media" /> -->
+        <img src=""/>
+      </div>
+      <div class="card-shadow"></div>
+</div>
+
+    
 
  <div> 
  <br>
