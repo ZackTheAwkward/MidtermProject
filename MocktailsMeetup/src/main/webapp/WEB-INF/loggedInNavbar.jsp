@@ -86,6 +86,7 @@ body {
 
 
 	<nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+	
 		<div class="container">
 			<img
 				src="https://live.staticflickr.com/65535/52029337243_b29a2f52f1_w.jpg"
@@ -106,11 +107,13 @@ body {
 
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="viewAllMeetup.do">MEETUPS</a></li>
-				
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="account.do">ACCOUNT</a></li>
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="logout.do">LOG OFF</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="logout.do">ANOThER? </a></li>
+				
 
 					<form class="form-inline my-2 my-lg-0" action="search.do">
 						<input id="subinput" class="form-control mr-sm-2" name="keyword"

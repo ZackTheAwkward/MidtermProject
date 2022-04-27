@@ -383,7 +383,7 @@ list-style-type: none;
             </div>
             <div class="commentcard p-3">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="user d-flex flex-row align-items-center"> <img src="${user.photoUrl }" width="30" class="user-img rounded-circle mr-2">
+                    <div class="user d-flex flex-row align-items-center" > <img src="${user.photoUrl }" width="30" class="user-img rounded-circle mr-2">
                      <span><small class="font-weight-bold text-primary">${rc.user.username }</small> <small class="font-weight-bold">${rc.comment }</small></span> 
                      </div>
                 </div>
