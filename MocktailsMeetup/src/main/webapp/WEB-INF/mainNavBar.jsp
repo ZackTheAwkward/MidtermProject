@@ -35,6 +35,12 @@ background-color: white !important;
 font-family: 'Source Sans Pro', sans-serif;
 font-size: 16px;
 color: black;
+padding-bottom: 0px;
+margin-bottom: 0px;
+ /* position: absolute; */
+ z-index:1;
+ width: 100%;
+ text-align: center;
  }
 
 .nav-item {
