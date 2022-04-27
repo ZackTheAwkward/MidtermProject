@@ -95,8 +95,19 @@ input[placeholder] {
 		<div class="d-flex align-items-start py-3 border-bottom">
 
 			<div class="form-group row">
-				<Label class="form-input-label"> Profile Picture URL: </Label> <input
-					type="text" name="photoUrl" value="${user.photoUrl}" />
+				<Label class="form-input-label"> Profile Picture URL: </Label> 
+				
+				
+				
+	<c:if test="${user.photo != null}">
+				<input type="text" name="photoUrl" value="${user.photoUrl}" /> 
+	</c:if>
+    
+  <c:if test="${user.photo == null}">
+				<input type="text" name="photoUrl" value="https://media.istockphoto.com/photos/people-profile-silhouettes-picture-id1070085826?b=1&k=20&m=1070085826&s=170667a&w=0&h=-MmoOWSPQVwQjV4K32w4_YW7uCjpqgs2n4U2bOpfpVk=" /> 
+   </c:if>
+				
+				
 			</div>
 		</div>
 
@@ -117,7 +128,7 @@ input[placeholder] {
 						class="bg-light form-control" placeholder="${user.username}">
 				</div>
 
-			<form action="sendToViewRecipes.do">
+		<%-- 	<form action="sendToViewRecipes.do">
 					<input type="submit" value="View Your Recipes"
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
@@ -127,7 +138,7 @@ input[placeholder] {
 					<input type="submit" value="View Your Meetups"
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
-				</form>
+				</form> --%>
  
 			</div>
 			<div class="row py-2"></div>
@@ -152,23 +163,6 @@ input[placeholder] {
 
 
 
-
-	<%-- <div class="row py-2"></div>
-	<form action="account.do">
-		<input type="submit" class="btn btn-primary mr-3" value="Save Changes">
-	</form>
-
-	<form action="welcome.do">
-		<button class="btn border button">Cancel</button>
-	</form>
-
-	<div>
-		<form action="deactivateUser.do">
-			<input type="submit" value="Deactivate Account"
-				class="bg-light form-control"> <input type="hidden"
-				name="id" value="${user.id }" />
-		</form>
-	</div> --%>
 
 
 
