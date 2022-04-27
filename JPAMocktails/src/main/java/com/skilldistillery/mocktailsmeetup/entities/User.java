@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -62,7 +63,7 @@ public class User {
 	@ManyToMany(mappedBy = "commenters")
 	private List<Recipe> commentedOn;
 	
-	@OneToMany(mappedBy="createdByUser")
+	@OneToMany(mappedBy="createdByUser", fetch=FetchType.EAGER)
 	private List<Recipe> userCreated;
 	
 	@OneToMany(mappedBy = "user")

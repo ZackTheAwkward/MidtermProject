@@ -1,11 +1,14 @@
 package com.skilldistillery.mocktailsmeetup.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.User;
 
 @Service
@@ -55,6 +58,13 @@ public class UserDaoImpl implements UserDAO {
 		return managed;
 	}
 
+	@Override
+	public List<Recipe> getUserList(int createdByUser) {
+		String jpql = "SELECT r FROM Recipe r WHERE r.createdByUser = :id";
+		List<Recipe> userCreated = em.createQuery(jpql, Recipe.class).setParameter("id", createdByUser).getResultList();
+		return userCreated;
+		
+	}
 
 
 }

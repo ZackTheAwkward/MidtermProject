@@ -257,7 +257,9 @@ public class HomeController {
 			recipe.setCreatedByUser(user);
 			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
 			model.addAttribute("newRecipe", newRecipe);
-			model.addAttribute("userId", recipe.getCreatedByUser().getId());
+			List<Recipe> userCreated = user.getUserCreated();
+			model.addAttribute("user", user);
+			model.addAttribute("userCreated", userCreated);
 			return "viewUserRecipes";
 
 		} else {
@@ -267,7 +269,7 @@ public class HomeController {
 
 	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
 	public String goToUserRecipes(Model model, int id, HttpSession session) {
-		User user = userDAO.findById(id);
+		User user =(User) session.getAttribute("user");
 		List<Recipe> userCreated = user.getUserCreated();
 		model.addAttribute("user", user);
 		model.addAttribute("userCreated", userCreated);
