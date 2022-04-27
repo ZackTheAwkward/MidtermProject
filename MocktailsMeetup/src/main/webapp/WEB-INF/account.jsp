@@ -138,7 +138,15 @@ input[placeholder] {
 		<form action="welcome.do">     
         <button class="btn border button">Cancel</button></form>  
             </div>
+       
+        <div>
+		<form action="deactivateUser.do">     
+        <button class="btn border button">Deactivate</button></form>  
+            </div>
         </div>
+        
+        
+        
        
 </body>
 </html>

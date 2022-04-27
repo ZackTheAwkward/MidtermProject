@@ -56,6 +56,8 @@ public class RecipeDaoImpl implements RecipeDAO {
 		return isDeleted;
 	}
 	
+
+	
 	@Override
 	public List<Recipe> findAll() {
 		String jpql = "SELECT r FROM Recipe r";
