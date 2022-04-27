@@ -277,7 +277,7 @@ public class HomeController {
 			List<Recipe> userCreated = user.getUserCreated();
 			model.addAttribute("user", user);
 			model.addAttribute("userCreated", userCreated);
-			return "viewUserRecipes";
+			return "singleResult";
 
 		} else {
 			return "login";
