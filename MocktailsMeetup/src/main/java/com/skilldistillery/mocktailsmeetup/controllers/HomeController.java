@@ -102,6 +102,16 @@ public class HomeController {
 
 		return "viewUserRecipes";
 	}
+	
+	@RequestMapping(path = "sendToViewMeetups.do", method = RequestMethod.GET)
+	public String goToUserMeetups(Model model, int id) {
+		User user = userDAO.findById(id);
+		List<Meetup> userMeetups = user.getHostedMeetups();
+		model.addAttribute("user", user);
+		model.addAttribute("userMeetups", userMeetups);
+		
+		return "viewUserMeetups";
+	}
 
 	@RequestMapping(path = "updateR.do", method = RequestMethod.POST)
 	public String updateR(Model model, int id) {
@@ -110,6 +120,13 @@ public class HomeController {
 //		System.out.println("In update.do");
 		return "updateRecipe";
 	}
+	
+	@RequestMapping(path = "updateMeetup.do", method = RequestMethod.POST)
+	public String updateMeetup(Model model, int id) {
+		Meetup meetup = meetupDAO.findById(id);
+		model.addAttribute("meetup", meetup);
+		return "meetupUpdate";
+	}
 
 	@RequestMapping(path = "updateRecipe.do", method = RequestMethod.POST)
 	public String updateRecipe(int id, Recipe recipe, Model model) {
@@ -117,6 +134,14 @@ public class HomeController {
 		Recipe updatedRecipe = recipeDAO.updateRecipe(id, recipe);
 		model.addAttribute("recipe", updatedRecipe);
 		return "account";
+		
+	}
+		@RequestMapping(path = "updatedMeetup.do")
+		public String updatedMeetup(int id, Meetup meetup, Model model) {
+//		System.out.println("In updateCoffee.do");
+			Meetup updatedMeetup = meetupDAO.updateMeetup(id, meetup);
+			model.addAttribute("meetup", updatedMeetup);
+			return "account";
 	}
 
 	@RequestMapping(path = { "meetup.do" })

@@ -42,6 +42,7 @@ html, body {
 	<div class="details">
 		<h5>${meetup.title}</h5>
 		<p>${meetup.description}</p>
+		<p>${meetup.address}</p>
 		<h4>${meetup.startTime} ${meetup.endTime}</h4>
 	</div>
 
