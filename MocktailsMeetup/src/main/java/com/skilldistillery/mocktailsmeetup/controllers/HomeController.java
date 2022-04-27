@@ -161,13 +161,13 @@ public class HomeController {
 
 	}
 
-	@RequestMapping("login.do")
-	public ModelAndView displayLogin(HttpSession session, Model model) {
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("user", new User());
-		mv.setViewName("login");
-		return mv;
-	}
+//	@RequestMapping("login.do")
+//	public ModelAndView displayLogin(HttpSession session, Model model) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.addObject("user", new User());
+//		mv.setViewName("login");
+//		return mv;
+//	}
 
 	@RequestMapping(path = "login.do", method = RequestMethod.POST)
 	public String submitLogin(User user, HttpSession session, Model model) {
