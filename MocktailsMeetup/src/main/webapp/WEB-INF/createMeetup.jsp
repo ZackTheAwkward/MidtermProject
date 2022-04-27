@@ -8,12 +8,7 @@
 </head>
 <body>
 	<%@ include file="loggedInNavbar.jsp"%>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	
 <h1>Post a Meetup</h1>
 	<form action="createdMeetup.do" method="POST">
 	<div class="table">

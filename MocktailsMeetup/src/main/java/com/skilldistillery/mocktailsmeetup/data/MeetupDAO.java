@@ -14,4 +14,6 @@ public interface MeetupDAO {
 	Meetup createMeetup(Meetup meetup);
 
 	List<Meetup> findAll();
+
+	List<Meetup> findByOwnerId(int ownerId);
 }

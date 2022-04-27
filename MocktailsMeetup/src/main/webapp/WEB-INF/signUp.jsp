@@ -12,15 +12,6 @@
 
 <%@ include file="mainNavBar.jsp" %>
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <h1>Sign Up </h1>
 
 

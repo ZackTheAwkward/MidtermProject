@@ -9,15 +9,6 @@
 <body>
 <%@ include file="loggedInNavbar.jsp" %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 <div>
 

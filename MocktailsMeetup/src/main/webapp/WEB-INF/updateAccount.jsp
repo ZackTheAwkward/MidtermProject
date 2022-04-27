@@ -11,14 +11,7 @@
 	
 	<br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <br>
 	<div class="container-fluid">
 	<form action="updateAccount.do" method="POST">

@@ -10,13 +10,6 @@
 <body>
 	<%@ include file="loggedInNavbar.jsp"%>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 
 	<div class="main">
 		<h3>List of Meetups</h3>
