@@ -30,7 +30,7 @@
 			<tr>
 				<th>Recipe Id:</th>
 				<th>Name:</th>
-				<th>Description:</th>
+				
 			</tr>
 		</thead>
 		<tbody >
@@ -41,6 +41,11 @@
 					<td><form action="updateR.do" method="POST">
 					<input type= "submit" value= "Update Recipe">
 					<input type="hidden" name="id" value="${c.id }" /></form></td>
+					<td><form action="deleteRecipe.do" method="POST">
+					<input type= "submit" value= "Deactivate Recipe">
+					<input type="hidden" name="id" value="${c.id }" /></form></td>
+					
+					
 				</tr>
 			</c:forEach>
 

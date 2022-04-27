@@ -180,7 +180,7 @@ public class HomeController {
 	@RequestMapping(path = "login.do", method = RequestMethod.POST)
 	public String submitLogin(User user, HttpSession session, Model model) {
 		User u = userDAO.getUserByUserNameAndPassword(user.getUsername(), user.getPassword());
-		if (u == null) {
+		if (u == null && user.isActive()!= true) {
 			return "redirect:login.do";
 		}
 		session.setAttribute("user", u);
@@ -204,6 +204,19 @@ public class HomeController {
 	public String logout(HttpSession session) {
 		session.removeAttribute("user");
 		return "redirect:home.do";
+	}
+	
+	@RequestMapping("deleteRecipe.do")
+	public String deleteRecipe(int id) {
+		Boolean isDeleted = recipeDAO.deleteRecipe(id);
+		return "viewUserRecipes";
+	}
+	
+	@RequestMapping("deactivateUser.do")
+	public String deleteUser(int id, User user) {
+		 user = userDAO.findById(id);
+		userDAO.deleteUser(id, user);
+		return "deactivatedUser";
 	}
 
 	@RequestMapping(path = "update.do", method = RequestMethod.GET)
