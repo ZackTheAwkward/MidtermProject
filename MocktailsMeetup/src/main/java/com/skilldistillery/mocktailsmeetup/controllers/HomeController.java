@@ -91,9 +91,9 @@ public class HomeController {
 	}
 
 	@RequestMapping(path = "sendToViewMeetups.do", method = RequestMethod.GET)
-	public String goToUserMeetups(Model model, int id) {
-		User user = userDAO.findById(id);
-		List<Meetup> userMeetups = user.getHostedMeetups();
+	public String goToUserMeetups(Model model, int id, HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		List<Meetup> userMeetups = meetupDAO.findByOwnerId(user.getId());
 		model.addAttribute("user", user);
 		model.addAttribute("userMeetups", userMeetups);
 

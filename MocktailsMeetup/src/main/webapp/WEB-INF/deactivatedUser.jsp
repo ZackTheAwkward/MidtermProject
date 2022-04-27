@@ -9,14 +9,6 @@
 <body>
 <%@ include file="mainNavBar.jsp" %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <h3>We're sad to see you go!</h3>
 

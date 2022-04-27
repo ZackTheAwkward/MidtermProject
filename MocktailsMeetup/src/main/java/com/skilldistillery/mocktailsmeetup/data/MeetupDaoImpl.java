@@ -57,6 +57,13 @@ public class MeetupDaoImpl implements MeetupDAO {
 
 	}
 	
+	@Override
+	public List<Meetup> findByOwnerId(int ownerId) {
+		String jpql = "SELECT m FROM Meetup m WHERE m.owner.id = :ownerId";
+		return em.createQuery(jpql, Meetup.class).setParameter("ownerId", ownerId).getResultList();
+		
+	}
+	
 	public Meetup createYourOwn(Meetup meetup) {
 		em.persist(meetup);
 		return meetup;

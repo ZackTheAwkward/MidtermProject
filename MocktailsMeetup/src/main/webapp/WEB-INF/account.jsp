@@ -89,17 +89,6 @@ input[placeholder] {
 
 	<%@ include file="loggedInNavbar.jsp"%>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 
 	<div class="wrapper bg-white mt-sm-5">
 		<h4 class="pb-4 border-bottom">Account settings</h4>
@@ -128,7 +117,7 @@ input[placeholder] {
 						class="bg-light form-control" placeholder="${user.username}">
 				</div>
 
-				<form action="sendToViewRecipes.do">
+			<form action="sendToViewRecipes.do">
 					<input type="submit" value="View Your Recipes"
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
@@ -139,7 +128,7 @@ input[placeholder] {
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
 				</form>
-
+ 
 			</div>
 			<div class="row py-2"></div>
 			<form action="account.do">
@@ -164,7 +153,7 @@ input[placeholder] {
 
 
 
-	<div class="row py-2"></div>
+	<%-- <div class="row py-2"></div>
 	<form action="account.do">
 		<input type="submit" class="btn btn-primary mr-3" value="Save Changes">
 	</form>
@@ -179,7 +168,7 @@ input[placeholder] {
 				class="bg-light form-control"> <input type="hidden"
 				name="id" value="${user.id }" />
 		</form>
-	</div>
+	</div> --%>
 
 
 

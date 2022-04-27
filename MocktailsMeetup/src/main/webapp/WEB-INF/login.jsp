@@ -11,13 +11,8 @@
 
 <%@ include file="mainNavBar.jsp" %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<div>
-<h1>Login Page Make Me Pretty</h1>
+<h1>Welcome to Sip n' Social</h1>
+<h3>Let's get you signed in"</h3>
 
 <form action="login.do" method="POST">
 	<input type="text" name="username">

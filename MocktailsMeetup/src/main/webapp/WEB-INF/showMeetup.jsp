@@ -26,17 +26,6 @@ html, body {
 <body>
 	<%@ include file="loggedInNavbar.jsp"%>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 	<h1>Meetup Details</h1>
 
 	<div class="details">
