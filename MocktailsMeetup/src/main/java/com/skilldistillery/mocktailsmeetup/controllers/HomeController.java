@@ -210,8 +210,9 @@ public class HomeController {
 	}
 
 	@RequestMapping("deleteRecipe.do")
-	public String deleteRecipe(int id) {
-		Boolean isDeleted = recipeDAO.deleteRecipe(id);
+	public String deleteRecipe(int id, Recipe recipe) {
+		recipe = recipeDAO.findById(id);
+		recipe = recipeDAO.deleteRecipe(id, recipe);
 		return "viewUserRecipes";
 	}
 
