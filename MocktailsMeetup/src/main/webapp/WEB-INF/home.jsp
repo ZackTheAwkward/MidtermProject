@@ -79,6 +79,14 @@
 </div>
 
 
+	<div>
+	<form action="surpriseMe.do">
+					<input type="submit" value="I'm Feeling Adventrous"
+						class="bg-light form-control"> <%-- <input type="hidden"
+						name="id" value="${user.id }" --%> />
+				</form>
+	</div>
+
 
 <p>**ABOUT**</p>
 
