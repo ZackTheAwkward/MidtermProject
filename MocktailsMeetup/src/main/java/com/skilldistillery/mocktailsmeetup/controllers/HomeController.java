@@ -93,15 +93,7 @@ public class HomeController {
 	}
 
 
-	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
-	public String goToUserRecipes(Model model, int id) {
-		User user = userDAO.findById(id);
-		List<Recipe> userCreated = user.getUserCreated();
-		model.addAttribute("user", user);
-		model.addAttribute("userCreated", userCreated);
 
-		return "viewUserRecipes";
-	}
 
 	@RequestMapping(path = "updateR.do", method = RequestMethod.POST)
 	public String updateR(Model model, int id) {
@@ -244,12 +236,23 @@ public class HomeController {
 			recipe.setCreatedByUser(user);
 			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
 			model.addAttribute("newRecipe", newRecipe);
-			model.addAttribute("userId", user.getId());
+			model.addAttribute("userId", recipe.getCreatedByUser().getId());
 			return "viewUserRecipes";
 			
 		} else {
 			return "login";
 		}
+	}
+	
+
+	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
+	public String goToUserRecipes(Model model, int id, HttpSession session) {
+		User user = userDAO.findById(id);
+		List<Recipe> userCreated = user.getUserCreated();
+		model.addAttribute("user", user);
+		model.addAttribute("userCreated", userCreated);
+
+		return "viewUserRecipes";
 	}
 
 	@RequestMapping(path = "getRecipeComments.do")

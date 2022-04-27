@@ -27,17 +27,12 @@ public class Drink {
 
 	private boolean active;
 
-	@OneToMany(mappedBy = "drink")
-	private List<Recipe> recipes;
-
-	
 	@ManyToMany(mappedBy = "drinks")
 	private List<Category> categories;
-	
+
 	public Drink() {
 		super();
 	}
-
 
 	public List<Category> getCategories() {
 		return categories;
@@ -86,16 +81,7 @@ public class Drink {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
-	
 
-	public List<Recipe> getRecipes() {
-		return recipes;
-	}
-
-	public void setRecipes(List<Recipe> recipes) {
-		this.recipes = recipes;
-	}
 
 	@Override
 	public String toString() {

@@ -9,6 +9,18 @@
 <body>
 <%@ include file="loggedInNavbar.jsp" %>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div>
+
 <form action="createdRecipe.do" method="POST">
 
 <input class="form-control-sm" type="text" name="name" placeholder="Name Your Recipe"/>
@@ -20,13 +32,14 @@
 <input class="form-control-sm" type="text" name="servingSize" placeholder="How many people does this serve? "/>
 	<br>
 	
-
 <input type= "submit" value= "Thank you for sharing a new sip!"/>
 
 
 
 
 </form>
+</div>
+
 
 </body>
 </html>
