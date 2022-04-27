@@ -58,6 +58,7 @@ class AddressTest {
 	@DisplayName("Test address to meetup mapping")
 	void Test2()   {			
 		assertNotNull(address.getMeetup());
+		assertEquals("May is for Mocktail Party", address.getMeetup().getTitle());	
 	}
 
 }
