@@ -141,7 +141,8 @@ input[placeholder] {
        
         <div>
 		<form action="deactivateUser.do">     
-        <button class="btn border button">Deactivate</button></form>  
+          <input type= "submit" value= "Deactivate Account" class="bg-light form-control">
+        <input type= "hidden" name= "id" value = "${user.id }"/></form>
             </div>
         </div>
         
