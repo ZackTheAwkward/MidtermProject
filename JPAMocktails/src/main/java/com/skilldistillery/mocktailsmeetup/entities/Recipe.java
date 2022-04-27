@@ -42,35 +42,25 @@ public class Recipe {
 	@Column(name = "created_date")
 	@CreationTimestamp
 	private LocalDate createDate;
-	
-	@ManyToOne
-	@JoinColumn(name = "drink_id")
-	private Drink drink;
-	
+
 	@OneToMany(mappedBy = "recipe")
-	private List<RecipeComment> comments; 
-	
-	
-	
+	private List<RecipeComment> comments;
+
 	@ManyToMany
-	@JoinTable(name= "favorite_recipe",
-			joinColumns=@JoinColumn(name="recipe_id"),
-			inverseJoinColumns=@JoinColumn(name="user_id"))
+	@JoinTable(name = "favorite_recipe", joinColumns = @JoinColumn(name = "recipe_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
 	private List<User> usersFavorited;
-	
+
 	@ManyToMany
-	@JoinTable(name="recipe_comment",
-	joinColumns=@JoinColumn(name="recipe_id"),
-	inverseJoinColumns=@JoinColumn(name="user_id"))
+	@JoinTable(name = "recipe_comment", joinColumns = @JoinColumn(name = "recipe_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
 	private List<User> commenters;
-	
-	@OneToMany(mappedBy="recipe")
+
+	@OneToMany(mappedBy = "recipe")
 	private List<RecipeIngredient> ingredients;
-	
+
 	@ManyToOne
-	@JoinColumn(name="user_id")
+	@JoinColumn(name = "user_id")
 	private User createdByUser;
-	
+
 	public Recipe() {
 		super();
 	}
@@ -138,17 +128,6 @@ public class Recipe {
 	public void setCreateDate(LocalDate createDate) {
 		this.createDate = createDate;
 	}
-	
-
-	public Drink getDrink() {
-		return drink;
-	}
-
-	public void setDrink(Drink drink) {
-		this.drink = drink;
-	}
-	
-	
 
 	public List<User> getUsersFavorited() {
 		return usersFavorited;
@@ -166,8 +145,6 @@ public class Recipe {
 		this.commenters = commenters;
 	}
 
-	
-	
 	public List<RecipeIngredient> getIngredients() {
 		return ingredients;
 	}
@@ -175,8 +152,6 @@ public class Recipe {
 	public void setIngredients(List<RecipeIngredient> ingredients) {
 		this.ingredients = ingredients;
 	}
-
-
 
 	public List<RecipeComment> getComments() {
 		return comments;
@@ -192,7 +167,6 @@ public class Recipe {
 				+ instructions + ", Serving Size: " + servingSize + ", Create Date: " + createDate;
 	}
 
-
 	public User getCreatedByUser() {
 		return createdByUser;
 	}
@@ -200,6 +174,7 @@ public class Recipe {
 	public void setCreatedByUser(User createdByUser) {
 		this.createdByUser = createdByUser;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

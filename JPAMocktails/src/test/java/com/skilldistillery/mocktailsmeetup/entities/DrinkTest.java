@@ -50,12 +50,12 @@ class DrinkTest {
 
 	}
 
-	@Test
-	@DisplayName("Testing Drink to Recipe mapping")
-	void Test2() {
-		assertNotNull(drink);
-		assertTrue(drink.getRecipes().size() > 0);
-	}
+//	@Test
+//	@DisplayName("Testing Drink to Recipe mapping")
+//	void Test2() {
+//		assertNotNull(drink);
+//		assertTrue(drink.getRecipes().size() > 0);
+//	}
 
 	@Test
 	@DisplayName("Testing Drink to Category mapping")

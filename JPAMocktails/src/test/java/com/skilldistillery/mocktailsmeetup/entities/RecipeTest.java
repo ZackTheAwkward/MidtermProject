@@ -51,12 +51,12 @@ class RecipeTest {
 		
 	}
 	
-	@Test
-	@DisplayName("Testing recipe to drink mapping")
-	void Test2() {
-		assertNotNull(recipe);
-		assertEquals(1, recipe.getDrink().getId());
-	}
+//	@Test
+//	@DisplayName("Testing recipe to drink mapping")
+//	void Test2() {
+//		assertNotNull(recipe);
+//		assertEquals(1, recipe.getDrink().getId());
+//	}
 	
 	@Test
 	@DisplayName("Testing recipe and user comments and favorites mappings")
