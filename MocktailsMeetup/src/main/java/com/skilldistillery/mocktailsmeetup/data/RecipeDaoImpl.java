@@ -1,6 +1,7 @@
 package com.skilldistillery.mocktailsmeetup.data;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -74,13 +75,21 @@ public class RecipeDaoImpl implements RecipeDAO {
 	
 	@Override
 	public RecipeComment createComment(RecipeComment comment) {
-//		em.persist(comment.getUser());
-//		em.persist(comment.getRecipe());
-	
 		em.persist(comment);
 		
 		return comment;
 		
+	}
+	
+	@Override
+	public Recipe surpriseMe() {
+		String jpql = "SELECT r FROM Recipe r";
+	List<Recipe> full = em.createQuery(jpql, Recipe.class).getResultList();
+	Random rand = new Random();
+	Recipe recipe = full.get(rand.nextInt(full.size()));
+    
+	return recipe;
+	
 	}
 
 }

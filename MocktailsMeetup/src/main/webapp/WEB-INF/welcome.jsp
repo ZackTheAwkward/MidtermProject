@@ -18,6 +18,14 @@
 	<h2>
 		<a href="addMeet.do">Create a Meetup</a>
 	</h2>
+	
+	<div>
+	<form action="surpriseMe.do">
+					<input type="submit" value="I'm Feeling Adventrous"
+						class="bg-light form-control"> <%-- <input type="hidden"
+						name="id" value="${user.id }" --%> />
+				</form>
+	</div>
 
 <div>
  <form action="newRecipe.do">
