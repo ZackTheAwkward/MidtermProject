@@ -14,6 +14,7 @@
 </head>
 
 
+
 <style>
 .btn, .btn-info {
 	background-color: black;
@@ -404,7 +405,7 @@ ul, li {
 											<div
 												class="d-flex justify-content-between align-items-center">
 												<div class="user d-flex flex-row align-items-center">
-													<img src="${user.photoUrl}" width="30"
+													<img src="${user.photoUrl }" width="30"
 														class="user-img rounded-circle mr-2"> <span><small
 														class="font-weight-bold text-primary">${rc.user.username }</small>
 														<small class="font-weight-bold">${rc.comment }</small></span>

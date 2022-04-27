@@ -19,7 +19,6 @@
 			<tr>
 				<th>Meetup ID:</th>
 				<th>Title:</th>
-				<th>Description:</th>
 			</tr>
 		</thead>
 		<tbody >

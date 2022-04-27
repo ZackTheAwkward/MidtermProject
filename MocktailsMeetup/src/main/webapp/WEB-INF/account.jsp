@@ -6,83 +6,67 @@
 <head>
 <meta charset="UTF-8">
 <title>Account</title>
+
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 </head>
+
+
+
 <style>
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
 
 body {
-	font-family: 'Poppins', sans-serif;
-	background-color: aliceblue;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #272829;
 }
 
-.wrapper {
-	padding: 30px 50px;
-	border: 1px solid #ddd;
-	border-radius: 15px;
-	margin: 10px auto;
-	max-width: 600px;
+a {
+	color: #149ddd;
+	text-decoration: none;
 }
 
-h4 {
-	letter-spacing: -1px;
-	font-weight: 400;
+a:hover {
+	color: #37b3ed;
+	text-decoration: none;
 }
 
-label {
-	margin-bottom: 0;
-	font-size: 14px;
-	font-weight: 500;
-	color: #777;
-	padding-left: 3px;
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Yeseva One', cursive;
 }
 
-.form-control {
-	border-radius: 10px;
+.col1 {
+	padding-top: 50px;
+	width: 40%;
 	display: inline-block;
+	justify-content: center;
+	text-align: center;
+	margin-left: auto;  
+	margin-right: auto;  
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-input[placeholder] {
-	font-weight: 500;
+.col2 {
+	padding-top: 100px; 
+	width : 60%;
+	display: inline-block;
+	padding-left: 100px;
+	justify-content: center;
+	margin-left: auto;  
+	margin-right: auto;  
+	padding-left: 20px;
 }
 
-.form-control:focus {
-	box-shadow: none;
-	border: 1.5px solid #0779e4;
+input[type="text"] {
+    width: 350px;
 }
 
-.button {
-	background-color: #fff;
-	color: #0779e4;
-}
 
-.button:hover {
-	background-color: #0779e4;
-	color: #fff;
-}
 
-.btn-primary {
-	background-color: #0779e4;
-}
-
-.danger {
-	background-color: #fff;
-	color: #e20404;
-	border: 1px solid #ddd;
-}
-
-.danger:hover {
-	background-color: #e20404;
-	color: #fff;
-}
-
-#deactivate {
-	line-height: 18px;
-}
-}
+/*--------------------------------------------------------- */
 </style>
 <body>
 
@@ -90,76 +74,70 @@ input[placeholder] {
 	<%@ include file="loggedInNavbar.jsp"%>
 
 
-	<div class="wrapper bg-white mt-sm-5">
-		<h4 class="pb-4 border-bottom">Account settings</h4>
-		<div class="d-flex align-items-start py-3 border-bottom">
+	<div class="row no-gutters">
 
-			<div class="form-group row">
-				<Label class="form-input-label"> Profile Picture URL: </Label> 
-				
-				
-				
-	<c:if test="${user.photo != null}">
-				<input type="text" name="photoUrl" value="${user.photoUrl}" /> 
-	</c:if>
-    
-  <c:if test="${user.photo == null}">
-				<input type="text" name="photoUrl" value="https://media.istockphoto.com/photos/people-profile-silhouettes-picture-id1070085826?b=1&k=20&m=1070085826&s=170667a&w=0&h=-MmoOWSPQVwQjV4K32w4_YW7uCjpqgs2n4U2bOpfpVk=" /> 
-   </c:if>
-				
-				
-			</div>
+		<div class="col1" id="leftSide">
+			<img src="${user.photoUrl }" width="200"
+				class="user-img rounded-circle mr-2"> <br>
+			<h4>${user.username } - ${user.firstName}</h4>
+			<p>${user.bio }</p>
+
+
+
 		</div>
 
-		<div class="py-2">
-			<div class="row py-2">
-				<div class="col-md-6">
-					<label for="firstName">First Name</label> <input type="text"
-						class="bg-light form-control" placeholder="${user.firstName}">
-				</div>
-				<div class="col-md-6 pt-md-0 pt-3">
-					<label for="lastName">Last Name</label> <input type="text"
-						class="bg-light form-control" placeholder="${user.lastName}">
-				</div>
-			</div>
-			<div class="row py-2">
-				<div class="col-md-6">
-					<label for="email">Username</label> <input type="text"
-						class="bg-light form-control" placeholder="${user.username}">
-				</div>
+		<div class="col2" id="rightSide">
+		
+		<h4>Update Your Account</h4>
 
-		<%-- 	<form action="sendToViewRecipes.do">
+
+			<label for="firstName">First Name</label> <input type="text"
+				class="bg-light form-control" placeholder="${user.firstName}">
+
+			<label for="lastName">Last Name</label> <input type="text"
+				class="bg-light form-control" placeholder="${user.lastName}">
+
+			<label for="email">Username</label> <input type="text"
+				class="bg-light form-control" placeholder="${user.username}">
+
+			<label for="photoUrl">Profile Picture URL:</label> <input type="text"
+				class="bg-light form-control" placeholder="${user.photoUrl}">
+
+			<%-- 	<form action="sendToViewRecipes.do">
 					<input type="submit" value="View Your Recipes"
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
 				</form>
-
 				<form action="sendToViewMeetups.do">
 					<input type="submit" value="View Your Meetups"
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
 				</form> --%>
- 
-			</div>
-			<div class="row py-2"></div>
+
 			<form action="account.do">
 				<input type="submit" class="btn btn-primary mr-3"
 					value="Save Changes">
 			</form>
 
+
+
 			<form action="welcome.do">
 				<button class="btn border button">Cancel</button>
 			</form>
-		</div>
 
-		<div>
 			<form action="deactivateUser.do">
-				<input type="submit" value="Deactivate Account"
-					class="bg-light form-control"> <input type="hidden"
+				<input type="submit" value="Deactivate Account"> <input type="hidden"
 					name="id" value="${user.id }" />
 			</form>
+
+
+
 		</div>
 	</div>
+
+
+
+
 
 
 
