@@ -23,7 +23,7 @@
 	<form action="surpriseMe.do">
 					<input type="submit" value="I'm Feeling Adventrous"
 						class="bg-light form-control"> <%-- <input type="hidden"
-						name="id" value="${user.id }" --%> />
+						name="id" value="${user.id }" --%> 
 				</form>
 	</div>
 
@@ -34,12 +34,13 @@
 
 
 	<div class="main">
-		<h3>Meetups happening near you</h3>
+		<h3>Upcoming Meetups happening near you</h3>
 		<table class="table table-borderless">
 			<thead>
 				<tr>
 					<th>ID</th>
 					<th>Meetup Name</th>
+					<th>Meetup Date</th>					
 					<th>Meetup Address</th>
 				</tr>
 			</thead>
@@ -47,7 +48,8 @@
 				<c:forEach var="m" items="${meetup}">
 					<tr>
 						<td>${m.id}</td>
-						<td><a href="getMeetups.do?Id=${m.id}">${m.title}</a></td>
+						<td><a href="getMeetups.do?Id=${m.id}">${m.title}</a></td>						
+						<td>${m.meetupDate}</td>
 						<td>${m.address}</td>
 					</tr>
 				</c:forEach>
