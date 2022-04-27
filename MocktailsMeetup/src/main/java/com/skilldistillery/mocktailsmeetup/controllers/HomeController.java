@@ -180,7 +180,7 @@ public class HomeController {
 	@RequestMapping(path = "login.do", method = RequestMethod.POST)
 	public String submitLogin(User user, HttpSession session, Model model) {
 		User u = userDAO.getUserByUserNameAndPassword(user.getUsername(), user.getPassword());
-		if (u == null || user.isActive()==false) {
+		if (u == null && user.isActive()!= true) {
 			return "redirect:login.do";
 		}
 		session.setAttribute("user", u);
