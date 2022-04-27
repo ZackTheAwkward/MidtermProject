@@ -83,6 +83,12 @@ public class RecipeDaoImpl implements RecipeDAO {
 		
 	}
 
+	@Override
+	public List<Recipe> findAllUserCreated(int id) {
+		String jpql = "SELECT r FROM Recipe r WHERE r.createdByUser.id = :id";
+		List<Recipe> full = em.createQuery(jpql, Recipe.class).setParameter("id", id).getResultList();
+		return full;
+	}
 }
 	
 

@@ -211,8 +211,8 @@ public class HomeController {
 
 	@RequestMapping("deleteRecipe.do")
 	public String deleteRecipe(int id, Recipe recipe) {
-		recipe = recipeDAO.findById(id);
-		recipe = recipeDAO.deleteRecipe(id, recipe);
+			recipe = recipeDAO.findById(id);
+			recipe = recipeDAO.deleteRecipe(id, recipe);
 		return "viewUserRecipes";
 	}
 
@@ -288,10 +288,12 @@ public class HomeController {
 	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
 	public String goToUserRecipes(Model model, int id, HttpSession session) {
 		User user = (User) session.getAttribute("user");
-		List<Recipe> userCreated = user.getUserCreated();
+		List<Recipe> userCreated = recipeDAO.findAllUserCreated(user.getId());
+//		List<Meetup> userMeetups = meetupDAO.findByOwnerId(user.getId());
+
+		
 		model.addAttribute("user", user);
 		model.addAttribute("userCreated", userCreated);
-
 		return "viewUserRecipes";
 	}
 
