@@ -210,6 +210,14 @@ public class User {
 		this.userRecipeComments = userRecipeComments;
 	}
 
+	public List<Meetup> getHostedMeetups() {
+		return hostedMeetups;
+	}
+
+	public void setHostedMeetups(List<Meetup> hostedMeetups) {
+		this.hostedMeetups = hostedMeetups;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id, username);

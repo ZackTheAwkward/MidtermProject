@@ -124,6 +124,10 @@ input[placeholder] {
             <form action="sendToViewRecipes.do">
         <input type= "submit" value= "View Your Recipes" class="bg-light form-control">
         <input type= "hidden" name= "id" value = "${user.id }"/></form>
+        
+            <form action="sendToViewMeetups.do">
+        <input type= "submit" value= "View Your Meetups" class="bg-light form-control">
+        <input type= "hidden" name= "id" value = "${user.id }"/></form>
 
         </div>
         <div class="row py-2">

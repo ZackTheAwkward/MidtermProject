@@ -29,46 +29,35 @@
 
 
 <style>
+
+
+.navbar {
+background-color: white !important;
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 16px;
+color: black;
+ }
+
+.nav-item {
+	margin-left: 0px;
+	padding-right: 75px !important;
+	padding-left: 10px;
+	font-family: 'Source Sans Pro', sans-serif;
+	justify-content: center;
+}
 .navbar-scroll .nav-link, .navbar-scroll .fa-bars, .navbar-scroll .navar-brand
 	{
 	color: #4f4f4f;
 }
 
-.navbar-scroll .nav-link:hover {
-	color: #1266f1;
+.nav-link:hover {
+	color: pink;
 }
 
-/* Color of the links AFTER scroll */
-.navbar-scrolled .nav-link, .navbar-scrolled .fa-bars, .navbar-scrolled .navar-brand
-	{
-	color: #4f4f4f;
-}
 
-/* Color of the navbar AFTER scroll */
-.navbar-scroll, .navbar-scrolled {
-	background-color: #fff;
-}
-
-/* An optional height of the navbar AFTER scroll */
-.navbar.navbar-scroll.navbar-scrolled {
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-body {
-	background-color: #eee;
-	font-family: 'Source Sans Pro', sans-serif;
-}
-
-.navbar-nav>li {
-	margin-left: 0px;
-	 padding-left : 10px;
-	padding-right: 40px;
-	padding-left: 10px;
-}
 
 .btn, .btn-info {
-	background-color: black;
+	background-color: black !important;
 	color: white;
 	border: 0px;
 	border-color: black;
@@ -78,6 +67,13 @@ body {
 	background-color: grey;
 }
 
+/* ----------------------------------------------------------------END NAV BAR STYLING------------------------------*/
+/* ---------------START BODY STYLING _________________________________________________------------------------------*/
+
+body {
+	background-color: #eee;
+	font-family: 'Source Sans Pro', sans-serif;
+}
 </style>
 
 
@@ -85,42 +81,44 @@ body {
 <body>
 
 
-	<nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
-		<div class="container">
-			<img
-				src="https://live.staticflickr.com/65535/52029337243_b29a2f52f1_w.jpg"
-				width="auto" height="75px" />
-			<button class="navbar-toggler ps-0" type="button"
-				data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-				aria-controls="navbarExample01" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span
-					class="navbar-toggler-icon d-flex justify-content-start align-items-center">
-					<i class="fas fa-bars"></i>
-				</span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item active"><a class="nav-link"
-						aria-current="page" href="welcome.do">HOME</a></li>
 
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="viewAllMeetup.do">MEETUPS</a></li>
-				
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="account.do">ACCOUNT</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="logout.do">LOG OFF</a></li>
 
-					<form class="form-inline my-2 my-lg-0" action="search.do">
-						<input id="subinput" class="form-control mr-sm-2" name="keyword"
-							type="search" placeholder="Search" aria-label="Search">
-						<button id="searchbutton"
-							class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					</form>
-				</ul>
-			</div>
-	</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="welcome.do">
+  <img src="https://live.staticflickr.com/65535/52029337243_b29a2f52f1_w.jpg" width="auto" height="75px" ></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="welcome.do">HOME <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="viewAllMeetup.do">MEETUPS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.do">LOG OFF</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="account.do" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ACCOUNT
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="account.do">Account</a>
+          <a class="dropdown-item" href="#">See My Recipes</a>
+          <a class="dropdown-item" href="#">My Meetups</a>
+        </div>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="search.do">
+      <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Sip Sip Hooray" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
