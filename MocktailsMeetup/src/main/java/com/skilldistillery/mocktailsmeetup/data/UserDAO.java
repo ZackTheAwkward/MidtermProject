@@ -1,5 +1,8 @@
 package com.skilldistillery.mocktailsmeetup.data;
 
+import java.util.List;
+
+import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.User;
 
 public interface UserDAO {
@@ -13,5 +16,7 @@ public interface UserDAO {
 	User updateUser(int userId, User user);
 	
 	User deleteUser(int userId, User user);
+
+	List<Recipe> getUserList(int userId);
 
 }
