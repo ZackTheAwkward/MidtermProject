@@ -10,20 +10,13 @@
 <body>
 
 <%@ include file="mainNavBar.jsp" %>
-	<h1>Results Matching Your Search: </h1>
 
 
 	<c:choose>
 	
 		<c:when test="${! empty recipeMatch}">
-
-			<br>
-			<br>
 			
-			<br>
-			<br>
-			
-			<h2>Matched by Recipe Name or Description:</h2>
+	<h1>Results Matching Your Search: </h1>
 	<table>
 		<thead>
 			<tr>
