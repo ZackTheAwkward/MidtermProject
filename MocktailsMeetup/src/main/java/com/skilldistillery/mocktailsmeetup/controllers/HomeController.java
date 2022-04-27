@@ -268,9 +268,9 @@ public class HomeController {
 			recipe.setCreatedByUser(user);
 			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
 			model.addAttribute("newRecipe", newRecipe);
-			List<Recipe> userCreated = user.getUserCreated();
-			model.addAttribute("user", user);
-			model.addAttribute("userCreated", userCreated);
+//			List<Recipe> userCreated = user.getUserCreated();
+//			model.addAttribute("user", user);
+//			model.addAttribute("userCreated", userCreated);
 			return "singleResult";
 
 		} else {
