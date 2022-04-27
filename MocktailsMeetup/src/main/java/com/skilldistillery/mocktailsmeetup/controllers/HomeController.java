@@ -213,7 +213,7 @@ public class HomeController {
 	public String deleteRecipe(int id, Recipe recipe) {
 		recipe = recipeDAO.findById(id);
 		recipe = recipeDAO.deleteRecipe(id, recipe);
-		return "viewUserRecipes";
+		return "account";
 	}
 
 	@RequestMapping("deactivateUser.do")
