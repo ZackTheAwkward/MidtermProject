@@ -180,7 +180,10 @@ public class HomeController {
 	@RequestMapping(path = "login.do", method = RequestMethod.POST)
 	public String submitLogin(User user, HttpSession session, Model model) {
 		User u = userDAO.getUserByUserNameAndPassword(user.getUsername(), user.getPassword());
-		if (u == null | u.isActive() == false) {
+		if (u == null) {
+			return "redirect:login.do";
+		}
+		if (u.isActive() == false) {
 			return "redirect:login.do";
 		}
 		session.setAttribute("user", u);
@@ -205,16 +208,17 @@ public class HomeController {
 		session.removeAttribute("user");
 		return "redirect:home.do";
 	}
-	
+
 	@RequestMapping("deleteRecipe.do")
 	public String deleteRecipe(int id) {
 		Boolean isDeleted = recipeDAO.deleteRecipe(id);
 		return "viewUserRecipes";
 	}
-	
+
 	@RequestMapping("deactivateUser.do")
-	public String deleteUser(int id, User user) {
-		 user = userDAO.findById(id);
+	public String deleteUser(int id, User user, HttpSession session) {
+		user = (User) (User) session.getAttribute("user");
+
 		userDAO.deleteUser(id, user);
 		return "deactivatedUser";
 	}
@@ -282,7 +286,7 @@ public class HomeController {
 
 	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
 	public String goToUserRecipes(Model model, int id, HttpSession session) {
-		User user =(User) session.getAttribute("user");
+		User user = (User) session.getAttribute("user");
 		List<Recipe> userCreated = user.getUserCreated();
 		model.addAttribute("user", user);
 		model.addAttribute("userCreated", userCreated);

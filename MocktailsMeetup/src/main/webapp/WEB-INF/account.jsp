@@ -164,5 +164,25 @@ input[placeholder] {
 
 
 
+	<div class="row py-2"></div>
+	<form action="account.do">
+		<input type="submit" class="btn btn-primary mr-3" value="Save Changes">
+	</form>
+
+	<form action="welcome.do">
+		<button class="btn border button">Cancel</button>
+	</form>
+
+	<div>
+		<form action="deactivateUser.do">
+			<input type="submit" value="Deactivate Account"
+				class="bg-light form-control"> <input type="hidden"
+				name="id" value="${user.id }" />
+		</form>
+	</div>
+
+
+
+
 </body>
 </html>
