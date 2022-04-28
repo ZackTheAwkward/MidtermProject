@@ -87,9 +87,14 @@
 				</form>
 	</div>
 
+<div class="about-section">
 
-<p>**ABOUT**</p>
 
+  <h1>About Us Page</h1>
+  <p>Being social is already hard enough- we take the pressure out of going out, and staying sober. </p>
+  <p>We offer a vast, and growing database of mocktail recipes that are sure to hit the spot for everyone!</p>
+  <p>We hope you'll join the Sip community and find your crowd of like-minded go-outers.</p>
+</div>
 
 </body>
 </html>
