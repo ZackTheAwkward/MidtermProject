@@ -113,8 +113,6 @@ padding-top: 10px;
 			<label for="firstName"></label> <input type="text" name="firstName" class="bg-light form-control" placeholder="First Name: ${user.firstName}"> 
 			<label for="lastName"></label> <input type="text" name="lastName" class="bg-light form-control" placeholder="Last Name: ${user.lastName}"> 
 			<label for="email"></label> <input type="text" name="username" class="bg-light form-control" placeholder="User Name: ${user.username}"> 
-			<label for="lastName" ></label> <input type="text"class="bg-light form-control" name="lastName" placeholder="Last Name: ${user.lastName}"> 
-			<label for="email"></label> <input type="text" name="userName" class="bg-light form-control" placeholder="User Name: ${user.username}"> 
 			<label for="photoUrl"></label> <input type="text" name ="photoUrl" class="bg-light form-control" placeholder="User Photo Url: ${user.photoUrl}"> <br>
 
 
