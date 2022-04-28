@@ -40,9 +40,6 @@ padding-top: 150px;
 
 }
 
-input[type="text"] {
-width: 200px;
-}
 
 .container input[type="text"] {
 	width: 300px;

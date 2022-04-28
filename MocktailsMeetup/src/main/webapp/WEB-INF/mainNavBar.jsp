@@ -142,7 +142,7 @@ body {
         <a class="nav-link" href="home.do">HOME <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="home.do">ABOUT</a>
+        <a class="nav-link" href="#about_us">ABOUT</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="goLogin.do">MEETUPS</a>
