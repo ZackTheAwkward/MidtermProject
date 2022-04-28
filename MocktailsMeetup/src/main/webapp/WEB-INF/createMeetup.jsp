@@ -6,11 +6,40 @@
 <meta charset="UTF-8">
 <title>Create a Meetup</title>
 </head>
+
+
+
+<style>
+
+.container input[type="text"] {
+width: 400px !important;
+
+}
+
+.container {
+margin-top: 100px;
+margin-bottom: 100px;
+padding-right: 0px;
+padding-left: 0px;
+background-color: white;
+height: 500px;
+width: 650px !important;
+border-radius: 3%;
+}
+
+h1 {
+text-align: center;}
+
+</style>
+
 <body>
 	<%@ include file="loggedInNavbar.jsp"%>
 	
-<h1>Post a Meetup</h1>
-	<form action="createdMeetup.do" method="POST">
+	
+	<div class="container">
+	<h1>Post a Meetup</h1>
+
+	<form action="createdMeetup.do" method="POST" style="margin: auto; width: 500px;">
 	<div class="table">
 	<input class="form-control-sm" type="text" name="title" placeholder="Title"/>
 	<br>
@@ -51,6 +80,7 @@
 	<input type ="submit" value="sumbit"/>
 	</div>
 	</form>
+	</div>
 
 
 
