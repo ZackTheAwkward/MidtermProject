@@ -44,7 +44,7 @@ width: 1000px;
 } 
 .card {
   margin: 10px;
-  background-color: #fff;
+  background-color: #b2c9ab;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -65,7 +65,7 @@ width: 1000px;
 }
 
 .tag {
-  background: #cccccc;
+  background: #00798c;
   border-radius: 50px;
   font-size: 12px;
   margin: 0;
@@ -94,7 +94,7 @@ font-family: 'Source Sans Pro', sans-serif;
 
 .contained {
   position: relative;
-  width: 320px;
+  width: 600px;
   margin: 100px auto 0 auto;
   perspective: 1000px;
   
@@ -192,7 +192,7 @@ color: #000000;
 
 .why-sip .box {
  
-padding-top: 30px;
+padding: 10px;
 	z-index: 1;
 	/* width: 800px; */
 	
@@ -201,7 +201,10 @@ padding-top: 30px;
 /*   justify-content: space-evenly; */
 align-items: center; 
  
-  background-color: white;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-style: inset;
+    border-width: 5px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   transition: all ease-in-out 0.3s;
   height: 100%; 
@@ -212,7 +215,7 @@ align-items: center;
  display: block;
   font-size: 28px;
   font-weight: 700;
-  color: #fec89a; 
+  color: #56ab91; 
    width: 80%  
 }
 .why-sip .box h4 {
@@ -229,16 +232,17 @@ align-items: center;
   padding: 0;
 }
 .why-sip .box:hover {
-  background: #fec89a;
+  background: #00798c;
   padding: 30px 30px 70px 30px;
   box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+  color: #ffffff;
 }
 .why-sip .box:hover span, .why-us .box:hover h4, .why-us .box:hover p {
-  color: #fec89a;
+  color: #ffffff;
 }
 
 section {
-  padding: 60px;
+  padding: 80px;
   align-items: center; 
  
   
@@ -264,7 +268,7 @@ h2 {
 }
 
 </style>
-<body>
+<body style = background-color:#eee>
 
 
 	<%@ include file="loggedInNavbar.jsp"%>
@@ -320,10 +324,10 @@ h2 {
     </section>
 
 <section>
-<h2>Meetups in your area: </h2>
+<h1 style= color:#00798c >MEETUPS IN YOUR AREA </h1>
 <div class="container">
     <c:forEach var="m" items="${meetup}">
-  <div class="card ">
+  <div style = background-color:#ffffff  class="card ">
 
     <div class="card-body">
       <span class="tag tag-teal">${m.meetupDate}</span>
