@@ -7,6 +7,10 @@
 <meta charset="UTF-8">
 <title>Sip n' Social Home</title>
 
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&family=Yeseva+One&display=swap"
+	rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+Pro:ital,wght@0,200;0,400;1,300&display=swap" rel="stylesheet">
@@ -69,7 +73,8 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h4, h5,  {
+
 font-family: 'Playfair Display', serif;
 color: #black;
 }
@@ -80,15 +85,19 @@ h2 {
   size: 25px;
 }
 
-h3 {
+h6 {
   font-family: 'Source Sans Pro', sans-serif;
   color: #black;
-  weight: 200px;
-  font-size: 10px;
-  padding-top: 20px;
-  padding-bottom: 200px;
+  font-size: 16px;
+  weight: thin;
+  
+/*   padding-top: 20px;
+  padding-bottom: 200px; */
   letter-spacing: 2px;
 }
+
+input[type=submit] {
+ width: 300px; height: 50px; }
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -341,6 +350,8 @@ section {
 
 
 
+
+
 </style>
 
 <body>
@@ -378,13 +389,7 @@ section {
 </div>
 
 
-	<div>
-	<form action="surpriseMe.do">
-					<input type="submit" value="I'm Feeling Adventrous"
-						class="bg-light form-control"> <%-- <input type="hidden"
-						name="id" value="${user.id }" --%> />
-				</form>
-	</div>
+	
 
 <main id="main">
     <section id="about" class="about">
@@ -402,8 +407,21 @@ section {
               <h2>Come for the Recipes <br><strong>Stay for the Community</strong></h2>
               <br>
 
-              <h4> Being social is already hard enough- we take the pressure out of going out, and staying sober. We offer a vast, and growing database of mocktail recipes that are sure to hit the spot for everyone! We hope you'll join the Sip community and find your crowd of like-minded go-outers.
-              </h4>
+              <h6> Being social is already hard enough- we take the pressure out of going out, and staying sober. We offer a vast, and growing database of mocktail recipes that are sure to hit the spot for everyone! We hope you'll join the Sip community and find your crowd of like-minded go-outers.
+              </h6>
+              <br>
+               <br>
+               <br>
+               <br>
+               <h2>Not sure what you want?</h2>
+               <p>Try our surprise recipe generator!</p>
+              <div>
+	<form action="surpriseMe.do">
+					<input type="submit" value="I'm Feeling Adventrous"
+						class="bg-light form-control"> <%-- <input type="hidden"
+						name="id" value="${user.id }" --%> 
+				</form>
+	</div>
 
 
 
