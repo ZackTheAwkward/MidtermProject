@@ -100,35 +100,6 @@ input[type=submit] {
  width: 300px; 
  height: 50px; }
 
-/*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
-.back-to-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 996;
-  background: #ffb03b;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  transition: all 0.4s;
-}
-.back-to-top i {
-  font-size: 28px;
-  color: #fff;
-  line-height: 0;
-}
-.back-to-top:hover {
-  background: #ffc064;
-  color: #fff;
-}
-.back-to-top.active {
-  visibility: visible;
-  opacity: 1;
-}
 
 
 section {
@@ -308,7 +279,7 @@ section {
   display: block;
   font-size: 28px;
   font-weight: 700;
-  color: #fec89a;
+  color: #00798c;
 }
 .why-sip .box h4 {
   font-size: 24px;
@@ -324,12 +295,12 @@ section {
   padding: 0;
 }
 .why-sip .box:hover {
-  background: #fec89a;
+  background: #00798c;
   padding: 30px 30px 70px 30px;
   box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
 }
 .why-sip .box:hover span, .why-us .box:hover h4, .why-us .box:hover p {
-  color: #fec89a;
+  color: white;
 }
 
 /*------Meetups --------------------------------------------------------------*/
@@ -390,16 +361,16 @@ section {
 </div>
 
 
-	
 
 <main id="main">
     <section id="about" class="about">
       <div class="container-fluid">
+	<a id="about_us" style="color:white;">About us</a>
 
         <div class="row">
 
-          <div class="col-lg-5"> <img src="https://live.staticflickr.com/65535/52034593087_33c4ac1494_o.png" height="600px">
-
+          <div class="col-lg-5"> <img src="https://live.staticflickr.com/65535/52036960264_147fc36ec5_c.jpg" height="600px" width="600px">
+		
           </div>
 
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
