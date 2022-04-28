@@ -25,6 +25,10 @@
 	
 <input class="form-control-sm" type="text" name="servingSize" placeholder="How many people does this serve? "/>
 	<br>
+	
+	
+	
+	
 <input type= "submit" value= "Thank you for sharing a new sip!"/>
 
 </form>

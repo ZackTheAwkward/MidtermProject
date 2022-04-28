@@ -123,7 +123,7 @@ public class HomeController {
 //		System.out.println("In updateCoffee.do");
 		Recipe updatedRecipe = recipeDAO.updateRecipe(id, recipe);
 		model.addAttribute("recipe", updatedRecipe);
-		return "prePostRecipe";
+		return "account";
 
 	}
 
