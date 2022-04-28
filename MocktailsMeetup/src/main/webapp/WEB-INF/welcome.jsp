@@ -94,7 +94,7 @@ font-family: 'Source Sans Pro', sans-serif;
 
 .contained {
   position: relative;
-  width: 600px;
+  width: 320px;
   margin: 100px auto 0 auto;
   perspective: 1000px;
   
