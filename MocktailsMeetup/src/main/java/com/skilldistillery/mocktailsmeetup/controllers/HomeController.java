@@ -123,7 +123,7 @@ public class HomeController {
 //		System.out.println("In updateCoffee.do");
 		Recipe updatedRecipe = recipeDAO.updateRecipe(id, recipe);
 		model.addAttribute("recipe", updatedRecipe);
-		return "account";
+		return "prePostRecipe";
 
 	}
 
@@ -264,34 +264,6 @@ public class HomeController {
 		}
 	}
 
-	@RequestMapping(path = "createdRecipe.do", method = RequestMethod.POST)
-	public String createRecipe(Recipe recipe, Model model, HttpSession session) {
-		User user = (User) session.getAttribute("user");
-		if (user != null) {
-			recipe.setCreatedByUser(user);
-			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
-			model.addAttribute("newRecipe", newRecipe);
-
-			return "singleResult";
-
-		} else {
-			return "login";
-		}
-	}
-
-	@RequestMapping(path = "addIngredients.do", method = RequestMethod.POST)
-	public String addIngredients(Recipe recipe, Model model, HttpSession session, RecipeIngredient recipeIngredient) {
-		User user = (User) session.getAttribute("user");
-		if (user != null) {
-			Ingredient newIngredient = ingredientDAO.createIngredient(recipeIngredient);
-			model.addAttribute("newIngrident", newIngredient);
-			return "singleResult";
-			
-		} else {
-			return "login";
-		}
-	}
-
 	@RequestMapping(path = "sendToViewRecipes.do", method = RequestMethod.GET)
 	public String goToUserRecipes(Model model, int id, HttpSession session) {
 		User user = (User) session.getAttribute("user");
@@ -322,6 +294,57 @@ public class HomeController {
 			recipeDAO.createComment(recipeComment);
 			model.addAttribute("recipe", recipeDAO.findById(recipeId));
 			return "singleResult";
+		} else {
+			return "login";
+		}
+	}
+
+//	@RequestMapping(path = "prePost.do", method = RequestMethod.POST)
+//	public String addIngredient(Recipe recipe, Model model, HttpSession session,
+//			Double quantity, String unit, Ingredient ingredient, int recipeId) {
+//		User user = (User) session.getAttribute("user");
+//		if (user != null) {
+//
+//			recipeIngredient.setRecipe(recipeDAO.findById(recipeId));
+//			recipeIngredient.setQuantity(quantity);
+//			recipeIngredient.setUnit(unit);
+//			recipeIngredient.setIngredient(ingredient);
+//			recipeDAO.addIngredient(recipeIngredient);
+//			model.addAttribute("recipe", recipeDAO.findById(recipeId));
+//			return "prePostRecipe";
+//		} else {
+//			return "login";
+//		}
+//	}
+	@RequestMapping(path = "prePost.do", method = RequestMethod.POST)
+	public String addIngredient(RecipeIngredient recipeIngredient, Model model, HttpSession session, int recipeId, int ingredientId) {
+		User user = (User) session.getAttribute("user");
+		if (user != null) {
+			
+			recipeIngredient.setRecipe(recipeDAO.findById(recipeId));
+			recipeIngredient.setIngredient(ingredientDAO.findById(ingredientId));
+			
+			
+			recipeDAO.addIngredient(recipeIngredient);
+			
+			model.addAttribute("ingredients", ingredientDAO.listAll());
+			model.addAttribute("recipe", recipeDAO.findById(recipeId));
+			return "prePostRecipe";
+		} else {
+			return "login";
+		}
+	}
+
+	@RequestMapping(path = "createdRecipe.do", method = RequestMethod.POST)
+	public String createRecipe(Recipe recipe, Model model, HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		if (user != null) {
+			recipe.setCreatedByUser(user);
+			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
+			model.addAttribute("recipe", newRecipe);
+			model.addAttribute("ingredients", ingredientDAO.listAll());
+			return "prePostRecipe";
+
 		} else {
 			return "login";
 		}
