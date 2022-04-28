@@ -15,20 +15,20 @@
 
 
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
  body {
 
  justify-content: center;
   align-items: center;
   margin: 0;
-  background-color: #f7f8fc;
-  font-family: 'Montserrat', sans-serif;
-  color: #001233;
+   font-family: 'Source Sans Pro', sans-serif;
+  color: #black;
+  background: #eee;
 }
 .container {
 
-	padding-top: 160px;
+	/* padding-top: 160px; */
 	z-index: 1;
 
 width: 1000px;
@@ -187,6 +187,81 @@ color: #000000;
   }
 }
 
+/* Breakout Section */
+
+
+.why-sip .box {
+ 
+padding-top: 30px;
+	z-index: 1;
+	/* width: 800px; */
+	
+  flex-wrap: wrap; 
+  
+/*   justify-content: space-evenly; */
+align-items: center; 
+ 
+  background-color: white;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.3s;
+  height: 100%; 
+  max-width: 80%
+ 
+}
+.why-sip .box span {
+ display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fec89a; 
+   width: 80%  
+}
+.why-sip .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: black;
+}
+.why-sip .box p {
+  color: black;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+.why-sip .box:hover {
+  background: #fec89a;
+  padding: 30px 30px 70px 30px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+}
+.why-sip .box:hover span, .why-us .box:hover h4, .why-us .box:hover p {
+  color: #fec89a;
+}
+
+section {
+  padding: 60px;
+  align-items: center; 
+ 
+  
+}
+.container2 {
+
+padding-top: 30px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: #black;
+  size: 25px;
+}
+.links {
+  margin: auto;
+  font-size: 20px;
+   top: 50%;
+  left: 50%;
+  position: static;
+  color: #001233;
+  
+}
 
 </style>
 <body>
@@ -194,7 +269,7 @@ color: #000000;
 
 	<%@ include file="loggedInNavbar.jsp"%>
 	
-	
+	<section>
 	<div class="contained">
   <div class="carousel">
     <div class="carousel__face">    <img class="d-block w-100" src="https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd2c1221a-47c7-11ec-9969-911e63457092.jpg?crop=5170%2C2908%2C372%2C545&resize=1200" alt="first slide">
@@ -209,42 +284,46 @@ color: #000000;
     <div class="carousel__face"><img class="d-block w-100" src="https://www.thelittleepicurean.com/wp-content/uploads/2015/12/sparkling-blackcurrant-raspberry-mocktail-2-700x450.jpg" alt="first slide"></div> 
   </div>
 </div>
-	
+	</section>
 
- 	<%-- <h1>Welcome ${user.username}</h1>
-	<br>
+  <section id="why-sip" class="why-sip">
+      <div class="container2">
 
-	<div class = top-container>
-	<h2>
-		<a href="addMeet.do">Create a Meetup</a>
-	</h2>
-	</div>
-	
-	<div class = top-container>
-		<form action="surpriseMe.do">
-			<input type="submit" value="I'm Feeling Adventrous"
-				class="bg-light form-control">
-		</form>
-	</div> 
+        <div class="row">
 
+          <div class="col-lg-4">
+            <div class="box">
+              <!-- <span>01</span> -->
+              <h2>Want to host a Sip n' Social Meetup?</h2>
+              <p><a class= links href="addMeet.do">Head to the meetup page to set one up!</a></p>
+            </div>
+          </div>
 
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+             <!--  <span>02</span> -->
+              <h2>Have a recipe you know everyone will love?</h2>
+              <a class= links href="newRecipe.do">Click here to share it with the Sip community!</a>
+            </div>
+          </div>
 
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <!-- <span>03</span> -->
+              <h2>Need us to pick a drink for you?</h2>
+              <p><a class= links href="surpriseMe.do">I'm feelin' adventurous!</a></p>
+            </div>
+          </div>
 
-	<div class = top-container>
-		<form action="newRecipe.do">
-			<input type="submit" value="Share A Recipe" class="ShareRec" />
-		</form>
-	</div> 
+        </div>
+      </div>
+    </section>
 
- --%>
-
-
+<section>
+<h2>Meetups in your area: </h2>
 <div class="container">
     <c:forEach var="m" items="${meetup}">
   <div class="card ">
-   <!--  <div class="card-header">
-      <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
-    </div> -->
 
     <div class="card-body">
       <span class="tag tag-teal">${m.meetupDate}</span>
@@ -259,7 +338,7 @@ color: #000000;
   </div>
 	</c:forEach>
   </div>
-  
+  </section>
 
 
 </body>
