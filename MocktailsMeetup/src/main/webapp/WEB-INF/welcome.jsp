@@ -74,7 +74,7 @@ width: 1000px;
   text-transform: uppercase;
   cursor: pointer;
 }
-.tag-teal {
+/* .tag-teal {
   background-color: #47bcd4;
 }
 .tag-purple {
@@ -82,9 +82,10 @@ width: 1000px;
 }
 .tag-pink {
   background-color: #cd5b9f;
-}
+} */
 
 .card-body p {
+font-family: 'Source Sans Pro', sans-serif;
   font-size: 13px;
   margin: 0 0 40px;
 }
@@ -140,18 +141,19 @@ width: 1000px;
 #linkTO3 {
   margin: auto;
   font-size: 2rem;
-bottom: 8px;
+	bottom: 8px;
   left: 16px;
   position: absolute;
   color: #f8f7ff;
   text-decoration: none;
 }
-#cardLink {
-  
-  color: #001233;
-  text-decoration: none;
-}
 
+#cardLink {
+color: #000000;
+ text-decoration: none;
+ font-family: 'Playfair Display', serif;
+
+}
 
 .carousel__face:nth-child(1) {
  

@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 	display: inline-block;
 	justify-content: center;
 	text-align: center;
-	background-color: white;
+	background-color: #fec89a;
 	border-radius: 3%;
 }
 
@@ -108,24 +108,25 @@ padding-top: 10px;
 
 			<h3>Update Account</h3>
 
-
+			<form action="updateAccount.do" method="POST">
+			<input type="hidden" name="id" value="${user.id }" />
 			<label for="firstName"></label> <input type="text" name="firstName" class="bg-light form-control" placeholder="First Name: ${user.firstName}"> 
-			<label for="lastName" name="lastName"></label> <input type="text"class="bg-light form-control" placeholder="Last Name: ${user.lastName}"> 
-			<label for="email"></label> <input type="text" name="userName" class="bg-light form-control" placeholder="User Name: ${user.username}"> 
+			<label for="lastName"></label> <input type="text" name="lastName" class="bg-light form-control" placeholder="Last Name: ${user.lastName}"> 
+			<label for="email"></label> <input type="text" name="username" class="bg-light form-control" placeholder="User Name: ${user.username}"> 
 			<label for="photoUrl"></label> <input type="text" name ="photoUrl" class="bg-light form-control" placeholder="User Photo Url: ${user.photoUrl}"> <br>
 
-			<div id="outer">
 
-					<div class="inner">
-						<form action="account.do">
 							<input type="submit" class="btn btn-primary mr-3"
 								value="Save Changes">
 						</form>
+					<div class="inner">
 
 					</div>
-
+						<br>
+						<br>
+						
 					<div class="inner">
-						<form action="welcome.do">
+				<form action="welcome.do">
 							<input type="submit" class="btn btn-primary mr-3" value="Cancel">
 						</form>
 
@@ -137,7 +138,6 @@ padding-top: 10px;
 
 
 
-		</div>
 
 
 
