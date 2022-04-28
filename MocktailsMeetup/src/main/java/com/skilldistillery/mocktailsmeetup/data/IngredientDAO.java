@@ -15,5 +15,6 @@ public interface IngredientDAO {
 		
 		Ingredient updateIngredient(int id, Ingredient ingredient);
 		
-		//Stretch goal. Figure out delete/set as inactive method?
+		List<Ingredient> listAll();
+		
 }

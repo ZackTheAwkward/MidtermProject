@@ -46,4 +46,11 @@ public class IngredientDaoImpl implements IngredientDAO {
 		return managed;
 	}
 
+	@Override
+	public List<Ingredient> listAll() {
+		String jpql = "SELECT i FROM Ingredient i";
+		return em.createQuery(jpql, Ingredient.class).getResultList();
+	}
+	
+
 }
