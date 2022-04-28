@@ -97,7 +97,8 @@ h6 {
 }
 
 input[type=submit] {
- width: 300px; height: 50px; }
+ width: 300px; 
+ height: 50px; }
 
 /*--------------------------------------------------------------
 # Back to top button

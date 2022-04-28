@@ -78,6 +78,10 @@ body {
 	background-color: #eee;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+input[type="text"] {
+width: 200px !important;
+}
 </style>
 
 
