@@ -69,13 +69,13 @@ width: 1000px;
   cursor: pointer;
 }
 .tag-teal {
-  background-color: #47bcd4;
+  background-color: #00798c;
 }
 .tag-purple {
-  background-color: #5e76bf;
+  background-color: #00798c;
 }
 .tag-pink {
-  background-color: #cd5b9f;
+  background-color: #00798c;
 }
 
 .card-body p {
@@ -88,15 +88,12 @@ width: 1000px;
 
 <div class="container">
     <c:forEach var="m" items="${meetup}">
-  <div class="card ">
-   <!--  <div class="card-header">
-      <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
-    </div> -->
+  <div style class="card ">
 
     <div class="card-body">
       <span class="tag tag-teal">${m.meetupDate}</span>
       <h4>
-        <a href="getMeetups.do?Id=${m.id}">${m.title}</a>
+        <a style= color:#000000 href="getMeetups.do?Id=${m.id}">${m.title}</a>
       </h4>
       <p>
         ${m.address}

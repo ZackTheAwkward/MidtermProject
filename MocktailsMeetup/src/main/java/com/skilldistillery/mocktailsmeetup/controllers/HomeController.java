@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.NoResultException;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,6 @@ import com.skilldistillery.mocktailsmeetup.data.MeetupDAO;
 import com.skilldistillery.mocktailsmeetup.data.RecipeDAO;
 import com.skilldistillery.mocktailsmeetup.data.UserDAO;
 import com.skilldistillery.mocktailsmeetup.entities.Category;
-import com.skilldistillery.mocktailsmeetup.entities.Ingredient;
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
@@ -174,18 +174,25 @@ public class HomeController {
 
 	@RequestMapping(path = "login.do", method = RequestMethod.POST)
 	public String submitLogin(User user, HttpSession session, Model model) {
+		
+		try {
 		User u = userDAO.getUserByUserNameAndPassword(user.getUsername(), user.getPassword());
-		if (u == null) {
-			return "redirect:login.do";
-		}
-		if (u.isActive() == false) {
-			return "redirect:login.do";
-		}
-		session.setAttribute("user", u);
-		List<Meetup> meetup = meetupDAO.findAll();
-		model.addAttribute("meetup", meetup);
-		return "welcome";
-	}
+			if (u == null) {
+			return "goLogin.do";
+			}
+			if (u.isActive() == false) {
+			return "goLogin.do";
+			} else {
+		
+				session.setAttribute("user", u);
+				List<Meetup> meetup = meetupDAO.findAll();
+				model.addAttribute("meetup", meetup);
+				return "welcome";
+			}
+		
+		} catch (NoResultException e) {
+			return "login";
+	}}
 
 	@RequestMapping("welcome.do")
 	public String checkLogin(HttpSession session, Model model) {
@@ -317,16 +324,16 @@ public class HomeController {
 //		}
 //	}
 	@RequestMapping(path = "prePost.do", method = RequestMethod.POST)
-	public String addIngredient(RecipeIngredient recipeIngredient, Model model, HttpSession session, int recipeId, int ingredientId) {
+	public String addIngredient(RecipeIngredient recipeIngredient, Model model, HttpSession session, int recipeId,
+			int ingredientId) {
 		User user = (User) session.getAttribute("user");
 		if (user != null) {
-			
+
 			recipeIngredient.setRecipe(recipeDAO.findById(recipeId));
 			recipeIngredient.setIngredient(ingredientDAO.findById(ingredientId));
-			
-			
+
 			recipeDAO.addIngredient(recipeIngredient);
-			
+
 			model.addAttribute("ingredients", ingredientDAO.listAll());
 			model.addAttribute("recipe", recipeDAO.findById(recipeId));
 			return "prePostRecipe";
