@@ -17,7 +17,6 @@
 
 
 <style>
-
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 	color: #272829;
@@ -34,38 +33,51 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Yeseva One', cursive;
+	font-family: 'Cormorant Garamond', serif;
 }
 
 .col1 {
+	margin-top: 50px;
 	padding-top: 50px;
-	width: 40%;
+	margin-right: 75px;
+	margin-left: 150px;
+	width: 500px;
 	display: inline-block;
 	justify-content: center;
 	text-align: center;
-	margin-left: auto;  
-	margin-right: auto;  
-	padding-left: 20px;
-	padding-right: 20px;
+	background-color: white;
+	border-radius: 3%;
 }
 
 .col2 {
-	padding-top: 100px; 
-	width : 60%;
+	margin-top: 50px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-right: 150px;
+	width: 500px;
 	display: inline-block;
-	padding-left: 100px;
 	justify-content: center;
-	margin-left: auto;  
-	margin-right: auto;  
+	background-color: white;
 	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 3%;
 }
 
+}
 input[type="text"] {
-    width: 350px;
-    
+	width: 350px;
+	padding-top: 0px;
 }
 
+.outer {
+padding-top: 10px;
+	width: 200px;
+	text-align: center;
+}
 
+.inner {
+	display: inline-block;
+}
 
 /*--------------------------------------------------------- */
 </style>
@@ -80,68 +92,61 @@ input[type="text"] {
 		<div class="col1" id="leftSide">
 			<img src="${user.photoUrl }" width="200"
 				class="user-img rounded-circle mr-2"> <br>
-			<h4>${user.username } - ${user.firstName}</h4>
+			<h4>${user.username }-${user.firstName}</h4>
 			<p>${user.bio }</p>
 
+<br>
 
+		<form action="deactivateUser.do">
+			<input type="submit" value="Deactivate Account"> <input
+				type="hidden" name="id" value="${user.id }" />
+		</form>
 
 		</div>
 
 		<div class="col2" id="rightSide">
-		
-		<h4>Update Your Account</h4>
+
+			<h3>Update Account</h3>
 
 
-			<label for="firstName">First Name</label> <input type="text"
-				class="bg-light form-control" placeholder="${user.firstName}">
-
-			<label for="lastName">Last Name</label> <input type="text"
-				class="bg-light form-control" placeholder="${user.lastName}">
-
-			<label for="email">Username</label> <input type="text"
-				class="bg-light form-control" placeholder="${user.username}">
-
-			<label for="photoUrl">Profile Picture URL:</label> <input type="text"
-				class="bg-light form-control" placeholder="${user.photoUrl}">
-
-			<%-- 	<form action="sendToViewRecipes.do">
-					<input type="submit" value="View Your Recipes"
-						class="bg-light form-control"> <input type="hidden"
-						name="id" value="${user.id }" />
-				</form>
-				<form action="sendToViewMeetups.do">
-					<input type="submit" value="View Your Meetups"
-						class="bg-light form-control"> <input type="hidden"
-						name="id" value="${user.id }" />
-				</form> --%>
-
-			<form action="account.do">
-				<input type="submit" class="btn btn-primary mr-3"
-					value="Save Changes">
-			</form>
+			<label for="firstName"></label> <input type="text"
+				class="bg-light form-control"
+				placeholder="First Name: ${user.firstName}"> <label
+				for="lastName"></label> <input type="text"
+				class="bg-light form-control"
+				placeholder="Last Name: ${user.lastName}"> <label
+				for="email"></label> <input type="text"
+				class="bg-light form-control"
+				placeholder="User Name: ${user.username}"> <label
+				for="photoUrl"></label> <input type="text"
+				class="bg-light form-control"
+				placeholder="User Photo Url: ${user.photoUrl}"> <br>
 
 
+				<div id="outer">
 
-			<form action="welcome.do">
-				<button class="btn border button">Cancel</button>
-			</form>
+					<div class="inner">
+						<form action="account.do">
+							<input type="submit" class="btn btn-primary mr-3"
+								value="Save Changes">
+						</form>
 
-			<form action="deactivateUser.do">
-				<input type="submit" value="Deactivate Account"> <input type="hidden"
-					name="id" value="${user.id }" />
-			</form>
+					</div>
+
+					<div class="inner">
+						<form action="welcome.do">
+							<input type="submit" class="btn btn-primary mr-3" value="Cancel">
+						</form>
+
+					</div>
+				</div>
+
+
+			</div>
 
 
 
 		</div>
-	</div>
-
-
-
-
-
-
-
 
 
 
