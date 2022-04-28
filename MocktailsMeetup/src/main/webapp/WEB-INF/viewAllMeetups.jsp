@@ -59,7 +59,7 @@ width: 1000px;
 }
 
 .tag {
-  background: #cccccc;
+  background: #00798c;
   border-radius: 50px;
   font-size: 12px;
   margin: 0;
