@@ -27,7 +27,7 @@
 
 
 
-
+<input type= "submit" value= "Thank you for sharing a new sip!"/>
 
 
 </form>
