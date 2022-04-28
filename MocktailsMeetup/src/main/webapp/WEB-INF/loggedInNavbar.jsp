@@ -84,7 +84,7 @@ body {
 
 
 
-<nav class="navbar navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar navbar-expand-lg navbar-light bg-light">
 <a class="navbar-brand" href="welcome.do">
   <img src="https://live.staticflickr.com/65535/52029337243_b29a2f52f1_w.jpg" width="auto" height="75px" ></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
