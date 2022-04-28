@@ -107,6 +107,8 @@ input {
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px
 		rgba(0, 0, 0, 0.22);
 	position: relative;
+	bottom: 0;
+	padding-top: 10;
 	overflow: hidden;
 	width: 768px;
 	max-width: 100%;
@@ -230,22 +232,9 @@ z-index
 	transform: translateX(20%);
 }
 
-.social-container {
-	margin: 20px 0;
-}
 
-.social-container a {
-	border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
-}
 
-footer {
+/* footer {
 	background-color: #222;
 	color: #fff;
 	font-size: 14px;
@@ -268,7 +257,7 @@ footer i {
 footer a {
 	color: #3c97bf;
 	text-decoration: none;
-}
+} */
 </style>
 <body>
 

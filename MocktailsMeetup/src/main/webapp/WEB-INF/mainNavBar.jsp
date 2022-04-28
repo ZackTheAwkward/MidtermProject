@@ -41,6 +41,8 @@ margin-bottom: 0px;
  z-index:1;
  width: 100%;
  text-align: center;
+  position: fixed;
+   top: 0;
  }
 
 .nav-item {
