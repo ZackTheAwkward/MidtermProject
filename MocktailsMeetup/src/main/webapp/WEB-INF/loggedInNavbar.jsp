@@ -112,8 +112,6 @@ body {
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="account.do">Account</a>
 
-          
-          <form action="sendToViewRecipes.do">
 
             <a class="dropdown-item" href="sendToViewRecipes.do?id=${user.id}">View Your Recipes</a>
           <a class="dropdown-item" href="sendToViewMeetups.do?id=${user.id}"><input type="hidden" name="id" value="${user.id }"/>View Your Meetups</a>
