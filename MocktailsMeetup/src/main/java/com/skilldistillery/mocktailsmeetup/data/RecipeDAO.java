@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeIngredient;
 
 public interface RecipeDAO {
 	Recipe findById(int recipeId);
@@ -16,4 +17,5 @@ public interface RecipeDAO {
 	Recipe deleteRecipe(int id, Recipe recipe);
 	List<Recipe> findAllUserCreated(int id);
 	Recipe surpriseMe();
+	RecipeIngredient addIngredient(RecipeIngredient recipeIngredient);
 }

@@ -511,7 +511,9 @@ ul, li {
 
 
 								<input id="id" type="hidden" name="recipeId"
-									value="${recipe.id}" /> <input class="form-control-xl"
+									value="${recipe.id}" /> 
+									
+									<input class="form-control-xl"
 									type="text" name="comment"
 									placeholder="Tell us what you think about this drink! " /> <br>
 

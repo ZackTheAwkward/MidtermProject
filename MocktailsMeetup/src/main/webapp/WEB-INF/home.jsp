@@ -484,7 +484,7 @@ section {
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
+              <a href="#" class="gallery-lightbox">
                 <img src="https://live.staticflickr.com/65535/52035055748_2ec180dea5_o.png" alt="" class="img-fluid">
               </a>
             </div>
@@ -492,7 +492,7 @@ section {
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
+              <a href="#" class="gallery-lightbox">
                 <img src="https://live.staticflickr.com/65535/52035528860_f3e829e1bf_z.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -500,7 +500,7 @@ section {
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
+              <a href="#" class="gallery-lightbox">
                 <img src="https://live.staticflickr.com/65535/52033968787_4d396647fc_o.png" alt="" class="img-fluid">
               </a>
             </div>
@@ -508,7 +508,7 @@ section {
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
+              <a href="#" class="gallery-lightbox">
                 <img src="https://live.staticflickr.com/65535/52033968757_5d5e9370dc_o.png" alt="" class="img-fluid">
               </a>
             </div>
@@ -516,7 +516,7 @@ section {
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
+              <a href="#" class="gallery-lightbox">
                 <img src="https://live.staticflickr.com/65535/52035055678_ccb5617382_o.png" alt="" class="img-fluid">
               </a>
             </div>
@@ -524,7 +524,7 @@ section {
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
+              <a href="#" class="gallery-lightbox">
                 <img src="https://live.staticflickr.com/65535/52035011911_dae8e6ccf9_o.png" alt="" class="img-fluid">
               </a>
             </div>
@@ -532,7 +532,7 @@ section {
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
+              <a href="#" class="gallery-lightbox">
                 <img src="https://live.staticflickr.com/65535/52035055688_33aebd4640_o.png" alt="" class="img-fluid">
               </a>
             </div>
@@ -540,7 +540,7 @@ section {
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
+              <a href="#" class="gallery-lightbox">
                 <img src="https://live.staticflickr.com/65535/52033968637_9bd49a87ac_o.png" alt="" class="img-fluid">
               </a>
             </div>
@@ -556,6 +556,10 @@ section {
 
 
   </main>
+  <br>
+  <br>
+  <br>
+    <%@ include file="footer.jsp"%>
 
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

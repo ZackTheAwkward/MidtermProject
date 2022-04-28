@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeIngredient;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeIngredientId;
 
 @Service
 @Transactional
@@ -104,6 +105,14 @@ public class RecipeDaoImpl implements RecipeDAO {
 		String jpql = "SELECT r FROM Recipe r WHERE r.createdByUser.id = :id";
 		List<Recipe> full = em.createQuery(jpql, Recipe.class).setParameter("id", id).getResultList();
 		return full;
+	}
+
+	@Override
+	public RecipeIngredient addIngredient(RecipeIngredient recipeIngredient) {
+		RecipeIngredientId id = new RecipeIngredientId(recipeIngredient.getRecipe().getId(), recipeIngredient.getIngredient().getId());
+		recipeIngredient.setId(id);
+		em.persist(recipeIngredient);
+		return recipeIngredient;
 	}
 }
 	
