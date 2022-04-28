@@ -36,7 +36,9 @@ background-color: white !important;
 font-family: 'Source Sans Pro', sans-serif;
 font-size: 16px;
 color: black;
-
+/* z-index:2;
+ position: fixed;
+   top: 0; */
 
  }
 
