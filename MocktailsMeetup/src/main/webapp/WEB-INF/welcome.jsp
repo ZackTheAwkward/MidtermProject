@@ -122,32 +122,7 @@ width: 1000px;
 		</form>
 	</div> 
 
-<%-- 
-	 <div class="main">
-		<h3>Upcoming Meetups happening near you</h3> 
-			<table> 
-			<thead>
-			 <tr>
-					<th>ID</th>
-					<th>Meetup Name</th>
-					<th>Meetup Date</th>					
-					<th>Meetup Address</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="m" items="${meetup}">
-					<tr>
-						<td>${m.id}</td>
-						<td><a href="getMeetups.do?Id=${m.id}">${m.title}</a></td>						
-						<td>${m.meetupDate}</td>
-						<td>${m.address}</td>
-					</tr>
-				</c:forEach>
 
-		</tbody>
-		</table> 
-
-	</div>  --%>
 
 
 <div class="container">
@@ -171,37 +146,7 @@ width: 1000px;
 	</c:forEach>
   </div>
   
-  <%-- 
-  <div class="card">
-    <div class="card-header">
-      <img src="https://www.newsbtc.com/wp-content/uploads/2020/06/mesut-kaya-LcCdl__-kO0-unsplash-scaled.jpg" alt="ballons" />
-    </div>
-    <div class="card-body">
-      <span class="tag tag-teal">${m.meetupDate}</span>
-      <h4>
-        <a href="getMeetups.do?Id=${m.id}">${m.title}</a>
-      </h4>
-      <p>
-        ${m.address}
-      </p>
-      
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header">
-      <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
-    </div>
-    <div class="card-body">
-      <span class="tag tag-teal">${m.meetupDate}</span>
-      <h4>
-        <a href="getMeetups.do?Id=${m.id}">${m.title}</a>
-      </h4>
-      <p>
-        ${m.address}
-      </p>
-    </div>
-  </div>
-  </div> --%>
+
 
 </body>
 </html>
