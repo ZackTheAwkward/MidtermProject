@@ -19,15 +19,14 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.mocktailsmeetup.data.CategoryDAO;
 import com.skilldistillery.mocktailsmeetup.data.DrinkDAO;
+import com.skilldistillery.mocktailsmeetup.data.IngredientDAO;
 import com.skilldistillery.mocktailsmeetup.data.MeetupDAO;
 import com.skilldistillery.mocktailsmeetup.data.RecipeDAO;
 import com.skilldistillery.mocktailsmeetup.data.UserDAO;
 import com.skilldistillery.mocktailsmeetup.entities.Category;
-import com.skilldistillery.mocktailsmeetup.entities.Drink;
 import com.skilldistillery.mocktailsmeetup.entities.Ingredient;
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
@@ -48,6 +47,8 @@ public class HomeController {
 	private DrinkDAO drinkDAO;
 	@Autowired
 	private MeetupDAO meetupDAO;
+	@Autowired
+	private IngredientDAO ingredientDAO;
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String home(Model model) {
@@ -270,27 +271,20 @@ public class HomeController {
 			recipe.setCreatedByUser(user);
 			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
 			model.addAttribute("newRecipe", newRecipe);
-			
-		
+
 			return "singleResult";
 
 		} else {
 			return "login";
 		}
 	}
-	
+
 	@RequestMapping(path = "addIngredients.do", method = RequestMethod.POST)
-	public String addIngredients(Recipe recipe, Model model, HttpSession session, RecipeIngredient recipeIngredient, Double quantity, String unit, Ingredient ingredient) {
+	public String addIngredients(Recipe recipe, Model model, HttpSession session, RecipeIngredient recipeIngredient) {
 		User user = (User) session.getAttribute("user");
 		if (user != null) {
-			recipe.setCreatedByUser(user);
-			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
-			model.addAttribute("newRecipe", newRecipe);
-			
-			recipeIngredient.setQuantity(quantity);
-			recipeIngredient.setUnit(unit);
-			recipeIngredient.setIngredient(ingredient);
-			
+			Ingredient newIngredient = ingredientDAO.createIngredient(recipeIngredient);
+			model.addAttribute("newIngrident", newIngredient);
 			return "singleResult";
 			
 		} else {

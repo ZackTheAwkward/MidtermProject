@@ -3,6 +3,7 @@ package com.skilldistillery.mocktailsmeetup.data;
 import java.util.List;
 
 import com.skilldistillery.mocktailsmeetup.entities.Ingredient;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeIngredient;
 
 public interface IngredientDAO {
 
@@ -10,9 +11,10 @@ public interface IngredientDAO {
 		
 		List<Ingredient> findByKeyword(String keyword);
 		
-		Ingredient createIngredient(Ingredient ingredient);
+		Ingredient createIngredient(RecipeIngredient recipeIngredient);
 		
 		Ingredient updateIngredient(int id, Ingredient ingredient);
 		
-		//Stretch goal. Figure out delete/set as inactive method?
+		List<Ingredient> listAll();
+		
 }

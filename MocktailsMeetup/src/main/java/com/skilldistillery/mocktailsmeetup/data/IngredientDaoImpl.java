@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.mocktailsmeetup.entities.Ingredient;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeIngredient;
 
 
 @Service
@@ -32,9 +33,9 @@ public class IngredientDaoImpl implements IngredientDAO {
 	}
 
 	@Override
-	public Ingredient createIngredient(Ingredient ingredient) {
-		em.persist(ingredient);
-		return em.find(Ingredient.class, ingredient.getId());
+	public Ingredient createIngredient(RecipeIngredient recipeIngredient) {
+		em.persist(recipeIngredient);
+		return em.find(Ingredient.class, recipeIngredient.getId());
 	}
 
 	@Override
@@ -44,5 +45,12 @@ public class IngredientDaoImpl implements IngredientDAO {
 		managed.setDescription(ingredient.getDescription());
 		return managed;
 	}
+
+	@Override
+	public List<Ingredient> listAll() {
+		String jpql = "SELECT i FROM Ingredient i";
+		return em.createQuery(jpql, Ingredient.class).getResultList();
+	}
+	
 
 }
