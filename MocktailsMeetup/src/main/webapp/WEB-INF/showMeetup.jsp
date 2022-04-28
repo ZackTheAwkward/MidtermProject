@@ -68,7 +68,7 @@ h1 {
 
 	<div class="topLeft">
 		<h2>${meetup.title}</h2>
-		<h4>${meetup.description}</h4>
+		<h5>${meetup.description}</h5>
 	</div>
 
 	<div class="bottomRight">
