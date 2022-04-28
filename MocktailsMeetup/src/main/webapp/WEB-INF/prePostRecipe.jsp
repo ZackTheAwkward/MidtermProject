@@ -510,74 +510,23 @@ ul, li {
 						</div>
 						<!-- END INSTRUCTIONS  -->
 
-
-
-						<div class="container">
-							<a href="#comments" class="btn btn-info" data-toggle="collapse">Comments</a>
-							<div id="comments" class="collapse">
-
-								<!--------------------- COMMENT FORM  ------------------------------->
-
-								<div id="commentForm">
-									<h3>Leave a comment:</h3>
-									<form action="createComment.do" method="POST">
-
-
-
-
-										<input id="id" type="hidden" name="recipeId"
-											value="${recipe.id}" /> <input class="form-control-xl"
-											type="text" name="comment"
-											placeholder="Tell us what you think about this drink! " /> <br>
-
-										<input type="submit" value="sumbit" />
-									</form>
-
-								</div>
-
-								<!-- ------------------ DISPLAY COMMENTS  ------------------------------->
-								<c:forEach var="rc" items="${recipe.comments }">
-
-
-
-									<div class="container mt-5">
-										<div class="row d-flex justify-content-center">
-											<div class="col-md-8">
-												<div
-													class="headings d-flex justify-content-between align-items-center mb-3">
-
-												</div>
-												<div class="commentcard p-3">
-													<div
-														class="d-flex justify-content-between align-items-center">
-														<div class="user d-flex flex-row align-items-center">
-															<img src="${rc.user.photoUrl }" width="30"
-																class="user-img rounded-circle mr-2"> <span><small
-																class="font-weight-bold text-primary">${rc.user.username }</small>
-																<small class="font-weight-bold">${rc.comment }</small></span>
-														</div>
-													</div>
-
-												</div>
-											</div>
-										</div>
-									</div>
-
-								</c:forEach>
-							</div>
-						</div>
-
-						<!-- 	END COMMENTS -->
-
-
-
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				
+				<form action="getRecipe.do" method="GET">
+					<input id="id" type="hidden" name="id" value="${recipe.id}" />
+				<input type= "submit" value= "Submit"/>
+				</form>
 
 
 					</div>
 				</div>
 				<!-- END OF Column 1  -->
 
-
+				
 
 				<div class="col-sm">
 					<img id="recipePhoto" src="${recipe.imageUrl}" class="card-media"
