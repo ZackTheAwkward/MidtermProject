@@ -50,8 +50,8 @@ span {
 }
 
 a {
-	color: #333;
-	font-size: 14px;
+	color: #FFFFFF;
+	font-size: 20px;
 	text-decoration: none;
 	margin: 15px 0;
 }
@@ -310,14 +310,14 @@ footer a {
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
 				<h1>Returning to Sip?</h1>
-				<p>We've missed you!</p>
+				<h3>We've missed you!</h3>
 				<button class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>New to Sip n Social?</h1>
-				<p>Create an account to unlock all of our features!</p>
-				<p>Share recipes, and join or host meetups!</p>
-				<a href="signUp.do">Sign Up</a>
+				<h4>Create an account to unlock all of our features!</h4>
+				<h4>Share recipes, and join or host meetups!</h4>
+				<a style= color:#FFFFFF;border-style:solid;border-color:#FFFFFF href="signUp.do">  Sign Up  </a>
 			</div>
 		</div>
 	</div>

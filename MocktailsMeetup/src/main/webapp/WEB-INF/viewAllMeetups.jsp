@@ -6,6 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Meetups</title>
+<link rel="stylesheet"
+	href=https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400>
+<link rel="stylesheet"
+	href=https://fonts.googleapis.com/css?family=Playfair+Display>
 </head>
 <style>
 * {
@@ -17,7 +21,7 @@
   align-items: center;
   margin: 0;
   background-color: #f7f8fc;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #10182f;
 }
 .container {
@@ -79,7 +83,7 @@ width: 1000px;
 }
 
 .card-body p {
-  font-size: 13px;
+  font-size: 18px;
   margin: 0 0 40px;
 }
 </style>

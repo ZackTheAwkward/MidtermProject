@@ -50,8 +50,8 @@ span {
 }
 
 a {
-	color: #333;
-	font-size: 14px;
+	color: #FFFFFF;
+	font-size: 20px;
 	text-decoration: none;
 	margin: 15px 0;
 }
@@ -269,14 +269,14 @@ z-index
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
 				<h1>New to Sip n Social?</h1>
-				<p>Create an account to unlock all of our features!</p>
-				<p>Share recipes, and join or host meetups!</p>
+				<h3>Create an account to unlock all of our features!</h3>
+				<h3>Share recipes, and join or host meetups!</h3>
 				<button class="ghost" id="signUp">Sign Up</button>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>Returning to Sip?</h1>
-				<p>We've missed you!</p>
-				<a href="goLogin.do">Sign In</a>
+				<h3>We've missed you!</h3>
+				<a style= color:#FFFFFF;border-style:solid;border-color:#FFFFFF href="goLogin.do">  Sign In  </a>
 			</div>
 		</div>
 	</div>
