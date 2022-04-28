@@ -26,12 +26,9 @@
 <style>
 .carousel-item {
   height: 100vh;
-<<<<<<< HEAD
   padding-top: 0px;
   margin-bottom: 1px;
-=======
   padding-top: 100px;
->>>>>>> 93e853651c8926eccccf8f52cc1ffd66fb2f7d2e
  /*  background: #212121 */
 position:relative;
 	z-index:1;
