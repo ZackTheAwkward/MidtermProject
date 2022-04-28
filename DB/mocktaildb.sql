@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
-  `active` TINYINT NOT NULL DEFAULT 1,
+  `active` TINYINT NOT NULL DEFAULT 0,
   `bio` TEXT NULL,
   `photo_url` VARCHAR(2000) NULL,
   `created_date` DATETIME NULL,
@@ -334,7 +334,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.com', 'admin', 1, 'Twitter guru. Music ninja. Social media geek. Hardcore travel nerd. Freelance introvert. Reader. Coffee buff.', 'https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female20141023786637939.jpg', '2016-04-03 00:09:00', 'data_admin');
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.com', 'admin', 1, 'Twitter guru. Music ninja. Social media geek. Hardcore travel nerd. Freelance introvert. Reader. Coffee buff.', 'https://randomuser.me/api/portraits/women/21.jpg', '2016-04-03 00:09:00', 'data_admin');
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (2, 'NeAlte', 'BY4Z8Gmf', 'Nelle', 'jude.nikolaus@baumbach.com', 'Altenwerth', 1, 'Pop culture buff. Reader. Alcoholaholic. Organizer. Twitter fan. Internet guru. Proud beer expert. Web fanatic.', 'https://randomuser.me/api/portraits/women/2.jpg', '2016-04-03 00:09:00', 'user');
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (3, 'MaPark', 'v8dTLmB4', 'Madge', 'maynard50@homenick.com', 'Parker', 1, 'Troublemaker. Analyst. Award-winning gamer. Falls down a lot. Problem solver.', 'https://randomuser.me/api/portraits/women/4.jpg', '1990-06-09 00:09:00', 'user');
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `email`, `last_name`, `active`, `bio`, `photo_url`, `created_date`, `role`) VALUES (4, 'JaHaag', 'xaHJy9BU', 'Jamar', 'jermain.considine@crooks.org', 'Haag', 1, 'Freelance writer. Amateur twitter fan. Gamer. Passionate bacon buff. Proud reader. Professional alcohol lover.', 'https://randomuser.me/api/portraits/men/2.jpg', '1978-11-09 00:09:00', 'user');
