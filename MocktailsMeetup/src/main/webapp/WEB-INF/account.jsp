@@ -108,6 +108,7 @@ padding-top: 10px;
 
 			<h3>Update Account</h3>
 
+						<form action="account.do">
 
 			<label for="firstName"></label> <input type="text" name="firstName" class="bg-light form-control" placeholder="First Name: ${user.firstName}"> 
 			<label for="lastName" ></label> <input type="text"class="bg-light form-control" name="lastName" placeholder="Last Name: ${user.lastName}"> 
@@ -117,7 +118,6 @@ padding-top: 10px;
 			<div id="outer">
 
 					<div class="inner">
-						<form action="account.do">
 							<input type="submit" class="btn btn-primary mr-3"
 								value="Save Changes">
 						</form>
@@ -125,7 +125,7 @@ padding-top: 10px;
 					</div>
 
 					<div class="inner">
-						<form action="welcome.do">
+				<form action="welcome.do">
 							<input type="submit" class="btn btn-primary mr-3" value="Cancel">
 						</form>
 
