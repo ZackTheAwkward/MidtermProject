@@ -70,8 +70,8 @@ h1 {
 					type="text" name="address.street" placeholder="Street" /> <br>
 
 				<input class="form-control-sm" type="text" name="address.city"
-					placeholder="City" /> <br> <input class="form-control-sm"
-					type="text" name="address.stateAbbr" maxlength="2"
+					placeholder="City" /> <br> 
+					<input class="form-control-sm" type="text" name="address.stateAbbr" maxlength="2"
 					placeholder="State Abbreviation" /> <br> <input
 					class="form-control-sm" type="text" name="address.postalCode"
 					placeholder="Postal Code" /> 
