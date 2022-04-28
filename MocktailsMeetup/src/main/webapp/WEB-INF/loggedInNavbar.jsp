@@ -111,6 +111,7 @@ body {
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="account.do">Account</a>
+          
           <form action="sendToViewRecipes.do">
           
 					<input type="submit" value="View Your Recipes"
