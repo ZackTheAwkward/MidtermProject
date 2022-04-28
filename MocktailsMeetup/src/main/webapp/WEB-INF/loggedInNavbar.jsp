@@ -111,7 +111,12 @@ body {
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="account.do">Account</a>
-          <form action="sendToViewRecipes.do">
+            <a class="dropdown-item" href="sendToViewRecipes.do?id=${user.id}">View Your Recipes</a>
+          <a class="dropdown-item" href="sendToViewMeetups.do?id=${user.id}"><input type="hidden" name="id" value="${user.id }"/>View Your Meetups</a>
+          
+          
+          
+         <%--  <form action="sendToViewRecipes.do">
           
 					<input type="submit" value="View Your Recipes"
 						class="bg-light form-control"> <input type="hidden"
@@ -123,7 +128,7 @@ body {
 						class="bg-light form-control"> <input type="hidden"
 						name="id" value="${user.id }" />
 				</form>
-          
+           --%>
         </div>
       </li>
 
