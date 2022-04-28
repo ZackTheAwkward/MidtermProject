@@ -361,16 +361,16 @@ section {
 </div>
 
 
-	
 
 <main id="main">
     <section id="about" class="about">
       <div class="container-fluid">
+	<a id="about_us" style="color:white;">About us</a>
 
         <div class="row">
 
-          <div class="col-lg-5"> <img src="https://live.staticflickr.com/65535/52034593087_33c4ac1494_o.png" height="600px">
-
+          <div class="col-lg-5"> <img src="https://live.staticflickr.com/65535/52036960264_147fc36ec5_c.jpg" height="600px" width="600px">
+		
           </div>
 
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
