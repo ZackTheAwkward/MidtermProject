@@ -29,6 +29,7 @@
 
 <style>
 .navbar {
+
 	background-color: white !important;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
@@ -42,6 +43,21 @@
 	position: fixed;
 	top: 0;
 }
+
+/* background-color: white !important;
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 16px;
+color: black;
+padding-bottom: 0px;
+margin-bottom: 0px;
+ /* position: absolute; */
+/*  z-index:2;
+ width: 100%;
+ text-align: center;
+  position: fixed;
+   top: 0;
+ } */
+
 
 .nav-item {
 	margin-left: 0px;
