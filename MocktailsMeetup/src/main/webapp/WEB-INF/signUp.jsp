@@ -1,21 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Sign Up</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap"
-	rel="stylesheet">
-
-
+<link rel="stylesheet"
+	href=https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400>
+<link rel="stylesheet"
+	href=https://fonts.googleapis.com/css?family=Playfair+Display>
 </head>
 <style>
+
 * {
 	box-sizing: border-box;
 }
@@ -26,16 +23,12 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Playfair Display', serif; /* 'Source Sans Pro', sans-serif; */
+	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
 }
 
-
-
-
 h1 {
-font-family: 'Playfair Display', serif;
 	font-weight: bold;
 	margin: 0;
 }
@@ -56,20 +49,15 @@ span {
 	font-size: 12px;
 }
 
-#signIn a {
-	color: black;
-	font-size: 25px;
-	font-family: 'Playfair Display', serif;
+a {
+	color: #333;
+	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
 }
 
-#signIn a:hover {
-	text-decoration: none;
-}
-
 button {
-	border-radius: fec89a;
+	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
 	color: #FFFFFF;
@@ -163,35 +151,17 @@ keyframes show { 0%, 49.99% {
 }
 
 50
-
-
 %
 ,
 100
-
-
 %
 {
 opacity
-
-
 :
-
-
-1
-;
-
-
+1;
 z-index
-
-
 :
-
-
-5
-;
-
-
+5;
 }
 }
 .overlay-container {
@@ -260,7 +230,9 @@ z-index
 	transform: translateX(20%);
 }
 
-
+.social-container {
+	margin: 20px 0;
+}
 
 .social-container a {
 	border: 1px solid #DDDDDD;
@@ -301,21 +273,19 @@ footer a {
 <body>
 
 
-	<%@ include file="mainNavBar.jsp"%>
-	<br>
+<%@ include file="mainNavBar.jsp" %>
 
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="login.do" method="POST">
+		<form action="login.do" method = "POST">
 			<h1>Sign in</h1>
-
-			<span>or use your account</span> <input type="text" name="username"
-				placeholder="Username" /> <input type="password" name="password"
-				placeholder="Password" />
+			
+			<span>or use your account</span>
+			<input type="text" name = "username" placeholder="Username" />
+			<input type="password" name = "password" placeholder="Password" />
 			<button>Sign In</button>
 		</form>
 	</div>
-
 	
 	<div class="form-container sign-in-container">
 	<form action="createAccount.do" method="POST">
@@ -344,41 +314,10 @@ footer a {
 				<h1>Returning to Sip?</h1>
 				<p>We've missed you!</p>
 				<a href="goLogin.do">Sign In</a>
-
-
-	<div class="container" id="container">
-		<div class="form-container sign-in-container">
-			<form action="createAccount.do" method="POST">
-				<h1>Create Account</h1>
-
-				<span>Welcome, Friend!</span> <input type="text" name="username"
-					placeholder="Username" required /> <input type="text"
-					name="password" placeholder="Password" required /> <input
-					type="text" name="firstName" placeholder="First Name" required /> <input
-					type="text" name="lastName" placeholder="Last Name" required /> <input
-					type="text" name="email" placeholder="Email" required /> <input
-					type="submit" value="Sign Up">
-			</form>
-
-		</div>
-
-		<div class="overlay-container">
-			<div class="overlay">
-				<div class="overlay-panel overlay-left">
-					<h1>New to Sip n Social?</h1>
-					<p>Create an account to unlock all of our features!</p>
-					<p>Share recipes, and join or host meetups!</p>
-					<button class="ghost" id="signUp">Sign Up</button>
-				</div>
-				<div class="overlay-panel overlay-right">
-					<h1>Returning to Sip?</h1>
-					<p>We've missed you!</p>
-					<a href="goLogin.do" id=signIn>Sign In</a>
-				</div>
->>>>>>> 86ec5f82da9064201ddb998db5fb472fe949b16c
 			</div>
 		</div>
 	</div>
+</div>
 
 </body>
 </html>
