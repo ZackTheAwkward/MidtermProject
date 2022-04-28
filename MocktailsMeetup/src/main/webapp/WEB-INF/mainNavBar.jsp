@@ -38,7 +38,7 @@ color: black;
 padding-bottom: 0px;
 margin-bottom: 0px;
  /* position: absolute; */
- z-index:1;
+ z-index:2;
  width: 100%;
  text-align: center;
   position: fixed;

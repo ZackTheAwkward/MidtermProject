@@ -46,6 +46,8 @@ body {
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;
 	font-weight: 400;
+	
+	
 }
 
 *, *:before, *:after {
@@ -71,16 +73,19 @@ body {
 
 .card-container {
 	margin: 25px auto 0;
-	position: relative;
+ position: relative; 
 	width: 692px;
+	
+	
+	
 }
 
 .card {
 	background-color: #fff;
-	padding: 30px;
-	position: relative;
+	padding: 70px;
+	/* position: static; */
 	box-shadow: 0 0 5px rgba(75, 75, 75, .07);
-	z-index: 1;
+	/* z-index: 1; */
 	display: inline-block;
 }
 
@@ -292,7 +297,7 @@ ul, li {
 	list-style-type: none;
 }
 </style>
-<body>
+<body style= background-color:#eee>
 
 
 	<c:if test="${user != null}">
