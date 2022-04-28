@@ -58,8 +58,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #fec89a;
+	background-color: #fec89a;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -180,9 +180,7 @@ z-index
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #fec89a;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

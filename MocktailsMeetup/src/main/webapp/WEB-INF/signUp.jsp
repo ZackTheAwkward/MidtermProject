@@ -57,7 +57,7 @@ a {
 }
 
 button {
-	border-radius: 20px;
+	border-radius: fec89a;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
 	color: #FFFFFF;
@@ -180,9 +180,8 @@ z-index
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #fec89a;
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -231,9 +230,7 @@ z-index
 	transform: translateX(20%);
 }
 
-.social-container {
-	margin: 20px 0;
-}
+
 
 .social-container a {
 	border: 1px solid #DDDDDD;
@@ -276,6 +273,7 @@ footer a {
 
 <%@ include file="mainNavBar.jsp" %>
 
+<div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="login.do" method = "POST">
 			<h1>Sign in</h1>
@@ -287,7 +285,6 @@ footer a {
 		</form>
 	</div>
 	
-<div class="container" id="container">
 	<div class="form-container sign-in-container">
 	<form action="createAccount.do" method="POST">
 			<h1>Create Account</h1>
