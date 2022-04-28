@@ -28,9 +28,11 @@ import com.skilldistillery.mocktailsmeetup.data.RecipeDAO;
 import com.skilldistillery.mocktailsmeetup.data.UserDAO;
 import com.skilldistillery.mocktailsmeetup.entities.Category;
 import com.skilldistillery.mocktailsmeetup.entities.Drink;
+import com.skilldistillery.mocktailsmeetup.entities.Ingredient;
 import com.skilldistillery.mocktailsmeetup.entities.Meetup;
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeIngredient;
 import com.skilldistillery.mocktailsmeetup.entities.User;
 
 @Controller
@@ -268,11 +270,29 @@ public class HomeController {
 			recipe.setCreatedByUser(user);
 			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
 			model.addAttribute("newRecipe", newRecipe);
-//			List<Recipe> userCreated = user.getUserCreated();
-//			model.addAttribute("user", user);
-//			model.addAttribute("userCreated", userCreated);
+			
+		
 			return "singleResult";
 
+		} else {
+			return "login";
+		}
+	}
+	
+	@RequestMapping(path = "addIngredients.do", method = RequestMethod.POST)
+	public String addIngredients(Recipe recipe, Model model, HttpSession session, RecipeIngredient recipeIngredient, Double quantity, String unit, Ingredient ingredient) {
+		User user = (User) session.getAttribute("user");
+		if (user != null) {
+			recipe.setCreatedByUser(user);
+			Recipe newRecipe = recipeDAO.createYourOwn(recipe);
+			model.addAttribute("newRecipe", newRecipe);
+			
+			recipeIngredient.setQuantity(quantity);
+			recipeIngredient.setUnit(unit);
+			recipeIngredient.setIngredient(ingredient);
+			
+			return "singleResult";
+			
 		} else {
 			return "login";
 		}

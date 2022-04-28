@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.mocktailsmeetup.entities.Recipe;
 import com.skilldistillery.mocktailsmeetup.entities.RecipeComment;
+import com.skilldistillery.mocktailsmeetup.entities.RecipeIngredient;
 
 @Service
 @Transactional
@@ -60,8 +61,14 @@ public class RecipeDaoImpl implements RecipeDAO {
 	}
 	
 	public Recipe createYourOwn(Recipe recipe) {
+		recipe.setActive(true);
 		em.persist(recipe);
 		return recipe;
+	}
+	
+	public RecipeIngredient createYourIngredient(RecipeIngredient recipeIngredient) {
+		em.persist(recipeIngredient);
+		return recipeIngredient;
 	}
 	
 	
