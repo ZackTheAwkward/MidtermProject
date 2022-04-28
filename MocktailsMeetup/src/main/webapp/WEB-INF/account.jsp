@@ -109,21 +109,12 @@ padding-top: 10px;
 			<h3>Update Account</h3>
 
 
-			<label for="firstName"></label> <input type="text"
-				class="bg-light form-control"
-				placeholder="First Name: ${user.firstName}"> <label
-				for="lastName"></label> <input type="text"
-				class="bg-light form-control"
-				placeholder="Last Name: ${user.lastName}"> <label
-				for="email"></label> <input type="text"
-				class="bg-light form-control"
-				placeholder="User Name: ${user.username}"> <label
-				for="photoUrl"></label> <input type="text"
-				class="bg-light form-control"
-				placeholder="User Photo Url: ${user.photoUrl}"> <br>
+			<label for="firstName"></label> <input type="text" name="firstName" class="bg-light form-control" placeholder="First Name: ${user.firstName}"> 
+			<label for="lastName" name="lastName"></label> <input type="text"class="bg-light form-control" placeholder="Last Name: ${user.lastName}"> 
+			<label for="email"></label> <input type="text" name="userName" class="bg-light form-control" placeholder="User Name: ${user.username}"> 
+			<label for="photoUrl"></label> <input type="text" name ="photoUrl" class="bg-light form-control" placeholder="User Photo Url: ${user.photoUrl}"> <br>
 
-
-				<div id="outer">
+			<div id="outer">
 
 					<div class="inner">
 						<form action="account.do">
