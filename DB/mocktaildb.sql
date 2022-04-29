@@ -1006,7 +1006,7 @@ INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `pos
 INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (38, 38, 9, 'One sip and -OMG, what a tasty treat.', '2020-10-18 09:00:00', NULL);
 INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (39, 39, 10, 'Easy to make, easily a crowd pleaser.', '2019-09-12 09:00:00', NULL);
 INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (40, 40, 11, 'My mom used to make this drink for me on my birthday when I was a little girl', '2019-12-16 09:00:00', NULL);
-INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (41, 41, 12, 'My husband\'s like it, and I love it!', '2019-02-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (41, 41, 12, 'My husband likes it, and I love it!', '2019-02-24 09:00:00', NULL);
 INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (42, 42, 13, 'We make this several times per week when we have the time. ', '2015-03-06 09:00:00', NULL);
 INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (43, 43, 14, 'Great virtual happy hour drink, enjoy!', '2014-08-02 09:00:00', NULL);
 INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (44, 44, 15, 'Tasty, easy, crowd pleaser without the regrets the next day. ', '2021-09-26 09:00:00', NULL);
