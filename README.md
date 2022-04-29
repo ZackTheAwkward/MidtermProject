@@ -48,15 +48,15 @@ Click on a meetup and be redirected to that events page. On the event page you w
 
 ### Lessons Learned
 
+
 - Composite primary key
-<br>
 A composite primate key exists when an entity does not have and int, GeneratedValue field for its ID. In our Sip n’ Social application our recipe_ingredient table has a composite primary key, in pace of a single primary key recipe_ingredient table has a composite primary key that consist of recipe_id & ingredient_id.
 In order for this entity to be mapped in JPA we have to use an embedded ID field. When using an embedded ID field, it is important to note that a new class must be created to represent the entity’s ID and this class must be annotated with @Embeddable, implement the Serializable interface, and should have a long field names serialVersionnUID. In our application this class is named “RecipeIngredientId”. Since this class is an entity, it is important to remember to include getters, setter, hashCode, equals, and a no-arg constructor.
 In the RecipeIngredient class we embedded a field of the type RecipeIngredientId and annotated it with @EmbeddedId. As always the owning entity is the entity with the foreign key. In the RecipeIngredient class the primary keys of the joined tables are the foreign keys. When mapping to the forging key we use out typically mapping annotations and add in the @MapsId annotation. The non-owning sides receives the usual annotations of  @OneToMany  and mapped By, but no additional annotations.
 Finally, to persist a new entity in JPA with an embedded id we had to construct the id object, RecipeIngredientId. Assign it to a new entity, assign new entities to the relationship field, and finally persist the entity.
 
+
 - Controller Class
-<br>
 The controller class is responsible for processing incoming REST API request, preparing a model, and returning the view. When we started our project we did not expect need more than one controller class. We quickly discovered how naive we were in that thought process. In future projects we plan to use many controller classes.
 Picture of figma
 Something planning and Trello
