@@ -60,13 +60,13 @@ Picture of Schema
 
 - Cecelia Guerrero
 Spider Owner
-GitHub:
-LinkedIn:
+GitHub: https://github.com/Cagugu
+LinkedIn: https://www.linkedin.com/in/cecelia-guerrero/
 
 - Desiree Easterling
 SCRUM Master
-GitHub:
-LinkedIn:
+GitHub: https://github.com/desireevanassche
+LinkedIn: https://www.linkedin.com/in/desiree-vanassche/
 
 - Ving P
 Database Owner
@@ -75,5 +75,5 @@ LinkedIn:
 
 - Zack Gaddy
 Repository Owner
-GitHub:
-LinkedIn:
+GitHub: https://github.com/ZackTheAwkward
+LinkedIn: https://www.linkedin.com/in/zack-gaddy/
