@@ -94,7 +94,7 @@ form {
 }
 
 input {
-	background-color: #eee;
+	background-color: #FFFFFF;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
