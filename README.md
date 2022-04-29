@@ -66,7 +66,7 @@ Picture of Schema
 Meet the team
 
 Cecelia Guerrero
-- Spider Owner
+- Development Team Lead
 - GitHub: https://github.com/Cagugu
 - LinkedIn: https://www.linkedin.com/in/cecelia-guerrero/
 
@@ -77,8 +77,6 @@ Desiree Easterling
 
 Ving Pollard
 - Database Owner
-- GitHub:
-- LinkedIn:
 
 Zack Gaddy
 - Repository Owner
