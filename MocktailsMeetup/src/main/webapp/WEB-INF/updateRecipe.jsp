@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Update Recipe</title>
 </head>
 
 <style> 
@@ -77,7 +77,7 @@ h1 {
 		</div>
 		<div class="form-group row">
 			<Label class="form-input-label"></Label>
-			<input type="text" name="imageUrl" />
+			<input type="text" name="imageUrl" value= "${recipe.imageUrl}"/>
 		</div>
 		
 		<br> <input type="submit" value="Submit Changes">

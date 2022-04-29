@@ -32,8 +32,14 @@ a:hover {
 	text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h5, h6 {
 	font-family: 'Cormorant Garamond', serif;
+}
+
+h4 {
+font-family: 'Playfair Display', serif;
+color: white;
+font-size: 25px;
 }
 
 .col1 {
@@ -45,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 	display: inline-block;
 	justify-content: center;
 	text-align: center;
-	background-color: #fec89a;
+	background-color: #00798c;
 	border-radius: 3%;
 }
 
@@ -119,23 +125,17 @@ padding-top: 10px;
 							<input type="submit" class="btn btn-primary mr-3"
 								value="Save Changes">
 						</form>
-					<div class="inner">
-
-					</div>
-						<br>
-						<br>
+<br>
 						
-					<div class="inner">
 				<form action="welcome.do">
 							<input type="submit" class="btn btn-primary mr-3" value="Cancel">
 						</form>
 
 					</div>
-				</div>
+					</div>
+				
 
-
-			</div>
-
+		
 
 
 

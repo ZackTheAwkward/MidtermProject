@@ -23,7 +23,7 @@ body {
 }
 
 .container input[type="text"] {
-	width: 550px !important;
+	width: 400px !important;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -43,7 +43,6 @@ body {
 justify-content: center;} 
 
 h1 {
-  font-family: 'Playfair Display', serif;
 	text-align: center;
 	padding-top: 30px;
 }
@@ -71,17 +70,6 @@ h1 {
 						type="text" name="description" value="Description: ${meetup.description}" />
 				</div>
 
-
-				<div class="form-group row">
-					<Label class="form-input-label"></Label> <input
-						type="text" name="maxAttendees" placeholder="Max Attendees: ${meetup.maxAttendees}" />
-				</div>
-
-
-				<div class="form-group row">
-					<Label class="form-input-label"></Label> <input
-						type="text" name="imageURL" placeholder="Image URL ${meetup.imageURL}" />
-				</div>
 				<div class="form-group row">
 					<Label class="form-input-label"> Start Time: </Label> <input
 						type="time" name="startTime" value="${meetup.startTime}" />
@@ -91,9 +79,20 @@ h1 {
 					<Label class="form-input-label"> End Time: </Label> <input
 						type="time" name="endTime" value="${meetup.endTime}" />
 				</div>
+
+				<div class="form-group row">
+					<Label class="form-input-label"></Label> <input
+						type="text" name="maxAttendees" placeholder="Max Attendees: ${meetup.maxAttendees}" />
+				</div>
+
 				<div class="form-group row">
 					<Label class="form-input-label"> Meetup Date: </Label> <input
 						type="date" name="meetupDate" value="${meetup.meetupDate}" />
+				</div>
+
+				<div class="form-group row">
+					<Label class="form-input-label"></Label> <input
+						type="text" name="imageURL" placeholder="Image URL ${meetup.imageURL}" />
 				</div>
 
 				<%-- <div class="form-group row">
