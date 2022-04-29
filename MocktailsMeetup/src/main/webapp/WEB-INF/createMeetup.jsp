@@ -10,8 +10,6 @@
 
 
 <style>
-
-
 body {
 	width: 1400px;
 	height: auto;
@@ -20,8 +18,8 @@ body {
 		center center;
 	background-size: cover;
 	margin-top: 120px;
-
 }
+
 .container input[type="text"] {
 	width: 400px !important;
 }
@@ -38,6 +36,7 @@ body {
 }
 
 h1 {
+	font-family: 'Playfair Display', serif;
 	text-align: center;
 	padding-top: 30px;
 }
@@ -66,18 +65,15 @@ h1 {
 				<input class="form-control-sm" type="date" name="meetupDate"
 					placeholder="Meetup Date" /> <br> <input
 					class="form-control-sm" type="text" name="imageURL"
-					placeholder="Image URL" /> <br> <input class="form-control-sm"
-					type="text" name="address.street" placeholder="Street" /> <br>
-
-				<input class="form-control-sm" type="text" name="address.city"
-					placeholder="City" /> <br> 
-					<input class="form-control-sm" type="text" name="address.stateAbbr" maxlength="2"
-					placeholder="State Abbreviation" /> <br> <input
+					placeholder="Image URL" /> <br> <input
+					class="form-control-sm" type="text" name="address.street"
+					placeholder="Street" /> <br> <input class="form-control-sm"
+					type="text" name="address.city" placeholder="City" /> <br> <input
+					class="form-control-sm" type="text" name="address.stateAbbr"
+					maxlength="2" placeholder="State Abbreviation" /> <br> <input
 					class="form-control-sm" type="text" name="address.postalCode"
-					placeholder="Postal Code" /> 
-					
-					
-					<br><input type="submit" value="sumbit" />
+					placeholder="Postal Code" /> <br>
+				<input type="submit" value="sumbit" />
 			</div>
 		</form>
 	</div>

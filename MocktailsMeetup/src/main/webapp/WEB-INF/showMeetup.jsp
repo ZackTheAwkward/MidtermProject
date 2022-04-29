@@ -6,7 +6,7 @@
 
 
 <meta charset="UTF-8">
-<title>Meetup Details</title>
+<title>${meetup.title}</title>
 
 <style>
 html, body {
@@ -16,48 +16,70 @@ html, body {
 }
 
 #map {
-	height: 800px;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	height: 500px;
+	width: 50%;
 }
 
-.details {
-	text-align: center;
-	position: absolute;
-	top: 20%;
-	right: 25%;
-	left: 25%;
+#image {
+	height: 500px;
+	width: 50%;
 }
 
 h1 {
 	text-align: center;
 }
+
+.topLeft {
+	font-weight: bold;
+	position: absolute;
+	top: 45%;
+	left: 10%;
+}
+
+.topRight {
+	position: absolute;
+	top: 30%;
+	margin-left: 50%;
+	margin-top: auto;
+}
+
+.bottomLeft {
+	position: absolute;
+	top: 70%;
+	margin-right: 50%;
+	margin-top: auto;
+}
+
+.bottomRight {
+	font-weight: bold;
+	position: absolute;
+	top: 100%;
+	right: 10%;
+}
 </style>
 </head>
 <body>
 	<%@ include file="loggedInNavbar.jsp"%>
+	
+	<br>
+	<br>
+	<br>
+	<h1>Meetup Details for ${meetup.title}</h1>
 
-	<h1>Meetup Details</h1>
+	<div class="topLeft">
+		<h2>${meetup.title}</h2>
+		<h5>${meetup.description}</h5>
+	</div>
 
-	<div class="details">
-		<h5>${meetup.title}</h5>
-		<p>${meetup.description}</p>
-		<p>Address: ${meetup.address}</p>
+	<div class="bottomRight">
+		<h2>Address: ${meetup.address}</h2>
 		<h4>Start: ${meetup.startTime} End: ${meetup.endTime}</h4>
 	</div>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 
+	<img class="topRight" id="image" src="${meetup.imageURL}" />
 
-
-	<div id="map"></div>
+	<div class="bottomLeft" id="map"></div>
 	<script>
 		var geocoder;
 		var map;

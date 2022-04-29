@@ -29,12 +29,28 @@ body {
 }
 
 h1 {
+ 	font-family: 'Playfair Display', serif;
 	font-weight: bold;
+	margin-bottom: 0px;
+	
+}
+
+img {
+padding: 0;
+margin-bottom: 0px;
+margin-top: 0px;}
+
+h3 {
+ 	font-family: 'Playfair Display', serif;
 	margin: 0;
 }
 
+
+
 h2 {
 	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
 }
 
 p {
@@ -58,8 +74,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #fec89a;
-	background-color: #fec89a;
+	border: 1px solid #00798c;
+	background-color: #00798c;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -111,6 +127,7 @@ input {
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
+	margin-top: 75px;
 }
 
 .form-container {
@@ -180,7 +197,7 @@ z-index
 }
 
 .overlay {
-	background: #fec89a;
+	background: #00798c;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -296,11 +313,9 @@ footer a {
 		<form action="login.do" method = "POST">
 			<h1>Sign in</h1>
 			<div class="social-container">
-				<br>
-				<br>
-				<br>
+				<img alt="Welcome Back!" src="https://live.staticflickr.com/65535/52037915228_8126178652.jpg" width="100px" height="100px">
 			</div>
-			<span>Welcome back, Friend!</span>
+			<h3>Welcome back, Friend!</h3>
 			<input type="text" name = "username" placeholder="Username" />
 			<input type="password" name = "password" placeholder="Password" />
 			<button>Sign In</button>
@@ -317,7 +332,7 @@ footer a {
 				<h1>New to Sip n Social?</h1>
 				<h4>Create an account to unlock all of our features!</h4>
 				<h4>Share recipes, and join or host meetups!</h4>
-				<a style= color:#FFFFFF;border-style:solid;border-color:#FFFFFF href="signUp.do">  Sign Up  </a>
+				<a style= color:#FFFFFF;border-style:solid;border-color:#FFFFFF; href="signUp.do">  Sign Up  </a>
 			</div>
 		</div>
 	</div>

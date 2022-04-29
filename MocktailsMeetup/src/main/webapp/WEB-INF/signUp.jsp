@@ -29,12 +29,23 @@ body {
 }
 
 h1 {
+	text-align: center;
+ 	font-family: 'Playfair Display', serif;
 	font-weight: bold;
 	margin: 0;
 }
 
+h3 {
+ 	font-family: 'Playfair Display', serif;
+	margin: 0;
+}
+
+
+
 h2 {
 	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
 }
 
 p {
@@ -103,6 +114,7 @@ input {
 
 .container {
 	background-color: #fff;
+	margin-top: 75px;
 	border-radius: 10px;
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px
 		rgba(0, 0, 0, 0.22);
@@ -182,8 +194,7 @@ z-index
 }
 
 .overlay {
-	background: #fec89a;
-	
+	background: #00798c;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -275,6 +286,7 @@ z-index
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>Returning to Sip?</h1>
+				<img alt="" src="https://live.staticflickr.com/65535/52036840052_cf16d87dd2.jpg" width="100px" height="100px">
 				<h3>We've missed you!</h3>
 				<a style= color:#FFFFFF;border-style:solid;border-color:#FFFFFF href="goLogin.do">  Sign In  </a>
 			</div>
