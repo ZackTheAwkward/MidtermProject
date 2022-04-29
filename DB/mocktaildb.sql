@@ -274,14 +274,9 @@ CREATE TABLE IF NOT EXISTS `recipe_comment` (
   `post_date` DATETIME NULL,
   `in_reply_to_id` INT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_recipe_comment_recipe_comment1_idx` (`in_reply_to_id` ASC),
   INDEX `fk_recipe_comment_recipe1_idx` (`recipe_id` ASC),
   INDEX `fk_recipe_comment_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_recipe_comment_recipe_comment1`
-    FOREIGN KEY (`in_reply_to_id`)
-    REFERENCES `recipe_comment` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_recipe_comment_recipe_comment1_idx` (`in_reply_to_id` ASC),
   CONSTRAINT `fk_recipe_comment_recipe1`
     FOREIGN KEY (`recipe_id`)
     REFERENCES `recipe` (`id`)
@@ -290,6 +285,11 @@ CREATE TABLE IF NOT EXISTS `recipe_comment` (
   CONSTRAINT `fk_recipe_comment_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_recipe_comment_recipe_comment1`
+    FOREIGN KEY (`in_reply_to_id`)
+    REFERENCES `recipe_comment` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -728,7 +728,7 @@ INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (15, 39, 8, 'whole', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (15, 38, 0.5, 'cups', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (15, 29, 2, 'cups', '');
-INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (15, 60, 1.25, 'litres', '');
+INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (15, 60, 1.25, 'liters', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (16, 64, 500, 'grams', '(halved)');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (16, 7, 110, 'grams', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (16, 31, 0.25, 'cup', '');
@@ -740,7 +740,7 @@ INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (17, 53, 1, 'cup', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (17, 57, 250, 'grams', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (17, 29, 4, 'cups', '');
-INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (17, 36, 1.25, 'litres', '');
+INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (17, 36, 1.25, 'liters', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (17, 47, 3, 'sprigs', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (18, 49, 3, 'whole', '(navel)');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (18, 66, 700, 'ml', '(raspberry flavor)');
@@ -783,7 +783,7 @@ INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (24, 32, 0.25, 'cups', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (24, 7, 1.25, 'cups', '');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (24, 52, 3, 'fruit ', '(halved)');
-INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (24, 60, 2, 'litres', '(chilled)');
+INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (24, 60, 2, 'liters', '(chilled)');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (24, 28, 2, 'cups', '(to serve)');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (25, 57, 150, 'grams', '(fresh or frozen)');
 INSERT INTO `recipe_ingredient` (`recipe_id`, `ingredient_id`, `quantity`, `unit`, `instruction`) VALUES (25, 4, 125, 'grams', '');
@@ -966,7 +966,106 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mocktaildb`;
-INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (1, 1, 1, 'Comment on Shirley Temple', '2020-05-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (1, 1, 1, 'This is one of my favorite mocktails!', '2016-04-03 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (2, 2, 2, 'FREAKIN GOOD!  And I am a former bartender.', '2016-04-03 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (3, 3, 3, 'Such a treat!', '2020-06-09 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (4, 4, 4, 'I was pleasantly surprised how tasty this drink was.', '2017-11-09 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (5, 5, 5, 'This is my daughters favorite drink, and she hates everything.', '2018-12-27 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (6, 6, 6, 'Was so excited to try this recipe!', '2021-09-26 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (7, 7, 7, 'OMG, this is freakin\' D-Lish!', '2021-03-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (8, 8, 8, 'Such an easy and tasty drink to make.', '2013-01-08 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (9, 9, 9, 'My husband makes this drink for the family every Easter.', '2014-08-09 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (10, 10, 10, 'This is my husband\'s favorite drink', '2017-12-14 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (11, 11, 11, 'I make this at least once a week during the summer months.', '2021-08-22 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (12, 12, 12, 'Perfect for a virtual happy hour.', '2020-05-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (13, 13, 13, 'All of the flavor without the regrets the next day. ', '2021-04-16 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (14, 14, 14, 'Everyone in my family loves this drink!', '2014-03-03 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (15, 15, 15, 'I was impressed with how easy it was to make this drink.', '2018-09-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (16, 16, 16, 'This is my mom\'s favorite drink.', '2016-04-07 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (17, 17, 17, 'I have had worse drinks, tbh.', '2019-09-11 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (18, 18, 18, 'excellent to got with brunch on a Saturday morn, imo.', '2012-04-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (19, 19, 19, 'Not my favorite, but everyone in my family seemed to like it.', '2017-02-11 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (20, 20, 20, 'Love this!', '2000-07-19 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (21, 21, 1, 'Fun to make, fun to drink - just fun!', '2019-04-02 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (22, 22, 22, 'This is my son\'s favorite drink.', '2020-10-18 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (23, 23, 23, 'This is easy to make, my goto fave on the weekend.', '2019-09-12 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (24, 24, 24, 'This recipe can be altered to your taste, I like to serve it without ice.', '2019-12-16 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (25, 25, 25, 'I highly recommend that you try this now!', '2019-02-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (26, 26, 26, 'My mom likes this, my hubby likes this, and I like this!', '2015-03-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (27, 27, 27, 'What\'s not to love - it beats having a hangover the next day.', '2014-08-02 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (28, 28, 28, 'This mocktail is easy to throw together.', '2017-06-08 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (29, 29, 29, 'If you like sweet drinks this is a classic choice.', '2020-07-14 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (30, 30, 30, 'Makes you feel like you are vacationing on a beach.', '2020-03-22 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (31, 31, 2, 'Your guaranteed for a hit when you order citrus based cocktails.', '2018-09-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (32, 32, 3, 'I expected to miss the alcohol, but was pleasantly surprised.', '2016-04-07 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (33, 33, 4, 'This is my favorite mocktail to order at the bar.', '2019-09-11 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (34, 34, 5, 'What a treat, I had this during our last mocktail mixer.', '2012-04-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (35, 35, 6, 'You would be surprised at the refreshing flavor', '2017-02-11 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (36, 36, 7, 'My son, who hates everything, loves this drink. ', '2000-07-19 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (37, 37, 8, 'Everyone at the party was looking forward to trying this recipe.', '2019-04-02 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (38, 38, 9, 'One sip and -OMG, what a tasty treat.', '2020-10-18 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (39, 39, 10, 'Easy to make, easily a crowd pleaser.', '2019-09-12 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (40, 40, 11, 'My mom used to make this drink for me on my birthday when I was a little girl', '2019-12-16 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (41, 41, 12, 'My husband likes it, and I love it!', '2019-02-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (42, 42, 13, 'We make this several times per week when we have the time. ', '2015-03-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (43, 43, 14, 'Great virtual happy hour drink, enjoy!', '2014-08-02 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (44, 44, 15, 'Tasty, easy, crowd pleaser without the regrets the next day. ', '2021-09-26 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (45, 45, 16, 'This is go to favorite in my family. ', '2021-03-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (46, 46, 17, 'This drink is so easy to make, what is not to love? ', '2013-01-08 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (47, 47, 18, 'My mom recommended this drink to me.  It is now my family favorite. ', '2014-08-09 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (48, 48, 19, 'This mocktail makes me feel young again, so light and refreshing. ', '2017-12-14 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (49, 49, 20, 'Great drink to go with brunch, breakfast, second breakfast, or the meals in between. ', '2016-04-03 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (50, 50, 21, 'Everyone at the party enjoyed this drink, make it today.', '2020-06-09 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (51, 1, 22, 'If you hate super sweet drinks, I recommend that you include sugar-free alternatives.  ', '2016-04-03 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (52, 2, 23, 'This is a fun drink to make and everyone will find it D-LISH!', '2016-04-03 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (53, 3, 24, 'This will be a real crowd pleaser. It is my dad\'s favorite drink.', '2020-06-09 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (54, 4, 25, 'Super easy to make with minimal cleanup - my goto fave on the weekend.', '2017-11-09 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (55, 5, 26, 'I always alter this recipe slightly, but my wife likes it as is.  ', '2018-12-27 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (56, 6, 27, 'I am looking forward to trying this recipe, it has all of the ingredients that I love.', '2021-09-26 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (57, 7, 28, 'My son loves this, my daughter enjoys this, and my boo get outvoted.  (He hates everything)', '2021-03-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (58, 8, 29, 'You will be hungover with tasty goodness in your belly. ', '2013-01-08 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (59, 9, 30, 'I had a party last year and I needed to throw together something quick, this recipe saved the day. ', '2014-08-09 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (60, 10, 1, 'Make this when you want to feel like you are on a luxury cruise.', '2017-12-14 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (61, 11, 2, 'You are going to love how tasty this classic mocktail is.', '2021-08-22 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (62, 12, 3, 'I love any grapefruit drink, this is one of my faves!', '2020-05-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (63, 13, 4, 'I recommend doubling up on the mangoes to make this drink special.', '2021-04-16 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (64, 14, 5, 'You can use regular lemonade or diet lemonade, make sure the strawberries are fresh.', '2014-03-03 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (65, 15, 6, 'Limey and minty deliciousness.', '2018-09-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (66, 16, 7, 'I like to increase the ice to make the drink super thick.', '2016-04-07 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (67, 17, 8, 'I like to freeze the fruit to make multiple drinks for weeks on end.', '2019-09-11 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (68, 18, 9, 'When you can\'t find hibiscus, you can use a substitute.', '2012-04-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (69, 19, 10, 'Make sure the watermelon is seedless.  Very refreshing drink.', '2017-02-11 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (70, 20, 11, 'This is my favorite homemade non-alcoholic punch ', '2000-07-19 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (71, 21, 12, 'I like to use Earl Gray tea for an extra orangy kick.', '2019-04-02 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (72, 22, 13, 'This is a perfect way to kick lemonade up a notch!', '2020-10-18 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (73, 23, 14, 'Perfect combination of lemon and ginger.', '2019-09-12 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (74, 24, 15, 'This is the drink that I think of when I think of summer. ', '2019-12-16 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (75, 25, 16, 'Devine mix of berries, more berries, apple and mint.', '2019-02-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (76, 26, 17, 'Do you want some tea with your lemons? ', '2015-03-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (77, 27, 18, 'This is a refreshing alternative to the Bloody alcohol infused alternative. ', '2014-08-02 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (78, 28, 19, 'This is great summer on the beach kind of drink.', '2017-06-08 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (79, 29, 20, 'If you love chocolate, you will love this drink!', '2020-07-14 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (80, 30, 21, 'They should bottle this drink and sell it in grocery stores!', '2020-03-22 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (81, 31, 22, 'I like to substitute for sugar-free alternative when serving to my family.', '2018-09-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (82, 32, 23, 'This is like a delicious coconut flavored smoothie.  ', '2016-04-07 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (83, 33, 24, 'For me, it is the pomegranate that makes this drink special.', '2019-09-11 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (84, 34, 25, 'This drink has Mango juice - what\'s not to love?', '2012-04-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (85, 35, 26, 'This reminds me of drinking my favorite childhood popsicle.', '2017-02-11 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (86, 36, 27, 'This drink certainly makes boring apple cider more enjoyable.', '2000-07-19 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (87, 37, 28, 'I like to alter the recipe using double the required amount of honey.', '2019-04-02 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (88, 38, 29, 'I went out and bought special copper mugs to make this drink authentic.', '2020-10-18 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (89, 39, 30, 'This is the perfect drink to go with Turkey day.  The kids will love it!', '2019-09-12 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (90, 40, 1, 'The cream of cocunt makes this drink special.', '2019-12-16 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (91, 41, 2, 'This seems similar to something that you might buy over the counter, except you control the ingredients.', '2019-02-24 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (92, 42, 3, 'You can substitute cranberry juice with your favorite juice.', '2015-03-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (93, 43, 4, 'Perfect drink to have a cold winter night.', '2014-08-02 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (94, 44, 5, 'This tastes like a creamsicle dream.', '2021-09-26 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (95, 45, 6, 'Another one of favorites to drink in the fall.', '2021-03-06 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (96, 46, 7, 'If you can\'t find mango seltzer, you can make your own using mangoes and seltzer.', '2013-01-08 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (97, 47, 8, 'This is one of my favorite frozen drinks to make for my kids.', '2014-08-09 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (98, 48, 9, 'What an amazing find! I would have never thought to make berry ice cubes.', '2017-12-14 09:00:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (99, 49, 10, 'I like all versions of the mojito and this is one of my favorites.', '2016-04-03 00:09:00', NULL);
+INSERT INTO `recipe_comment` (`id`, `recipe_id`, `user_id`, `text_content`, `post_date`, `in_reply_to_id`) VALUES (100, 50, 11, 'I can\'t wait to try this alternative to the sidecar.', '2020-06-09 00:09:00', NULL);
 
 COMMIT;
 
