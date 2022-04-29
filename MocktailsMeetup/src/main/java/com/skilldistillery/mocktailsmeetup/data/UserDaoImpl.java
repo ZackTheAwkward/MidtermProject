@@ -46,6 +46,7 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User createUser(User user) {
+		user.setActive(true);
 		em.persist(user);
 		return em.find(User.class, user.getId());
 	}
