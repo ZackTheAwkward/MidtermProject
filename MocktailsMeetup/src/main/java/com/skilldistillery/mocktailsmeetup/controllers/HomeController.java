@@ -196,7 +196,8 @@ public class HomeController {
 
 	@RequestMapping("welcome.do")
 	public String checkLogin(HttpSession session, Model model) {
-		if (session.getAttribute("user") == null) {
+		User u = (User)session.getAttribute("user");
+		if (u.isActive() == false) {
 			return "redirect:login.do";
 		}
 		List<Meetup> meetup = meetupDAO.findAll();
@@ -244,9 +245,11 @@ public class HomeController {
 	}
 
 	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
-	public String createAccount(User user, Model model) {
+	public String createAccount(User user, Model model, HttpSession session) {
 		User createAccount = userDAO.createUser(user);
-		model.addAttribute("user", createAccount);
+		session.setAttribute("user", createAccount);
+		List<Meetup> meetup = meetupDAO.findAll();
+		model.addAttribute("meetup", meetup);
 		return "welcome";
 	}
 
