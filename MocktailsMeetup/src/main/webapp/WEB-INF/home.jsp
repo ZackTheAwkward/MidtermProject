@@ -74,7 +74,6 @@ a:hover {
 }
 
 h1, h4, h5,  {
-
 font-family: 'Playfair Display', serif;
 color: #black;
 }
@@ -449,7 +448,7 @@ section {
 
         <div class="section-title">
           <h2>Photos from Our Mocktail Meetups</h2>
-          <p>some catchy paragraph about how great we are here </p>
+          <p>We could tell you about how cool our events our, but we thought it best to just show you </p>
         </div>
 
         <div class="row g-0">

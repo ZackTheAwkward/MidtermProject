@@ -317,7 +317,7 @@ footer a {
 				<h1>New to Sip n Social?</h1>
 				<h4>Create an account to unlock all of our features!</h4>
 				<h4>Share recipes, and join or host meetups!</h4>
-				<a style= color:#FFFFFF;border-style:solid;border-color:#FFFFFF href="signUp.do">  Sign Up  </a>
+				<a style= color:#FFFFFF;border-style:solid;border-color:#FFFFFF;border-radius:3%; href="signUp.do">  Sign Up  </a>
 			</div>
 		</div>
 	</div>
